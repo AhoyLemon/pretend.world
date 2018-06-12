@@ -1,0 +1,400 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+main,
+mark,
+menu,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video,
+xmp {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%; }
+
+html,
+body {
+  height: 100%; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block; }
+
+b,
+strong {
+  font-weight: bold; }
+
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic; }
+
+ul,
+ol {
+  list-style: none; }
+
+li {
+  display: list-item; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th,
+td,
+caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left; }
+
+q {
+  quotes: none; }
+
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+sub,
+sup,
+small {
+  font-size: 75%; }
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+svg {
+  overflow: hidden; }
+
+[v-cloak] {
+  display: none !important; }
+
+body {
+  background: #333; }
+
+main {
+  font-family: "Bitter", serif; }
+  main h2 {
+    color: #212121;
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 1em; }
+
+.chart-holder {
+  padding-left: 340px;
+  padding-right: 20px; }
+  .chart-holder .download-chart {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    color: blue;
+    border: 1px solid blue;
+    background: white;
+    font-size: 18px; }
+
+@media screen and (max-width: 600px) {
+  .chart-holder {
+    padding-left: 0; }
+  section div {
+    height: 98vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  canvas {
+    width: 100%;
+    height: 90vh; } }
+
+.chart-selector {
+  font-family: "Bitter", serif; }
+  .chart-selector .chart-options .word {
+    display: inline-block;
+    padding-right: 1em; }
+  .chart-selector .chart-options .comma {
+    margin-left: -1em; }
+  .chart-selector .chart-options select, .chart-selector .chart-options input {
+    font-family: "Bitter", serif;
+    margin-right: 1em; }
+  .chart-selector input::-webkit-input-placeholder {
+    color: #212121; }
+  .chart-selector input:-ms-input-placeholder {
+    color: #212121; }
+  .chart-selector input::-ms-input-placeholder {
+    color: #212121; }
+  .chart-selector input::placeholder {
+    color: #212121; }
+  .chart-selector input::-webkit-calendar-picker-indicator {
+    display: none; }
+
+.chart-selector.intro {
+  background: -webkit-gradient(linear, left top, left bottom, from(#4ac29a), to(#bdfff3));
+  background: -webkit-linear-gradient(top, #4ac29a, #bdfff3);
+  background: -o-linear-gradient(top, #4ac29a, #bdfff3);
+  background: linear-gradient(to bottom, #4ac29a, #bdfff3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 40px; }
+  .chart-selector.intro h1 {
+    font-weight: 100;
+    font-size: 6.5vw;
+    margin-bottom: 0.5em;
+    color: #dcc831; }
+  .chart-selector.intro .chart-options {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; }
+  .chart-selector.intro .word, .chart-selector.intro input, .chart-selector.intro select {
+    font-size: 20px; }
+  .chart-selector.intro input, .chart-selector.intro select {
+    background: transparent;
+    border: none; }
+  .chart-selector.intro .button-holder {
+    margin-top: 30px; }
+  .chart-selector.intro button {
+    background-color: transparent;
+    border: 2px solid currentColor;
+    font-size: 20px;
+    padding: 0.5em 1.5em;
+    color: #113471;
+    font-family: "Bitter", serif;
+    font-weight: 600;
+    cursor: pointer; }
+    .chart-selector.intro button:hover {
+      background: #113471;
+      color: #eee; }
+  .chart-selector.intro input:focus, .chart-selector.intro select:focus {
+    background: #e9eab9;
+    color: #113471; }
+  .chart-selector.intro input:focus::-webkit-input-placeholder {
+    color: #e9eab9; }
+  .chart-selector.intro input:focus:-ms-input-placeholder {
+    color: #e9eab9; }
+  .chart-selector.intro input:focus::-ms-input-placeholder {
+    color: #e9eab9; }
+  .chart-selector.intro input:focus::placeholder {
+    color: #e9eab9; }
+  .chart-selector.intro .criteria {
+    display: block;
+    margin-bottom: 0.75em; }
+
+.chart-selector.aside {
+  background: url(../img/hip-square.png);
+  padding: 10px;
+  line-height: 350%; }
+  .chart-selector.aside .word {
+    padding-right: 0.25em; }
+  .chart-selector.aside button {
+    color: #eee;
+    background: #113471;
+    font-size: 120%;
+    display: block;
+    border: 3px solid #113471;
+    padding: 0.3em 1.5em;
+    cursor: pointer; }
+    .chart-selector.aside button:hover {
+      background: #eee;
+      color: #113471; }
+    .chart-selector.aside button.hide-sidebar {
+      color: #212121;
+      background: #eee; }
+      .chart-selector.aside button.hide-sidebar:hover {
+        background: #212121;
+        color: #eee; }
+
+@-webkit-keyframes extrude {
+  0% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334; }
+  20% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334; }
+  40% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.03em -0.06em 0 #174334, 0.03em -0.06em 0 #174334, 0.03em -0.06em 0 #174334; }
+  60% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.045em -0.09em 0 #174334, 0.045em -0.09em 0 #174334; }
+  80% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.06em -0.12em 0 #174334, 0.06em -0.12em 0 #174334; }
+  90% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.06em -0.12em 0 #174334, 0.075em -0.15em 0 #174334; }
+  100% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.06em -0.12em 0 #174334, 0.075em -0.15em 0 #174334; } }
+
+@keyframes extrude {
+  0% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334, 0.007em -0.015em 0 #174334; }
+  20% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334, 0.015em -0.03em 0 #174334; }
+  40% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.03em -0.06em 0 #174334, 0.03em -0.06em 0 #174334, 0.03em -0.06em 0 #174334; }
+  60% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.045em -0.09em 0 #174334, 0.045em -0.09em 0 #174334; }
+  80% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.06em -0.12em 0 #174334, 0.06em -0.12em 0 #174334; }
+  90% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.06em -0.12em 0 #174334, 0.075em -0.15em 0 #174334; }
+  100% {
+    text-shadow: -1px 1px 0 #174334, 1px -1px 0 #174334, 0.015em -0.03em 0 #174334, 0.03em -0.06em 0 #174334, 0.045em -0.09em 0 #174334, 0.06em -0.12em 0 #174334, 0.075em -0.15em 0 #174334; } }
+
+.chart-selector.intro h1 {
+  -webkit-animation-name: extrude;
+  animation-name: extrude;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse; }
+
+section.type-buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+  section.type-buttons button {
+    background: white !important;
+    font-size: 14px !important;
+    border-color: black !important; }
+
+@media screen and (max-width: 600px) {
+  .chart-selector.intro {
+    padding-bottom: 80px; }
+    .chart-selector.intro h1 {
+      font-size: 15vw;
+      text-align: center; } }
+
+@media screen and (min-width: 601px) {
+  .chart-selector.aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px; } }
+
+/*# sourceMappingURL=charts.css.map */

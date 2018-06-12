@@ -1,0 +1,23 @@
+- var testing = true
+- var siteTitle = "impersonators"
+- var siteURL = ""
+- var fPlusURL = false
+- var description = ""
+- var d = new Date()
+- var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
+doctype html
+html(lang="en")
+  head
+    include partials/_head.pug
+  body
+    main#app
+      figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
+        //-img(:src="current.pic")
+      figcaption
+        .inner
+          h1 You're at a party of celebrity impersonators.
+          h2 Who is this supposed to be?
+          form(@submit.prevent="checkName()")
+            input(type="text" v-model="guess" placeholder="Type your guess here" )
+            button(type="submit") Guess!
+    include partials/_javascripts.pug
