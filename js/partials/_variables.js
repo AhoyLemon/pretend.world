@@ -256,7 +256,13 @@ const impersonators = [
   { 
     file: "howard-stern-1.jpg",
     celebrity: "Howard Stern",
-    url: "http://www.classiqueproductions.com/pages/howard-stern-impersonator-1.htm"
+    url: "http://www.classiqueproductions.com/pages/howard-stern-impersonator-1.htm",
+    badGuess: [
+      { 
+        guess: "Joey Ramone",
+        feedback: "I know, right? I agree, that looks like Joey Ramone. But it isn't."
+      }
+    ]
   },
   { 
     file: "barbra-streisand-29.jpg",
@@ -283,7 +289,13 @@ const impersonators = [
   { 
     file: "bruce-willis-2.jpg",
     celebrity: "Bruce Willis",
-    url: "http://www.classiqueproductions.com/pages/bruce-willis-impersonator-2.htm"
+    url: "http://www.classiqueproductions.com/pages/bruce-willis-impersonator-2.htm",
+    badGuess: [
+      {
+        guess: "Jason Statham",
+        feedback: "Different bald guy."
+      }
+    ]
   },
   { 
     file: "clark-gable-1.jpg",
