@@ -2,11 +2,22 @@ var app = new Vue({
   el: '#app',
   data: {
     guess: '',
+    phase: 'question',
     celebrities: impersonators,
+    met: [],
+    answer: 'correct',
+    my: {
+      round: 0,
+      points: 0
+    },
     current: {
       pic: '',
-      name: ''
+      name: '',
+      url: '',
+      variants: '',
+      sex: ''
     }
+
   },
 
   created: function () {
@@ -14,37 +25,124 @@ var app = new Vue({
   },
 
   methods: {
+
+    nextRound() {
+      let self = this;
+      self.phase = 'question';
+      self.answer = null;
+      self.my.round++;
+      //self.my.score = (this.my.points / this.my.round);
+      self.guess = '';
+      self.findImpersonator();
+    },
+
+
     findImpersonator: function() {
       let self = this;
+
+      // Who are you going to meet?
       let i = randomFrom(self.celebrities);
       self.current.pic = picPath + i.file;
       self.current.name = i.celebrity;
+      self.current.url = i.url;
+      self.current.variants = i.variants;
+      self.current.sex = i.sex;
+
+      // Did you already meet this person?
+      if (stringInArray(self.current.name,self.met)) {
+        self.findImpersonator();
+      } else {
+        self.met.push(self.current.name);
+      }
+      
     },
 
     checkName: function() {
       let self = this;
-
+      let correctGuess = false;
       if (self.guess.toLowerCase() == self.current.name.toLowerCase()) {
-        alert('correct');
-        self.guess = "";
-        self.findImpersonator();
-      } else {
-        let a = self.guess;
-        let b = self.current.name;
-        let score = similarity(b,a);
+
+        // 100% correct
+        self.answer = 'correct';
+        correctGuess = true;
+      } else if (self.current.variants) {
+        self.current.variants.forEach(v => {
+          if (self.guess.toLowerCase() == v.toLowerCase() ) {
+            // Acceptable variant.
+            correctGuess = true;
+            self.answer = 'close';
+          }
+        });
+      
+      }
+      
+      if (correctGuess == false) {
+        let score = similarity(self.current.name,self.guess);
         if (score > 0.86) {
-          alert('Score of '+score+'? Yeah, close enough')
-          self.findImpersonator();
+          // Your spelling was off, but this is close enough.
+          self.answer = 'close';
+          correctGuess = true;
         } else {
-          alert('Score of '+score+'')
+          // NOTE TO LEMON: Allow something here for the wrong answers you suspected.
+          self.answer = 'wrong';
         }
       }
+
+      if (self.answer == 'correct') {
+        self.my.points = self.my.points + 1;
+      } else if (self.answer == 'close') {
+        self.my.points = self.my.points + 0.7;
+      } else if (self.answer == 'wrong') {
+        self.my.points = self.my.points - 0.5;
+      }
+      self.phase = 'answer';
+
     }
     
   },
 
   computed: {
-    // put computeds here
+
+    myScore() {
+      return (this.my.points / this.my.round);
+    },
+
+    peopleThink() {
+      if (this.myScore < -0.4) {
+        return "you are the worst person they have ever met";
+      } else if (this.myScore() < -0.2) {
+        return "you suck";
+      } else if (this.myScore() < -0) {
+        return "you're very unplesant";
+      } else if (this.myScore() < -0.2) {
+        return "you are forgettable";
+      } else if (this.myScore() < -0.4) {
+        return "you're okay";
+      } else if (this.myScore() < -0.6) {
+        return "you're cool";
+      } else if (this.myScore() < -0.8) {
+        return "you're the bee's knees";
+      } else {
+        return "you're the best person in the world";
+      }
+    },
+
+    // Pronouns
+    his() {
+      if (this.current.sex == 'm') { return 'his'; } 
+      else if (this.current.sex == 'f') { return 'her'; }
+    },
+
+    he() {
+      if (this.current.sex == 'm') { return 'he'; } 
+      else if (this.current.sex == 'f') { return 'she'; }
+    },
+    himself() {
+      if (this.current.sex == 'm') { return 'himself'; } 
+      else if (this.current.sex == 'f') { return 'herself'; }
+    }
+
+
   },
 
   beforeMount: function() {

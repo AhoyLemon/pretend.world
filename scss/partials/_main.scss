@@ -6,13 +6,29 @@ html { background:#0d1021; color:$white; }
   img { height: 100%; }
 }
 
-figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include flex-center();
+figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include flex-center(); padding-left: 2em; padding-right:2em;
 
-  h1 { font-size:3.5vw; text-align: center; margin-bottom: 1em; }
-  h2 { font-size:2.25vw; text-align: center; margin-bottom: 1em;  }
+  h1 {  text-align: center; margin-bottom: 1em;
+    .medium-text { font-family: $font; font-size:2.8vw; font-weight: 400; margin-bottom: 0.35em; }
+    .big-text { font-family:$headline; color:$red; text-transform: uppercase; font-size:4vw; line-height: 90%; }
+  }
+  h2 { font-size:2.25vw; text-align: center; margin-top: 1em; margin-bottom: 1em; font-weight: 300; font-style: italic; }
   form { width:33vw; margin-left:auto; margin-right: auto; display: block;
-    input { display: block; width:100%; font-size:2.25vw; padding: 0.15em 0.5em;  }
-    button { background: $red; color:$white; border:none; font-size:1.75vw; padding: 0.15em 0.5em; display: block; margin-left: auto; cursor: pointer; }
+    input { display: block; width:100%; font-size:1.75vw; padding: 0.15em 0.5em; font-family: $font; }
+    button { background: $red; color:$white; border:none; font-size:1.75vw; padding: 0.15em 0.5em; display: block; margin-left: auto; cursor: pointer; font-family: $headline; }
+  }
+}
+
+.feedback { text-align: center;
+  h1 { font-size: 4vw; font-family: $headline;
+    &.correct { color: $correct; }
+    &.close   { color: $yellow; }
+    &.wrong   { color: $red; }
+  }
+  p { font-size:1.65vw; }
+
+  .button-holder { padding-top: 3em;
+    button { font-size:2em; padding:0.25em 1em; font-family:$headline; cursor: pointer; }
   }
 
 }

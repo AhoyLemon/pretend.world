@@ -197,7 +197,7 @@ figcaption {
   right: 50%;
   bottom: 0;
   left: 0;
-  font-family: "Limelight", cursive;
+  font-family: "Open Sans", sans-serif;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -216,15 +216,30 @@ figcaption {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-left: 2em;
+  padding-right: 2em; }
   figcaption h1 {
-    font-size: 3.5vw;
     text-align: center;
     margin-bottom: 1em; }
+    figcaption h1 .medium-text {
+      font-family: "Open Sans", sans-serif;
+      font-size: 2.8vw;
+      font-weight: 400;
+      margin-bottom: 0.35em; }
+    figcaption h1 .big-text {
+      font-family: "Limelight", cursive;
+      color: #ee2a2a;
+      text-transform: uppercase;
+      font-size: 4vw;
+      line-height: 90%; }
   figcaption h2 {
     font-size: 2.25vw;
     text-align: center;
-    margin-bottom: 1em; }
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: 300;
+    font-style: italic; }
   figcaption form {
     width: 33vw;
     margin-left: auto;
@@ -233,8 +248,9 @@ figcaption {
     figcaption form input {
       display: block;
       width: 100%;
-      font-size: 2.25vw;
-      padding: 0.15em 0.5em; }
+      font-size: 1.75vw;
+      padding: 0.15em 0.5em;
+      font-family: "Open Sans", sans-serif; }
     figcaption form button {
       background: #ee2a2a;
       color: #eee;
@@ -243,4 +259,26 @@ figcaption {
       padding: 0.15em 0.5em;
       display: block;
       margin-left: auto;
+      cursor: pointer;
+      font-family: "Limelight", cursive; }
+
+.feedback {
+  text-align: center; }
+  .feedback h1 {
+    font-size: 4vw;
+    font-family: "Limelight", cursive; }
+    .feedback h1.correct {
+      color: #3ede2e; }
+    .feedback h1.close {
+      color: #e9eab9; }
+    .feedback h1.wrong {
+      color: #ee2a2a; }
+  .feedback p {
+    font-size: 1.65vw; }
+  .feedback .button-holder {
+    padding-top: 3em; }
+    .feedback .button-holder button {
+      font-size: 2em;
+      padding: 0.25em 1em;
+      font-family: "Limelight", cursive;
       cursor: pointer; }

@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-12@16:31:26">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight">
-    <link href="css/impersonators.css?lastUpdated=2018-05-12@16:31:26" rel="stylesheet">
+    <meta http-equiv="last-modified" content="2018-05-12@23:27:39">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Open+Sans:300,300i,400,600">
+    <link href="css/impersonators.css?lastUpdated=2018-05-12@23:27:39" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -37,13 +37,45 @@
     <main id="app">
       <figure class="celebrity-photo" :style=" { backgroundImage: 'url('+current.pic+')' } "></figure>
       <figcaption>
-        <div class="inner">
-          <h1>You're at a party of celebrity impersonators.</h1>
-          <h2>Who is this supposed to be?</h2>
-          <form @submit.prevent="checkName()">
-            <input type="text" v-model="guess" placeholder="Type your guess here">
-            <button type="submit">Guess!</button>
-          </form>
+        <div class="inner question" v-if="phase == 'question'">
+          <div class="status">
+            <h1 v-if="my.round &lt; 1">
+              <div class="medium-text">You're at a party of </div>
+              <div class="big-text">celebrity impersonators</div>
+            </h1>
+            <h1 v-else-if="my.round &lt; 3">
+              <div class="medium-text">You're getting to</div>
+              <div class="big-text">know people</div>
+            </h1>
+            <h1 v-else-if="my.round &lt; 6">
+              <div class="medium-text">People at this party think</div>
+              <div class="big-text">{{peopleThink}}</div>
+            </h1>
+          </div>
+          <div class="question-wrapper">
+            <h2>Who is this supposed to be?</h2>
+            <form @submit.prevent="checkName()">
+              <input type="text" v-model="guess" placeholder="Type your guess here">
+              <button type="submit">Guess!</button>
+            </form>
+          </div>
+        </div>
+        <div class="inner feedback" v-if="phase == 'answer'">
+          <div class="correct-answer" v-if="answer == 'correct'">
+            <h1 class="correct">Great guess!</h1>
+            <p>The <span class="name" v-text="current.name"></span> impersonator brings you a drink and you chat for a couple minutes about The Philadelphia Eagles.</p>
+          </div>
+          <div class="close-answer" v-if="answer == 'close'">
+            <h1 class="close">Close enough!</h1>
+            <p>It's actually <i class="name" v-text="current.name"></i>, but <span v-text="he"></span> doesn't notice your mispronunciation.</p>
+          </div>
+          <div class="wrong-answer" v-if="answer == 'wrong'">
+            <h1 class="wrong">No!!!</h1>
+            <p>The <span class="name" v-text="current.name"></span> impersonator looks visably annoyed that you thought {{he}} was {{guess}}. You apologize profusely and {{he}} seems somewhat placated.</p>
+          </div>
+          <div class="button-holder">
+            <button class="keep-mingling" @click="nextRound()">Keep Mingling</button>
+          </div>
         </div>
       </figcaption>
     </main>

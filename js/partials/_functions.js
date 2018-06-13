@@ -2,11 +2,23 @@ function randomNumber(min,max) {
   return Math.floor(Math.random() * (max - min) ) + min;
 }
 
+/*
 function getRandomInt(max,min) {
   if (min) {
     return Math.floor(Math.random() * max) + min;
   } else {
     return Math.floor(Math.random() * max);
+  }
+}
+*/
+
+
+function stringInArray(s, a) {
+  let n = a.indexOf(s);
+  if (n > -1) {
+    return true;
+  } else {
+    return false;
   }
 }
 
