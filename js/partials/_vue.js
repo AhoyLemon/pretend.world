@@ -25,8 +25,11 @@ var app = new Vue({
       url: '',
       variants: '',
       sex: ''
+    },
+    feedback: {
+      headline: '',
+      message: ''
     }
-
   },
 
   created: function () {
@@ -104,13 +107,37 @@ var app = new Vue({
       } else if (self.answer == 'wrong') {
         self.my.points = self.my.points - 0.5;
       }
+      self.generateFeedback();
       self.phase = 'answer';
+    },
 
+    generateFeedback() {
+      let self = this;
+      if (self.answer == "correct") { 
+        self.feedback.headline = randomFrom(correctHeadlines); 
+      } else if (self.answer == "close") { 
+        self.feedback.headline = randomFrom(closeHeadlines); 
+      } else if (self.answer == "wrong") { 
+        self.feedback.headline = randomFrom(wrongHeadlines); 
+        
+        let n = [
+          "The  "+self.current.name+" impersonator looks visibly annoyed that you thought "+self.he+" was "+self.guess+". You apologize profusely and "+self.he+" seems somewhat placated.",
+          "So "+self.he+" says to me "+self.he+" says my name is "+self.current.name+"."
+        ];
+        
+        self.feedback.message = randomFrom(n);
+
+      }
     }
     
   },
 
   computed: {
+
+    randomWrongHeadline() {
+      let self = this;
+      return randomFrom(self.wrongHeadlines);
+    },
 
     myScore() {
       return (this.my.points / this.my.round);
@@ -146,12 +173,14 @@ var app = new Vue({
       if (this.current.sex == 'm') { return 'he'; } 
       else if (this.current.sex == 'f') { return 'she'; }
     },
+    him() {
+      if (this.current.sex == 'm') { return 'him'; } 
+      else if (this.current.sex == 'f') { return 'her'; }
+    },
     himself() {
       if (this.current.sex == 'm') { return 'himself'; } 
       else if (this.current.sex == 'f') { return 'herself'; }
     }
-
-
   },
 
   beforeMount: function() {

@@ -48,11 +48,8 @@ html(lang="en")
               span(v-text="he")
               |  doesn't notice your mispronunciation.
           .wrong-answer(v-if="answer == 'wrong'")
-            h1.wrong No!!!
-            p
-              | The 
-              span.name(v-text="current.name")
-              |  impersonator looks visably annoyed that you thought {{he}} was {{guess}}. You apologize profusely and {{he}} seems somewhat placated.
+            h1.wrong {{feedback.headline}}
+            p {{feedback.message}}
           .button-holder
             button.keep-mingling(@click="nextRound()" v-focus) Keep Mingling
 
