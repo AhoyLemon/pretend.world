@@ -1,3 +1,12 @@
+Vue.directive('focus', {
+  // When the bound element is inserted into the DOM...
+  inserted: function (el) {
+    // Focus the element
+    el.focus();
+  }
+});
+
+
 var app = new Vue({
   el: '#app',
   data: {
@@ -110,17 +119,17 @@ var app = new Vue({
     peopleThink() {
       if (this.myScore < -0.4) {
         return "you are the worst person they have ever met";
-      } else if (this.myScore() < -0.2) {
+      } else if (this.myScore < -0.2) {
         return "you suck";
-      } else if (this.myScore() < -0) {
+      } else if (this.myScore < -0) {
         return "you're very unplesant";
-      } else if (this.myScore() < -0.2) {
+      } else if (this.myScore < 0.2) {
         return "you are forgettable";
-      } else if (this.myScore() < -0.4) {
+      } else if (this.myScore < 0.4) {
         return "you're okay";
-      } else if (this.myScore() < -0.6) {
+      } else if (this.myScore < 0.6) {
         return "you're cool";
-      } else if (this.myScore() < -0.8) {
+      } else if (this.myScore < 0.8) {
         return "you're the bee's knees";
       } else {
         return "you're the best person in the world";

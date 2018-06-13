@@ -230,7 +230,6 @@ figcaption {
     figcaption h1 .big-text {
       font-family: "Limelight", cursive;
       color: #ee2a2a;
-      text-transform: uppercase;
       font-size: 4vw;
       line-height: 90%; }
   figcaption h2 {
@@ -260,7 +259,12 @@ figcaption {
       display: block;
       margin-left: auto;
       cursor: pointer;
-      font-family: "Limelight", cursive; }
+      font-family: "Limelight", cursive;
+      -webkit-transition: opacity 0.3s linear;
+      -o-transition: opacity 0.3s linear;
+      transition: opacity 0.3s linear; }
+      figcaption form button[disabled] {
+        opacity: 0; }
 
 .feedback {
   text-align: center; }

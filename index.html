@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-12@23:27:39">
+    <meta http-equiv="last-modified" content="2018-05-12@23:50:50">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Open+Sans:300,300i,400,600">
-    <link href="css/impersonators.css?lastUpdated=2018-05-12@23:27:39" rel="stylesheet">
+    <link href="css/impersonators.css?lastUpdated=2018-05-12@23:50:50" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -41,7 +41,7 @@
           <div class="status">
             <h1 v-if="my.round &lt; 1">
               <div class="medium-text">You're at a party of </div>
-              <div class="big-text">celebrity impersonators</div>
+              <div class="big-text">CELEBRITY IMPERSONATORS</div>
             </h1>
             <h1 v-else-if="my.round &lt; 3">
               <div class="medium-text">You're getting to</div>
@@ -54,9 +54,9 @@
           </div>
           <div class="question-wrapper">
             <h2>Who is this supposed to be?</h2>
-            <form @submit.prevent="checkName()">
-              <input type="text" v-model="guess" placeholder="Type your guess here">
-              <button type="submit">Guess!</button>
+            <form @submit.prevent="checkName()" :disabled="guess.length &lt; 4">
+              <input type="text" v-model="guess" placeholder="Type your guess here" v-focus>
+              <button type="submit" :disabled="guess.length &lt; 4">Guess!</button>
             </form>
           </div>
         </div>
@@ -74,7 +74,7 @@
             <p>The <span class="name" v-text="current.name"></span> impersonator looks visably annoyed that you thought {{he}} was {{guess}}. You apologize profusely and {{he}} seems somewhat placated.</p>
           </div>
           <div class="button-holder">
-            <button class="keep-mingling" @click="nextRound()">Keep Mingling</button>
+            <button class="keep-mingling" @click="nextRound()" v-focus>Keep Mingling</button>
           </div>
         </div>
       </figcaption>

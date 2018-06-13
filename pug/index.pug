@@ -19,7 +19,7 @@ html(lang="en")
           .status
             h1(v-if="my.round < 1")
               .medium-text You're at a party of 
-              .big-text celebrity impersonators
+              .big-text CELEBRITY IMPERSONATORS
             h1(v-else-if="my.round < 3")
               .medium-text You're getting to
               .big-text know people
@@ -28,9 +28,9 @@ html(lang="en")
               .big-text {{peopleThink}}
           .question-wrapper
             h2 Who is this supposed to be?
-            form(@submit.prevent="checkName()")
-              input(type="text" v-model="guess" placeholder="Type your guess here" )
-              button(type="submit") Guess!
+            form(@submit.prevent="checkName()" :disabled="guess.length < 4")
+              input(type="text" v-model="guess" placeholder="Type your guess here" v-focus)
+              button(type="submit" :disabled="guess.length < 4" ) Guess!
         
         .inner.feedback(v-if="phase == 'answer'")
           .correct-answer(v-if="answer == 'correct'")
@@ -54,7 +54,7 @@ html(lang="en")
               span.name(v-text="current.name")
               |  impersonator looks visably annoyed that you thought {{he}} was {{guess}}. You apologize profusely and {{he}} seems somewhat placated.
           .button-holder
-            button.keep-mingling(@click="nextRound()") Keep Mingling
+            button.keep-mingling(@click="nextRound()" v-focus) Keep Mingling
 
 
 

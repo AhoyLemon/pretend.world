@@ -10,12 +10,14 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
 
   h1 {  text-align: center; margin-bottom: 1em;
     .medium-text { font-family: $font; font-size:2.8vw; font-weight: 400; margin-bottom: 0.35em; }
-    .big-text { font-family:$headline; color:$red; text-transform: uppercase; font-size:4vw; line-height: 90%; }
+    .big-text { font-family:$headline; color:$red; font-size:4vw; line-height: 90%; }
   }
   h2 { font-size:2.25vw; text-align: center; margin-top: 1em; margin-bottom: 1em; font-weight: 300; font-style: italic; }
   form { width:33vw; margin-left:auto; margin-right: auto; display: block;
     input { display: block; width:100%; font-size:1.75vw; padding: 0.15em 0.5em; font-family: $font; }
-    button { background: $red; color:$white; border:none; font-size:1.75vw; padding: 0.15em 0.5em; display: block; margin-left: auto; cursor: pointer; font-family: $headline; }
+    button { background: $red; color:$white; border:none; font-size:1.75vw; padding: 0.15em 0.5em; display: block; margin-left: auto; cursor: pointer; font-family: $headline; transition:opacity 0.3s linear;
+      &[disabled] { opacity: 0; }
+    }
   }
 }
 
