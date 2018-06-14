@@ -139,8 +139,15 @@ var app = new Vue({
 
         let closeMessages = [
           [
-            self.he + ' is actually a ' +self.current.name+ ' impersonator, but chalks it up to you having a speech impediment, which you now have to pretend to have for the rest of the night.',
-            self.he + ' is actually a ' +self.current.name+ ' impersonator, but '+self.guess+' is close.'
+            capitalize(self.he) + ' is actually a ' +self.current.name+ ' impersonator,',
+              ['but '+self.he+' chalks up the mistake to you having a speech impediment, which you now have to pretend for the rest of the night', 'but '+self.he+' just assumes you&apos;e a terrible. To futher the ruse, you write down "HALO, NISE 2 MEET U :)" on a piece of paper. '+capitalize(self.he)+' gives you a pitying look and quietly disposes of your note.', 'but blames the misspelling on your mouthful of Ritz crackers. You continue to make small talk, spitting crumbs in '+self.his+' face.']
+          ],
+          [
+            '“'+self.guess+', right?” you ask.',
+              [ 
+                self.current.he+" looks at you quizzically. “"+self.current.name+" actually.” “That's what I said. "+self.current.name+".” You confidently reply.",
+                "“Did you say "+self.current.name+" or "+self.guess+"?” "+self.he+" asks you. “Which is the right one?” you reply. “What?” "+self.he+" he asks. You then ask if "+self.he+" wants to see a magic trick, but do not perform one."
+              ]
           ]
         ];
         self.feedback.message = workThisArray(closeMessages);
@@ -160,10 +167,16 @@ var app = new Vue({
             "“"+self.guess+"!” you scream, and the "+self.current.name+" impersonator",
               " ",
                 ["takes a wild punch at your noses, but misses considerably.", "spits directly into your mouth.", "breaks down into tears."]
+          ],
+          [
+            capitalize(self.he)+ "takes a few paces forwards and captures you an an unbreaking stare.",
+              [
+                "“"+self.current.name+".” is "+self.his+" and only utterance, but the stare does not break. Eventually you have to excuse yourself to the bathroom to break "+self.his+" line of sight.",
+                "“"+self.guess+"? You look at me and tell me how I look like "+self.guess+".” You fail to think of a response, "+self.he+" screams “"+self.current.name+"!!!” loud enough for the entire party to hear."
+              ]
           ]
         ];
         self.feedback.message = workThisArray(wrongMessages);
-
       }
     }
     

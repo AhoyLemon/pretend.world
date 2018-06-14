@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-13@21:49:43">
+    <meta http-equiv="last-modified" content="2018-05-14@16:12:00">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Open+Sans:300,300i,400,600">
-    <link href="css/impersonators.css?lastUpdated=2018-05-13@21:49:43" rel="stylesheet">
+    <link href="css/impersonators.css?lastUpdated=2018-05-14@16:12:00" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -66,8 +66,8 @@
             <p>{{feedback.message}}</p>
           </div>
           <div class="close-answer" v-if="answer == 'close'">
-            <h1 class="close">Close enough!</h1>
-            <p>It's actually <i class="name" v-text="current.name"></i>, but <span v-text="he"></span> doesn't notice your mispronunciation.</p>
+            <h1 class="close">{{feedback.headline}}</h1>
+            <p>{{feedback.message}}</p>
           </div>
           <div class="wrong-answer" v-if="answer == 'wrong'">
             <h1 class="wrong">{{feedback.headline}}</h1>
