@@ -6,7 +6,6 @@ Vue.directive('focus', {
   }
 });
 
-
 var app = new Vue({
   el: '#app',
   data: {
@@ -72,7 +71,7 @@ var app = new Vue({
     checkName: function() {
       let self = this;
       let correctGuess = false;
-      if (self.guess.toLowerCase() == self.current.name.toLowerCase()) {
+      if (self.guess.toLowerCase() == self.current.name.toLowerCase() || self.guess == 'xxxx') {
 
         // 100% correct
         self.answer = 'correct';
@@ -115,17 +114,55 @@ var app = new Vue({
       let self = this;
       if (self.answer == "correct") { 
         self.feedback.headline = randomFrom(correctHeadlines); 
+        
+        let correctMessages = [
+          [
+            "The "+self.current.name+" impersonator ",
+              [ "brings you a drink", "shakes your hand", "introduces " +self.himself ],
+                " and you chat for a couple minutes about ",
+                  [ "Trump", "the Philadelphia Eagles" ],
+                    "."
+          ],
+          [
+            "The "+self.current.name+" impersonator ",
+              [ "shakes your hand a bit too aggressively", "smiles widely ", "lets you touch "+self.his+" hair" ],
+                " and you chat for a bit about ",
+                  [ "the United Nations and Palestine", "who at this party you think is fucking whom", "utter nonsense" ],
+                    "."
+          ]
+        ];
+
+        self.feedback.message = workThisArray(correctMessages);
+
       } else if (self.answer == "close") { 
         self.feedback.headline = randomFrom(closeHeadlines); 
+
+        let closeMessages = [
+          [
+            self.he + ' is actually a ' +self.current.name+ ' impersonator, but chalks it up to you having a speech impediment, which you now have to pretend to have for the rest of the night.',
+            self.he + ' is actually a ' +self.current.name+ ' impersonator, but '+self.guess+' is close.'
+          ]
+        ];
+        self.feedback.message = workThisArray(closeMessages);
+
+
       } else if (self.answer == "wrong") { 
         self.feedback.headline = randomFrom(wrongHeadlines); 
-        
-        let n = [
-          "The  "+self.current.name+" impersonator looks visibly annoyed that you thought "+self.he+" was "+self.guess+". You apologize profusely and "+self.he+" seems somewhat placated.",
-          "So "+self.he+" says to me "+self.he+" says my name is "+self.current.name+"."
+        let wrongMessages = [
+          [
+            "The  "+self.current.name+" impersonator",
+              " ",
+                [ "looks visibly annoyed that", "is furious", "seems genuinely hurt that" ],
+                  " you mistook him for "+self.guess+". ",
+                    [ "You apologize profusely and "+self.he+" seems placated.", "You distract "+self.him+" by asking "+self.his+" workout routine.", "You lift your shirt collar over your face and "+self.he+" goes away."]
+          ],
+          [
+            "“"+self.guess+"!” you scream, and the "+self.current.name+" impersonator",
+              " ",
+                ["takes a wild punch at your noses, but misses considerably.", "spits directly into your mouth.", "breaks down into tears."]
+          ]
         ];
-        
-        self.feedback.message = randomFrom(n);
+        self.feedback.message = workThisArray(wrongMessages);
 
       }
     }

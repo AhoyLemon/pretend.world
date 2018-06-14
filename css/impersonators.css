@@ -286,3 +286,6 @@ figcaption {
       padding: 0.25em 1em;
       font-family: "Limelight", cursive;
       cursor: pointer; }
+      .feedback .button-holder button:hover, .feedback .button-holder button:focus {
+        background: #155bd4;
+        color: #eee; }

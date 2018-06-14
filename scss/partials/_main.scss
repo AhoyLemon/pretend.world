@@ -30,7 +30,9 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
   p { font-size:1.65vw; }
 
   .button-holder { padding-top: 3em;
-    button { font-size:2em; padding:0.25em 1em; font-family:$headline; cursor: pointer; }
+    button { font-size:2em; padding:0.25em 1em; font-family:$headline; cursor: pointer;
+      &:hover, &:focus { background:darken($blue,15%); color:$white; }
+    }
   }
 
 }

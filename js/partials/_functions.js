@@ -13,6 +13,38 @@ function getRandomInt(max,min) {
 */
 
 
+function workThisArray(myArray) {
+
+  let r = Math.floor(Math.random()*(myArray.length));
+  let message = '';
+
+  myArray[r].forEach(function(k) {
+    //console.log(typeof k);
+    if (typeof k == "object") {
+      //console.log(k)
+      var z = Math.floor(Math.random()*(k.length));
+
+      if (typeof k[z] == "object") {
+        k[z].forEach(function(a) {
+          if (typeof a == "object") {
+            message += a[(Math.floor(Math.random()*(a.length)))];
+          } else {
+            message += a;
+          }
+        });
+      } else {
+        message += k[z];
+      }
+    } else {
+      message += k;
+    }
+  });
+
+  return message;
+
+}
+
+
 function stringInArray(s, a) {
   let n = a.indexOf(s);
   if (n > -1) {

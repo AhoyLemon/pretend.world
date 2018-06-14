@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-13@16:38:25">
+    <meta http-equiv="last-modified" content="2018-05-13@21:49:43">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Open+Sans:300,300i,400,600">
-    <link href="css/impersonators.css?lastUpdated=2018-05-13@16:38:25" rel="stylesheet">
+    <link href="css/impersonators.css?lastUpdated=2018-05-13@21:49:43" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -62,8 +62,8 @@
         </div>
         <div class="inner feedback" v-if="phase == 'answer'">
           <div class="correct-answer" v-if="answer == 'correct'">
-            <h1 class="correct">Great guess!</h1>
-            <p>The <span class="name" v-text="current.name"></span> impersonator brings you a drink and you chat for a couple minutes about The Philadelphia Eagles.</p>
+            <h1 class="correct">{{feedback.headline}}</h1>
+            <p>{{feedback.message}}</p>
           </div>
           <div class="close-answer" v-if="answer == 'close'">
             <h1 class="close">Close enough!</h1>

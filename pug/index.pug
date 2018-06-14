@@ -34,11 +34,8 @@ html(lang="en")
         
         .inner.feedback(v-if="phase == 'answer'")
           .correct-answer(v-if="answer == 'correct'")
-            h1.correct Great guess!
-            p
-              | The 
-              span.name(v-text="current.name")
-              |  impersonator brings you a drink and you chat for a couple minutes about The Philadelphia Eagles.
+            h1.correct {{feedback.headline}}
+            p {{feedback.message}}
           .close-answer(v-if="answer == 'close'")
             h1.close Close enough!
             p
