@@ -1,12 +1,12 @@
-const partyMood = {
+const partyMoods = {
   veryGood: [
-    
+    "Everything is very good. PLACEHOLDER TEXT DELETE THIS ONE."
   ],
   prettyGood: [
     "You give finger guns to three separate people whom you have never met. Only one of those finger gun’d makes a face like you just farted. You consider this a success."
   ],
   neutral: [
-
+    "NEUTRAL. PLACEHOLDER TEXT. DELETE THIS ONE."
   ],
   prettyBad: [
     "The opening riff of Dee-Lite’s “Groove Is In The Heart” starts to play, and you make an utterly nonsensical joke about Josh Grobin In The Heart? Like, Josh Grobin is in your heart? Something like that. It is a <i>terrible</i> joke and everybody heard it.",

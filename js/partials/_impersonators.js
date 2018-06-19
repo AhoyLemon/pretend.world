@@ -201,7 +201,13 @@ const impersonators = [
     file: "buddy-holly-6.jpg",
     celebrity: "Buddy Holly",
     sex: 'm',
-    url: "http://www.classiqueproductions.com/pages/buddy-holly-impersonator-6.htm"
+    url: "http://www.classiqueproductions.com/pages/buddy-holly-impersonator-6.htm",
+    badGuess: [
+      { 
+        guess: "Elvis Costello",
+        feedback: "Wrong nerd. Think older."
+      }
+    ]
   },
   { 
     file: "anthony-hopkins-1.jpg",

@@ -107,3 +107,12 @@ function editDistance(s1, s2) {
   }
   return costs[s2.length];
 }
+
+function testChance(chance) {
+  let r = Math.floor(Math.random() * 100) + 1;
+  if (chance >= r) {
+    return true;
+  } else {
+    return false;
+  }
+}

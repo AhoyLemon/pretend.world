@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-14@16:12:00">
+    <meta http-equiv="last-modified" content="2018-05-18@23:18:42">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Open+Sans:300,300i,400,600">
-    <link href="css/impersonators.css?lastUpdated=2018-05-14@16:12:00" rel="stylesheet">
+    <link href="css/impersonators.css?lastUpdated=2018-05-18@23:18:42" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -35,21 +35,19 @@
   </head>
   <body>
     <main id="app">
+      <header class="debug">
+        <div class="box"><span class="label">round</span><span class="data">{{my.round}}</span></div>
+        <div class="box"><span class="label">score</span><span class="data">{{my.score}}</span></div>
+        <div class="box"><span class="label">mood</span><span class="data">{{my.mood}}</span></div>
+        <div class="box"><span class="label">steps</span><span class="data">{{my.stepsToCheese}}</span></div>
+      </header>
       <figure class="celebrity-photo" :style=" { backgroundImage: 'url('+current.pic+')' } "></figure>
       <figcaption>
         <div class="inner question" v-if="phase == 'question'">
           <div class="status">
-            <h1 v-if="my.round &lt; 1">
+            <h1>
               <div class="medium-text">You're at a party of </div>
               <div class="big-text">CELEBRITY IMPERSONATORS</div>
-            </h1>
-            <h1 v-else-if="my.round &lt; 3">
-              <div class="medium-text">You're getting to</div>
-              <div class="big-text">know people</div>
-            </h1>
-            <h1 v-else-if="my.round &lt; 6">
-              <div class="medium-text">People at this party think</div>
-              <div class="big-text">{{peopleThink}}</div>
             </h1>
           </div>
           <div class="question-wrapper">
@@ -61,17 +59,16 @@
           </div>
         </div>
         <div class="inner feedback" v-if="phase == 'answer'">
-          <div class="correct-answer" v-if="answer == 'correct'">
-            <h1 class="correct">{{feedback.headline}}</h1>
-            <p>{{feedback.message}}</p>
+          <h1 v-bind:class="feedback.headlineClass" v-text="feedback.headline"></h1>
+          <div class="answer-feedback" v-if="feedback.showAnswerMessage">
+            <p v-html="feedback.answerMessage"></p>
           </div>
-          <div class="close-answer" v-if="answer == 'close'">
-            <h1 class="close">{{feedback.headline}}</h1>
-            <p>{{feedback.message}}</p>
+          <div class="mood-feedback" v-if="feedback.showMoodMessage" :class="my.mood">
+            <p v-html="feedback.moodMessage"></p>
+            <p v-if="my.mood == 'veryBad'">You are in danger of being kicked out of the party.</p>
           </div>
-          <div class="wrong-answer" v-if="answer == 'wrong'">
-            <h1 class="wrong">{{feedback.headline}}</h1>
-            <p>{{feedback.message}}</p>
+          <div class="cheese-feedback" v-if="feedback.showCheeseMessage">
+            <p v-html="feedback.cheeseMessage"></p>
           </div>
           <div class="button-holder">
             <button class="keep-mingling" @click="nextRound()" v-focus>Keep Mingling</button>

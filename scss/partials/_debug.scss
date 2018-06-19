@@ -1,0 +1,9 @@
+.debug { @include position(fixed,0,50%,null,0); background:white; color:black;
+  @include flex-container();
+  .box { @include flex-item(20%); text-align: center;
+    span { display: block;
+      &.data { font-size:200%; }
+    }
+  }
+
+}

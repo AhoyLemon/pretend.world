@@ -27,7 +27,7 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
     &.close   { color: $yellow; }
     &.wrong   { color: $red; }
   }
-  p { font-size:1.65vw; }
+  p { font-size:1.65vw; margin: 0.75em; }
 
   .button-holder { padding-top: 3em;
     button { font-size:2em; padding:0.25em 1em; font-family:$headline; cursor: pointer;
@@ -35,6 +35,14 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
     }
   }
 
+}
+
+.mood-feedback {
+  &.veryGood   { color: $veryGood; }
+  &.prettyGood { color: $prettyGood; }
+  &.neutral    { color: $neutral; }
+  &.prettyBad  { color: $prettyBad; }
+  &.veryBad  { color: $veryBad; }
 }
 
 

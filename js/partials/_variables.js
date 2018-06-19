@@ -9,8 +9,3 @@ const closeHeadlines = [
 const wrongHeadlines = [
   "No!!!", "Wrong!", "That is incorrect!", "You are wrong!", "Incorrect!"
 ];
-
-const wrongFeedbackTexts = [
-  "Hello, my name is {{current.name}} and my preferred pronouns are {{he}} and {{him}}.",
-  "So {{he}} says to me {{he}} says my name is {{current.name}}"
-];

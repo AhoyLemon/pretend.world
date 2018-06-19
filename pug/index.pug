@@ -10,22 +10,27 @@ html(lang="en")
   head
     include partials/_head.pug
   body
+
     main#app
+
+      if testing = true
+        include partials/_debug.pug
+
       figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
         //-img(:src="current.pic")
       figcaption
 
         .inner.question(v-if="phase == 'question'")
           .status
-            h1(v-if="my.round < 1")
+            h1
               .medium-text You're at a party of 
               .big-text CELEBRITY IMPERSONATORS
-            h1(v-else-if="my.round < 3")
+            //-h1(v-else-if="my.round < 3")
               .medium-text You're getting to
               .big-text know people
-            h1(v-else-if="my.round < 6")
+            //-h1(v-else-if="my.round < 6")
               .medium-text People at this party think
-              .big-text {{peopleThink}}
+              //-.big-text {{peopleThink}}
           .question-wrapper
             h2 Who is this supposed to be?
             form(@submit.prevent="checkName()" :disabled="guess.length < 4")
@@ -33,15 +38,20 @@ html(lang="en")
               button(type="submit" :disabled="guess.length < 4" ) Guess!
         
         .inner.feedback(v-if="phase == 'answer'")
-          .correct-answer(v-if="answer == 'correct'")
-            h1.correct {{feedback.headline}}
-            p {{feedback.message}}
-          .close-answer(v-if="answer == 'close'")
-            h1.close {{feedback.headline}}
-            p {{feedback.message}}
-          .wrong-answer(v-if="answer == 'wrong'")
-            h1.wrong {{feedback.headline}}
-            p {{feedback.message}}
+
+
+          h1(v-bind:class="feedback.headlineClass" v-text="feedback.headline")
+
+          .answer-feedback(v-if="feedback.showAnswerMessage")
+            p(v-html="feedback.answerMessage")
+          
+          .mood-feedback(v-if="feedback.showMoodMessage" :class="my.mood")
+            p(v-html="feedback.moodMessage")
+            p(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
+
+          .cheese-feedback(v-if="feedback.showCheeseMessage")
+            p(v-html="feedback.cheeseMessage")
+
           .button-holder
             button.keep-mingling(@click="nextRound()" v-focus) Keep Mingling
 

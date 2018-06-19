@@ -16,7 +16,13 @@ var app = new Vue({
     answer: 'correct',
     my: {
       round: 0,
-      points: 0
+      points: 0,
+      score: 0,
+      previousScore: 0,
+      stepsToCheese: 10,
+      cheeseAdvance: false,
+      mood: "null",
+      previousMood: "null"
     },
     current: {
       pic: '',
@@ -27,7 +33,13 @@ var app = new Vue({
     },
     feedback: {
       headline: '',
-      message: ''
+      headlineClass: '',
+      showAnswerMessage: false,
+      answerMessage: '',
+      showMoodMessage: false,
+      moodMessage: '',
+      showCheeseMessage: false,
+      cheeseMessage: ''
     }
   },
 
@@ -112,9 +124,13 @@ var app = new Vue({
 
     generateFeedback() {
       let self = this;
+      self.feedback.headlineClass = self.answer;
+
+
+      // Generate the Answer Feedback
       if (self.answer == "correct") { 
         self.feedback.headline = randomFrom(correctHeadlines); 
-        
+
         let correctMessages = [
           [
             "The "+self.current.name+" impersonator ",
@@ -132,7 +148,7 @@ var app = new Vue({
           ]
         ];
 
-        self.feedback.message = workThisArray(correctMessages);
+        self.feedback.answerMessage = workThisArray(correctMessages);
 
       } else if (self.answer == "close") { 
         self.feedback.headline = randomFrom(closeHeadlines); 
@@ -150,7 +166,7 @@ var app = new Vue({
               ]
           ]
         ];
-        self.feedback.message = workThisArray(closeMessages);
+        self.feedback.answerMessage = workThisArray(closeMessages);
 
 
       } else if (self.answer == "wrong") { 
@@ -166,18 +182,94 @@ var app = new Vue({
           [
             "“"+self.guess+"!” you scream, and the "+self.current.name+" impersonator",
               " ",
-                ["takes a wild punch at your noses, but misses considerably.", "spits directly into your mouth.", "breaks down into tears."]
+                ["takes a wild punch at your nose, but misses considerably.", "spits directly into your mouth.", "breaks down into tears."]
           ],
           [
-            capitalize(self.he)+ "takes a few paces forwards and captures you an an unbreaking stare.",
+            capitalize(self.he)+ " takes a few paces forwards and captures you an an unbreaking stare. ",
               [
                 "“"+self.current.name+".” is "+self.his+" and only utterance, but the stare does not break. Eventually you have to excuse yourself to the bathroom to break "+self.his+" line of sight.",
-                "“"+self.guess+"? You look at me and tell me how I look like "+self.guess+".” You fail to think of a response, "+self.he+" screams “"+self.current.name+"!!!” loud enough for the entire party to hear."
+                "“"+self.guess+"? You look at me and tell me how I look like "+self.guess+"!” You fail to think of a response, "+self.he+" screams “"+self.current.name+"!!!” loud enough for the entire party to hear."
               ]
           ]
         ];
-        self.feedback.message = workThisArray(wrongMessages);
+        self.feedback.answerMessage = workThisArray(wrongMessages);
       }
+
+      self.my.previousScore = self.my.score;
+      self.my.previousMood = self.my.mood;
+
+      self.my.score = (self.my.points / self.my.round);
+
+      // Generate the Mood Score
+      if (self.my.score > 0.6) {
+        self.my.mood = "veryGood";
+      } else if (self.my.score > 0.3) {
+        self.my.mood = "prettyGood";
+      } else if (self.my.score > -0.1) {
+        self.my.mood = "neutral";
+      } else if (self.my.score > -0.3) {
+        self.my.mood = "prettyBad";
+      } else {
+        self.my.mood = "veryBad";
+      }
+
+      // Mood Score Feedback
+
+      if (self.my.mood != self.my.previousMood) {
+        self.feedback.showMoodMessage = true;
+        self.feedback.moodMessage = randomFrom(partyMoods[self.my.mood]);
+      } else {
+        self.feedback.showMoodMessage = false;
+      }
+      // NOTE TO LEMON: Allow for a rarely occuring mood feedback on no change.
+
+
+      // Cheese Status Feedback
+
+      if (self.answer != "wrong") {
+        self.my.stepsToCheese--;
+
+        let f = cheeseStatus.any;
+
+        if (self.my.stepsToCheese > 7) {
+          // You are far from the cheese
+          f.concat(cheeseStatus.far);
+        } else if (self.my.stepsToCheese > 3) {
+          // You are medium distance from the cheese
+          f.concat(cheeseStatus.medium);
+        } else if (self.my.stepsToCheese > 0) {
+          // You are close to the cheese
+          f.concat(cheeseStatus.close);
+        } else {
+          alert('you have won the game (LEMON, WRITE SOMETHING FOR THIS)');
+        }
+
+        self.feedback.showCheeseMessage = true;
+        self.feedback.cheeseMessage = randomFrom(f);
+        self.feedback.cheeseMessage += ' <span>['+self.my.stepsToCheese+' steps remain]</span>';
+
+      } else {
+        // LEMON: Maybe an infrequent cheese cheeck here? Maybe?
+        self.feedback.showCheeseMessage = false;
+      }
+
+      let answerMessageShowChance = 0;
+      if (self.feedback.showMoodMessage == true && self.feedback.showCheeseMessage == true) {
+        answerMessageShowChance = 20;
+      } else if (self.feedback.showMoodMessage == true && self.feedback.showCheeseMessage == false) {
+        answerMessageShowChance = 40;
+      } else if (self.feedback.showMoodMessage == false && self.feedback.showCheeseMessage == true) {
+        answerMessageShowChance = 60;
+      } else if (self.feedback.showMoodMessage == false && self.feedback.showCheeseMessage == false) {
+        answerMessageShowChance = 100;
+      }
+
+      if (testChance(answerMessageShowChance)) {
+        self.feedback.showAnswerMessage = true;
+      } else {
+        self.feedback.showAnswerMessage = false;
+      }
+
     }
     
   },
@@ -193,6 +285,9 @@ var app = new Vue({
       return (this.my.points / this.my.round);
     },
 
+    // This part is deprecated
+    /*
+    
     peopleThink() {
       if (this.myScore < -0.4) {
         return "you are the worst person they have ever met";
@@ -212,6 +307,7 @@ var app = new Vue({
         return "you're the best person in the world";
       }
     },
+    */
 
     // Pronouns
     his() {
@@ -234,7 +330,7 @@ var app = new Vue({
   },
 
   beforeMount: function() {
-    this.findImpersonator();
+    this.nextRound();
   }
 
 });
