@@ -37,13 +37,8 @@ html(lang="en")
             h1.correct {{feedback.headline}}
             p {{feedback.message}}
           .close-answer(v-if="answer == 'close'")
-            h1.close Close enough!
-            p
-              | It's actually 
-              i.name(v-text="current.name")
-              | , but 
-              span(v-text="he")
-              |  doesn't notice your mispronunciation.
+            h1.close {{feedback.headline}}
+            p {{feedback.message}}
           .wrong-answer(v-if="answer == 'wrong'")
             h1.wrong {{feedback.headline}}
             p {{feedback.message}}
