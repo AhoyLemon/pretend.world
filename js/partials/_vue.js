@@ -11,6 +11,7 @@ var app = new Vue({
   data: {
     guess: '',
     phase: 'question',
+    debugMode: true,
     celebrities: impersonators,
     met: [],
     answer: 'correct',
@@ -176,7 +177,7 @@ var app = new Vue({
             "The  "+self.current.name+" impersonator",
               " ",
                 [ "looks visibly annoyed that", "is furious", "seems genuinely hurt that" ],
-                  " you mistook him for "+self.guess+". ",
+                  " you mistook " +self.him+" for "+self.guess+". ",
                     [ "You apologize profusely and "+self.he+" seems placated.", "You distract "+self.him+" by asking "+self.his+" workout routine.", "You lift your shirt collar over your face and "+self.he+" goes away."]
           ],
           [
@@ -218,6 +219,10 @@ var app = new Vue({
       if (self.my.mood != self.my.previousMood) {
         self.feedback.showMoodMessage = true;
         self.feedback.moodMessage = randomFrom(partyMoods[self.my.mood]);
+      } else if (testChance(26)) {
+        // a certain liklihood that it will display the general mood of the party, without specifically referencing your status.
+        self.feedback.showMoodMessage = true; 
+        self.feedback.moodMessage = randomFrom(partyMoods.noChange);
       } else {
         self.feedback.showMoodMessage = false;
       }

@@ -1,4 +1,4 @@
-- var testing = true
+- var testing = false
 - var siteTitle = "impersonators"
 - var siteURL = ""
 - var fPlusURL = false
@@ -13,7 +13,7 @@ html(lang="en")
 
     main#app
 
-      if testing = true
+      if testing == true
         include partials/_debug.pug
 
       figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
@@ -32,15 +32,15 @@ html(lang="en")
               .medium-text People at this party think
               //-.big-text {{peopleThink}}
           .question-wrapper
-            h2 Who is this supposed to be?
             form(@submit.prevent="checkName()" :disabled="guess.length < 4")
-              input(type="text" v-model="guess" placeholder="Type your guess here" v-focus)
+              label(for="guess") Who is this supposed to be?
+              input(type="text" v-model="guess" placeholder="Type your guess here" v-focus name="guess")
               button(type="submit" :disabled="guess.length < 4" ) Guess!
         
         .inner.feedback(v-if="phase == 'answer'")
 
 
-          h1(v-bind:class="feedback.headlineClass" v-text="feedback.headline")
+          h2(v-bind:class="feedback.headlineClass" v-text="feedback.headline")
 
           .answer-feedback(v-if="feedback.showAnswerMessage")
             p(v-html="feedback.answerMessage")
