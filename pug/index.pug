@@ -1,10 +1,11 @@
 - var testing = true
-- var siteTitle = "impersonators"
+- var siteTitle = "PRETEND 🌐 WORLD"
 - var siteURL = ""
 - var fPlusURL = false
 - var description = ""
 - var d = new Date()
 - var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
+
 doctype html
 html(lang="en")
   head
@@ -17,54 +18,9 @@ html(lang="en")
         include partials/_debug.pug
 
       figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
-        //-img(:src="current.pic")
+
       figcaption
-
-        .inner.question(v-if="phase == 'question'")
-          .status
-            h1(v-if="my.round == 1")
-              .medium-text You're at a party of 
-              .big-text.neutral CELEBRITY IMPERSONATORS
-            h1(v-else-if="my.warmUp == true")
-              .medium-text(v-text="headlineText[0]")
-              .big-text.neutral(v-text="headlineText[1]")
-            h1(v-else)
-              .medium-text(v-text="headlineText[0]")
-              .big-text(v-text="headlineText[1]" :class="my.mood")
-          
-          .cheese-feedback(v-if="feedback.showCheeseMessage")
-            p(v-html="feedback.cheeseMessage")
-            p [ {{my.stepsToCheese}} steps remain ]
-          
-          .mood-feedback(v-else)
-            p(v-html="feedback.moodMessage")
-            p.veryBad(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
-
-          .question-wrapper
-            form(@submit.prevent="checkName()" :disabled="guess.length < 4")
-              label(for="guess") Who is this supposed to be?
-              input(type="text" v-model="guess" placeholder="Type your guess here" v-focus name="guess")
-              button(type="submit" :disabled="guess.length < 4" ) Guess!
-        
-        .inner.feedback(v-if="phase == 'answer'")
-
-          h2(v-bind:class="feedback.headlineClass" v-text="feedback.headline")
-
-          //-.answer-feedback(v-if="feedback.showAnswerMessage")
-          .answer-feedback
-            p(v-html="feedback.answerMessage")
-          
-          .mood-feedback(v-if="feedback.showCheeseMessage")
-            p(v-if="my.mood != my.previousMood" v-html="feedback.moodMessage" :class="my.mood")
-            p(v-if="my.mood == my.previousMood" v-html="feedback.moodMessage")
-            p(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
-
-          .button-holder
-            button.keep-mingling(@click="nextRound()" v-focus) Keep Mingling
-
-
-
-
-
+        include partials/_question.pug
+        include partials/_answer.pug
 
     include partials/_javascripts.pug
