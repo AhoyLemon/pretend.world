@@ -153,17 +153,42 @@ var app = new Vue({
         let correctMessages = [
           [
             "The "+bold(self.current.name)+" impersonator ",
-              [ "brings you a drink", "shakes your hand", "introduces " +self.himself ],
-                " and you chat for a couple minutes about ",
-                  [ "Trump", "the Philadelphia Eagles" ],
-                    "."
+              [
+                "brings you a drink",
+                "shakes your hand a bit too aggressively",
+                "introduces " +self.himself +" ",
+                "smiles widely ",
+                "lets you touch "+self.his+" hair" 
+              ],
+                ", and you chat for a bit about ",
+                  [ 
+                    "the Philadelphia Eagles.",
+                    "Trump.",
+                    "the United Nations and Palestine.", 
+                    //"who you think is sleeping with whom.", 
+                    "utter nonsense.",
+                    "cocktail recipes.",
+                    "lawn maintenance."
+                  ]
           ],
           [
-            "The "+bold(self.current.name)+" impersonator ",
-              [ "shakes your hand a bit too aggressively", "smiles widely ", "lets you touch "+self.his+" hair" ],
-                " and you chat for a bit about ",
-                  [ "the United Nations and Palestine", "who at this party you think is fucking whom", "utter nonsense" ],
-                    "."
+            capitalize(self.he)+ "introduces you to ",
+              [
+                "a Jimmy Carr impersonator",
+                "this one guy who might be Glenn Danzig",
+                "one of those mimes who dresses like a robot",
+                "someone who claims to be one of the Daft Punk guys",
+                self.his+" neighbor Catherine"
+              ],
+                ", and the three of you ",
+                  [
+                    "play a couple rounds of Uno.",
+                    "name your favorite episodes of <i>Silicon Valley</i>.",
+                    "make utterly baseless guesses about who at the party is sleeping together.",
+                    "trade recipes for polenta.",
+                    "discuss how well "+self.current.name+" aged.",
+                    "brainstorm an ideal <i>Match Game</i> cast."
+                  ]
           ]
         ];
 
@@ -175,15 +200,27 @@ var app = new Vue({
         let closeMessages = [
           [
             capitalize(self.he) + ' is actually a ' +bold(self.current.name)+ ' impersonator,',
-              ['but '+self.he+' chalks up the mistake to you having a speech impediment, which you now have to pretend for the rest of the night', 'but '+self.he+' just assumes you&apos;e a terrible. To futher the ruse, you write down "HALO, NISE 2 MEET U :)" on a piece of paper. '+capitalize(self.he)+' gives you a pitying look and quietly disposes of your note.', 'but blames the misspelling on your mouthful of Ritz crackers. You continue to make small talk, spitting crumbs in '+self.his+' face.']
+              [
+                'but '+self.he+' chalks up the mistake to you having a speech impediment, which you now have to pretend for the rest of the night',
+                'but '+self.he+' just assumes you&apos;e illiterate. To futher the ruse, you write down "HALO, NISE 2 MEET U :)" on a piece of paper.',
+                'but blames the misspelling on your mouthful of Ritz crackers. You continue to make small talk, spitting crumbs in '+self.his+' face.'
+              ]
           ],
           [
-            '“'+self.guess+', right?” you ask.',
+            "“"+self.guess+", right?” you ask.",
               [ 
                 self.current.he+" looks at you quizzically. “"+bold(self.current.name)+" actually.” “That's what I said. "+self.current.name+".” You confidently reply.",
-                "“Did you say "+self.current.name+" or "+self.guess+"?” "+self.he+" asks you. “Which is the right one?” you reply. “What?” "+self.he+" he asks. You then ask if "+self.he+" wants to see a magic trick, but do not perform one."
+                "“Did you say "+self.current.name+" or "+self.guess+"?” "+self.he+" asks you. “Which is the right one?” you reply. “What?” "+self.he+" he asks. You then ask if "+self.he+" wants to see a magic trick, but do not perform one.",
+                "“You mean "+self.current.name+"” he asks. You tell him that's what you meant."
               ]
-          ]
+          ],
+          [
+            "“You kinda look like "+self.guess+".” you tell "+self.him+".",
+              [ 
+                "“Kind of looking like "+bold(self.current.name)+" is kind of what I do!” he says. You laugh politely.",
+                "He thanks you for saying so, and doesn't correct you by pronouncing it "+bold(self.current.name)+"."
+              ]
+          ],
         ];
         self.feedback.answerMessage = workThisArray(closeMessages);
 
@@ -192,16 +229,42 @@ var app = new Vue({
         self.feedback.headline = randomFrom(wrongHeadlines); 
         let wrongMessages = [
           [
-            "The  "+bold(self.current.name)+" impersonator",
-              " ",
-                [ "looks visibly annoyed that", "is furious", "seems genuinely hurt that" ],
-                  " you mistook " +self.him+" for "+self.guess+". ",
-                    [ "You apologize profusely and "+self.he+" seems placated.", "You distract "+self.him+" by asking "+self.his+" workout routine.", "You lift your shirt collar over your face and "+self.he+" goes away."]
+            "The  "+bold(self.current.name)+" impersonator ",
+              [ 
+                "looks visibly annoyed that",
+                "is furious",
+                "seems genuinely hurt that",
+                "is super bummed",
+                "can not believe"
+              ],
+                " you mistook " +self.him+" for "+self.guess+". ",
+                  [ 
+                    "You apologize profusely and "+self.he+" seems placated.",
+                    "You distract "+self.him+" by asking "+self.his+" workout routine.",
+                    "You lift your shirt collar over your face and "+self.he+" goes away.",
+                    "You try to change topics, but the only one you can think of is javascript, and nobody <i>ever</i> wants to talk about javascript."
+                  ]
           ],
           [
-            "“"+self.guess+"!” you scream, and the "+bold(self.current.name)+" impersonator",
-              " ",
-                ["takes a wild punch at your nose, but misses considerably.", "spits directly into your mouth.", "breaks down into tears."]
+            "“"+self.guess+"!” you scream, and the "+bold(self.current.name)+" impersonator ",
+              [
+                "takes a wild punch at your nose, missing by a good foot.",
+                "spits directly into your mouth.",
+                "breaks down into tears.",
+                "loudly calls your citizenship into question.",
+                "makes a sound like “GGLLLGGGGRG”, which you find very distressing.",
+                "screams “You'll never work in this town again!”",
+                "screams “NO!”",
+                "says he feels sorry for you."
+              ],
+              [
+                "That could have gone better.",
+                "You'll have to do better.",
+                "You feel genuine shame.",
+                "You fold your arms and look around the room for a couple minutes.",
+                "You apologize, and "+self.he+" immediately forgives you.",
+                "You apologize, but "+self.he+" doesn't forgive you."
+              ]
           ],
           [
             capitalize(self.he)+ " takes a few paces forwards and captures you an an unbreaking stare. ",
