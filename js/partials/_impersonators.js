@@ -59,6 +59,7 @@ const impersonators = [
   { 
     file: "cher-5.jpg",
     celebrity: "Cher",
+    variants: [ "Cherilyn Sarkisian", "Cher Bono" ],
     sex: 'f',
     url: "http://www.classiqueproductions.com/pages/cher-impersonator-5.htm"
   },
@@ -406,17 +407,96 @@ const impersonators = [
   },
   { 
     file: "pattinson.jpg",
-    celebrity: "Robert Pattinson ",
+    celebrity: "Robert Pattinson",
     variants: [ "Robert Pattenson" ],
     sex: 'm',
     url: "http://www.celebrity-lookalikes.com/sharpton.htm"
   },
   { 
     file: "eminem.jpg",
-    celebrity: "Eminem ",
+    celebrity: "Eminem",
     variants: [ "Slim Shady", "Marshall Mathers" ],
     sex: 'm',
     url: "http://www.celebrity-lookalikes.com/sharpton.htm"
   },
 
+
+  // Tribute Productions
+  {
+    file: "mike-myers.jpg",
+    celebrity: "Mike Myers",
+    variants: [ "Michael Myers" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+  {
+    file: "conan-o-brien.jpg",
+    celebrity: "Conan O'Brien",
+    variants: [ "Conan O Brien", "Conan O'Brian" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+  {
+    file: "ice-t.jpg",
+    celebrity: "Ice T",
+    variants: [ "Ice T.", "Ice-T", "Iced Tea" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+  {
+    file: "alan-alda.jpg",
+    celebrity: "Alan Alda",
+    variants: [ "Allen Alda" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+  {
+    file: "philip-seymour-hoffman.jpg",
+    celebrity: "Philip Seymour Hoffman",
+    variants: [ "Phillip Seymour Hoffman", "Philip Semore Hoffman", "Phillip Semore Hoffman", "Phillip Hoffman", "Philip Hoffman", "Philip Hoffmann"  ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+  {
+    file: "matthew-mcconaughey.jpg",
+    celebrity: "Matthew McConaughey",
+    variants: [ "Matthew McConnaughy", "Matthew Mcconnaughey", "Matthew McConnohey", "Matthew McConohy", "Matthew McConnaghey", "Matthew McConnihy", "Matthew McConnohay", "Matthew McConnihay" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+  {
+    file: "matthew-perry.jpg",
+    celebrity: "Matthew Perry",
+    variants: [ "Matthew Parry", "Matthew Pary" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+  {
+    file: "lindsey-lohan.jpg",
+    celebrity: "Lindsey Lohan",
+    variants: [ "Lindsay Lohan", "Lindsie Lohan" ],
+    sex: 'f',
+    url: "http://www.tributeproductions.com/celebrity-women"
+  },
+  {
+    file: "cameron-diaz.jpg",
+    celebrity: "Cameron Diaz",
+    sex: 'f',
+    url: "http://www.tributeproductions.com/celebrity-women"
+  },
+  {
+    file: "keith-richards.jpg",
+    celebrity: "Keith Richards",
+    variants: [ "Kieth Richards", "Keith Richard" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/music-men"
+  },
+  {
+    file: "neil-diamond.jpg",
+    celebrity: "Neil Diamond",
+    variants: [ "Niel Diamond", "Neil Daimond" ],
+    sex: 'm',
+    url: "http://www.tributeproductions.com/music-men"
+  },
+  
 ];
