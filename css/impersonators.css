@@ -197,7 +197,7 @@ figcaption {
   right: 50%;
   bottom: 0;
   left: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Merriweather", serif;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -219,26 +219,28 @@ figcaption {
   justify-content: center;
   padding-left: 2em;
   padding-right: 2em; }
+  figcaption p {
+    font-size: 18px;
+    line-height: 160%;
+    margin-bottom: 0.75em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 36em;
+    text-align: center; }
   figcaption .question h1 {
     text-align: center;
     margin-bottom: 3vh; }
     figcaption .question h1 .medium-text {
-      font-family: "Open Sans", sans-serif;
+      font-family: "Merriweather", serif;
       font-size: 2.8vw;
       font-weight: 400;
       margin-bottom: 0.35em; }
     figcaption .question h1 .big-text {
       font-family: "Limelight", cursive;
       font-size: 4vw;
-      line-height: 90%; }
-  figcaption .question .neutral {
-    color: #e4dfbf; }
-  figcaption .question p {
-    font-size: 20px;
-    margin-bottom: 0.75em;
-    display: block;
-    max-width: 36em;
-    text-align: center; }
+      line-height: 90%;
+      text-transform: uppercase; }
   figcaption .question form {
     width: 33vw;
     margin-left: auto;
@@ -256,8 +258,8 @@ figcaption {
       display: block;
       width: 100%;
       font-size: 1.75vw;
-      padding: 0.15em 0.5em;
-      font-family: "Open Sans", sans-serif; }
+      padding: 0.3em 0.5em;
+      font-family: "Merriweather", serif; }
     figcaption .question form button {
       background: #ee2a2a;
       color: #eee;
@@ -280,18 +282,13 @@ figcaption {
     font-size: 4vw;
     font-family: "Limelight", cursive;
     margin-bottom: 0.35em; }
-    .feedback h2.correct {
-      color: #3ede2e; }
-    .feedback h2.close {
-      color: #e9eab9; }
-    .feedback h2.wrong {
-      color: #ee2a2a; }
   .feedback p {
-    font-size: 20px;
-    margin-bottom: 0.75em;
+    margin-bottom: 1em;
     display: block;
     max-width: 36em;
-    text-align: center; }
+    text-align: center;
+    font-size: 18px;
+    line-height: 160%; }
   .feedback .button-holder {
     padding-top: 3em; }
     .feedback .button-holder button {
@@ -303,20 +300,29 @@ figcaption {
         background: #155bd4;
         color: #eee; }
 
-.mood-feedback.veryGood {
+.correct {
+  color: #3ede2e; }
+
+.close {
+  color: #e9eab9; }
+
+.wrong {
+  color: #ee2a2a; }
+
+.veryGood {
   color: #21f90c; }
 
-.mood-feedback.prettyGood {
+.prettyGood {
   color: #a8cd7d; }
 
-.mood-feedback.neutral {
+.neutral {
   color: #e4dfbf; }
 
-.mood-feedback.prettyBad {
+.prettyBad {
   color: #e8a657; }
 
-.mood-feedback.veryBad {
-  color: #fd0c0c; }
+.veryBad {
+  color: #e84040; }
 
 .debug {
   position: fixed;

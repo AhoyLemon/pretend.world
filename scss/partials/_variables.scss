@@ -1,17 +1,19 @@
 $mobile-max: 600px;
 $desktop-min: 601px; 
-$font: 'Open Sans', sans-serif;
-$headline: 'Limelight', cursive;
 //$font: 'Fontdiner Swanky', cursive;
 
+// FONTS
+$font: 'Merriweather', serif;
+$headline: 'Limelight', cursive;
+$fontSize: 18px;
+$lineHeight:160%;
+$bold: 900;
 
 // COLORS
 $correct: #3ede2e;
-
-
 
 $veryGood: #21f90c;
 $prettyGood: #a8cd7d;
 $neutral: #e4dfbf;
 $prettyBad: #e8a657;
-$veryBad: #fd0c0c;
+$veryBad: #e84040;

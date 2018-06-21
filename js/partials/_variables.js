@@ -1,3 +1,9 @@
+const settings = {
+  stepsToCheese: 10,
+  warmUpRounds: 3
+};
+
+
 const correctHeadlines = [
   "Great guess!", "You're right!", "Yes!", "Excellent!", "Good job!", "Nice!", "Work it!"
 ];

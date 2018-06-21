@@ -19,9 +19,10 @@ var app = new Vue({
     my: {
       round: 0,
       points: 0,
+      correctGuesses: 0,
       score: 0,
       previousScore: 0,
-      stepsToCheese: 10,
+      stepsToCheese: settings.stepsToCheese,
       cheeseAdvance: false,
       mood: null,
       previousMood: null,
@@ -65,15 +66,18 @@ var app = new Vue({
 
     generateHeadline() {
       let self = this;
+      let h;
       if (self.my.round == 1) {
-        // do nothing.
-      } else if (self.my.round < 3) {
+        // Round 1
         self.my.warmUp = true;
-        let h = randomFrom(minglingHeadlines);
+      } else if (self.my.round <= settings.warmUpRounds) {
+        // You're out of warm up phase.
+        self.my.warmUp = true;
+        h = randomFrom(minglingHeadlines);
         self.headlineText = [h[0], h[1]];
       } else {
         self.my.warmUp = false;
-        let h = randomFrom(moodHeadlines[self.mood]);
+        h = randomFrom(moodHeadlines[self.my.mood]);
         self.headlineText = [h[0], h[1]];
       }
     },
@@ -132,8 +136,10 @@ var app = new Vue({
 
       if (self.answer == 'correct') {
         self.my.points = self.my.points + 1;
+        self.my.correctGuesses++;
       } else if (self.answer == 'close') {
         self.my.points = self.my.points + 0.7;
+        self.my.correctGuesses++;
       } else if (self.answer == 'wrong') {
         self.my.points = self.my.points - 0.5;
       }
@@ -172,7 +178,7 @@ var app = new Vue({
                   ]
           ],
           [
-            capitalize(self.he)+ "introduces you to ",
+            capitalize(self.he)+ " introduces you to ",
               [
                 "a Jimmy Carr impersonator",
                 "this one guy who might be Glenn Danzig",
@@ -257,14 +263,15 @@ var app = new Vue({
                 "screams “NO!”",
                 "says he feels sorry for you."
               ],
-              [
-                "That could have gone better.",
-                "You'll have to do better.",
-                "You feel genuine shame.",
-                "You fold your arms and look around the room for a couple minutes.",
-                "You apologize, and "+self.he+" immediately forgives you.",
-                "You apologize, but "+self.he+" doesn't forgive you."
-              ]
+                " ",
+                  [
+                    "That could have gone better.",
+                    "You'll have to do better.",
+                    "You feel genuine shame.",
+                    "You fold your arms and look around the room for a couple minutes.",
+                    "You apologize, and "+self.he+" immediately forgives you.",
+                    "You apologize, but "+self.he+" doesn't forgive you."
+                  ]
           ],
           [
             capitalize(self.he)+ " takes a few paces forwards and captures you an an unbreaking stare. ",

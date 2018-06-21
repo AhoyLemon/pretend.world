@@ -25,7 +25,7 @@ html(lang="en")
             h1(v-if="my.round == 1")
               .medium-text You're at a party of 
               .big-text.neutral CELEBRITY IMPERSONATORS
-            h1(v-else-if="my.warmUp")
+            h1(v-else-if="my.warmUp == true")
               .medium-text(v-text="headlineText[0]")
               .big-text.neutral(v-text="headlineText[1]")
             h1(v-else)
@@ -36,9 +36,9 @@ html(lang="en")
             p(v-html="feedback.cheeseMessage")
             p [ {{my.stepsToCheese}} steps remain ]
           
-          .mood-feedback(v-else-if="feedback.showMoodMessage")
+          .mood-feedback(v-else)
             p(v-html="feedback.moodMessage")
-            p(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
+            p.veryBad(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
 
           .question-wrapper
             form(@submit.prevent="checkName()" :disabled="guess.length < 4")
