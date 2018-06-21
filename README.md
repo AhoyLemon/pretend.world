@@ -1,2 +1,2 @@
 # pretend.world
-## You are at a party of celebrity impersonators.
+### You are at a party of celebrity impersonators.
