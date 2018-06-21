@@ -17,9 +17,21 @@ html(lang="en")
       if testing == true
         include partials/_debug.pug
 
-      figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
+      figure.cheese-photo(style="background-image:url(img/cheeselog/1.jpg)" v-if="phase == 'showCheese'")
+      figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } " v-else)
 
-      figcaption
+
+      figcaption(v-if="phase == 'showCheese'")
+        .inner.mission
+          .status 
+            h2 Look at that
+
+            p These parties always have impressive spreads that spared no expense; figs from the middle east, the fresh caviar from Russia, and freshly baked pastries from France. All garbage for peasants. This cheese log is the true treasure.
+
+            h1.mission-start
+              a.big-text(@click="phase = 'question'") Mission Start!
+
+      figcaption(v-else)
         include partials/_question.pug
         include partials/_answer.pug
 

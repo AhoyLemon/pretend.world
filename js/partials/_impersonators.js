@@ -494,9 +494,80 @@ const impersonators = [
   {
     file: "neil-diamond.jpg",
     celebrity: "Neil Diamond",
-    variants: [ "Niel Diamond", "Neil Daimond" ],
     sex: 'm',
     url: "http://www.tributeproductions.com/music-men"
+  },
+  {
+    file: "jason-statham.jpg",
+    celebrity: "Jason Statham",
+    sex: 'm',
+    url: "http://www.tributeproductions.com/celebrity-men"
+  },
+
+  // Mirror images
+  {
+    file: "stanley-tucci.jpg",
+    celebrity: "Stanley Tucci",
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/stanley-tucci/"
+  },
+  {
+    file: "angela-merkel.jpg",
+    celebrity: "Angela Merkel",
+    sex: 'f',
+    url: "https://mirrorimages.co/portfolio/angela-merkel/"
+  },
+  {
+    file: "notorious-big.jpg",
+    celebrity: "The Notorious B.I.G.",
+    variants: [ "Notorious BIG", "Notorious B.I.G", "Biggie Smalls", "Biggy Smalls", "Biggie", "Christopher Wallace" ],
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/biggy-smalls-notorious-b-g/"
+  },
+  {
+    file: "channing-tatum.jpg",
+    celebrity: "Channing Tatum",
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/channing-tatum-look-alike/"
+  },
+  {
+    file: "john-wayne.jpg",
+    celebrity: "John Wayne",
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/john-wayne/"
+  },
+  {
+    file: "mark-wahlberg.jpg",
+    celebrity: "Mark Wahlberg",
+    variants: [ "Mark Wallberg", "Mark Wahlburg" ],
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/mark-wahlberg/"
+  },
+  {
+    file: "mark-zuckerberg.jpg",
+    celebrity: "Mark Zuckerberg",
+    variants: [ "Zuck" ],
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/mark-zuckerberg/"
+  },
+  {
+    file: "martha-stewart.jpg",
+    celebrity: "Martha Stewart",
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/martha-stewart/"
+  },
+  {
+    file: "nicolas-cage.jpg",
+    celebrity: "Nicolas Cage",
+    variants: [ "Nicholas Cage", "Nick Cage", "Nic Cage" ],
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/nicolas-cage/"
+  },
+  {
+    file: "danny-devito.jpg",
+    celebrity: "Danny DeVito",
+    sex: 'm',
+    url: "https://mirrorimages.co/portfolio/danny-devito/"
   },
   
 ];

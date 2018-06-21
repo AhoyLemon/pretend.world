@@ -191,6 +191,16 @@ html {
   .celebrity-photo img {
     height: 100%; }
 
+.cheese-photo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  background-size: cover;
+  background-position: contain;
+  background-repeat: no-repeat; }
+
 figcaption {
   position: fixed;
   top: 0;
@@ -228,15 +238,15 @@ figcaption {
     margin-right: auto;
     max-width: 36em;
     text-align: center; }
-  figcaption .question h1 {
+  figcaption h1 {
     text-align: center;
     margin-bottom: 3vh; }
-    figcaption .question h1 .medium-text {
+    figcaption h1 .medium-text {
       font-family: "Merriweather", serif;
       font-size: 2.8vw;
       font-weight: 400;
       margin-bottom: 0.35em; }
-    figcaption .question h1 .big-text {
+    figcaption h1 .big-text {
       font-family: "Limelight", cursive;
       font-size: 4vw;
       line-height: 90%;
@@ -299,6 +309,32 @@ figcaption {
       .feedback .button-holder button:hover, .feedback .button-holder button:focus {
         background: #155bd4;
         color: #eee; }
+
+.mission h2 {
+  font-size: 3vw;
+  margin-bottom: 0.35em;
+  text-align: center;
+  text-transform: uppercase; }
+
+.mission .mission-start {
+  margin-top: 6vh;
+  margin-bottom: 0; }
+  .mission .mission-start .big-text {
+    font-size: 4.3vw; }
+  .mission .mission-start a {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    display: block;
+    -webkit-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+    cursor: pointer;
+    color: yellow; }
+    .mission .mission-start a:hover {
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05); }
 
 .correct {
   color: #3ede2e; }

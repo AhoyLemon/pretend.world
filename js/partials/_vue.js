@@ -55,7 +55,7 @@ var app = new Vue({
 
     nextRound() {
       let self = this;
-      self.phase = 'question';
+      self.phase = 'showCheese';
       self.answer = null;
       self.my.round++;
       //self.my.score = (this.my.points / this.my.round);

@@ -6,15 +6,21 @@ html { background:#0d1021; color:$white; }
   img { height: 100%; }
 }
 
+.cheese-photo { @include position(fixed,0,0,0,50%);  background-size:cover; background-position: contain; background-repeat: no-repeat;
+
+}
+
+
 figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include flex-center(); padding-left: 2em; padding-right:2em;
 
   p { font-size:$fontSize; line-height:$lineHeight; margin-bottom: 0.75em; display: block; margin-left: auto; margin-right: auto; max-width: 36em; text-align: center; }
 
-  .question {
-    h1 { text-align: center; margin-bottom: 3vh;
-      .medium-text { font-family: $font; font-size:2.8vw; font-weight: 400; margin-bottom: 0.35em; }
-      .big-text { font-family:$headline; font-size:4vw; line-height: 90%; text-transform: uppercase; }
-    }
+  h1 { text-align: center; margin-bottom: 3vh;
+    .medium-text { font-family: $font; font-size:2.8vw; font-weight: 400; margin-bottom: 0.35em; }
+    .big-text { font-family:$headline; font-size:4vw; line-height: 90%; text-transform: uppercase; }
+  }
+
+  .question { 
     form { width:33vw; margin-left: auto; margin-right: auto; display: block;
       label  { font-size:2.25vw; text-align: center; margin-top: 1em; margin-bottom: 1em; font-weight: 300; font-style: italic; display:block; }
       input { display: block; width:100%; font-size:1.75vw; padding: 0.3em 0.5em; font-family: $font; }
@@ -23,9 +29,6 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
       }
     }
   }
-
-
-  
 }
 
 .feedback { text-align: center; 
@@ -37,6 +40,17 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
   .button-holder { padding-top: 3em;
     button { font-size:1.5em; padding:0.25em 1em; font-family:$headline; cursor: pointer;
       &:hover, &:focus { background:darken($blue,15%); color:$white; }
+    }
+  }
+}
+
+.mission {
+  //h1 { margin-bottom: 1em; }
+  h2 { font-size: 3vw; margin-bottom: 0.35em; text-align: center; text-transform: uppercase; }
+  .mission-start {margin-top: 6vh; margin-bottom: 0;
+    .big-text { font-size:4.3vw; }
+    a { transform: scale(1); display: block; transition:all 0.15s linear; cursor: pointer; color:yellow; 
+      &:hover { transform: scale(1.05); }
     }
   }
 }

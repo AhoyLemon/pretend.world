@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-21@13:59:52">
+    <meta http-equiv="last-modified" content="2018-05-21@16:24:55">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/impersonators.css?lastUpdated=2018-05-21@13:59:52" rel="stylesheet">
+    <link href="css/pretend.css?lastUpdated=2018-05-21@16:24:55" rel="stylesheet">
   </head>
   <body>
     <main id="app">
@@ -22,8 +22,18 @@
           <div class="box"><span class="label">steps</span><span class="data">{{my.stepsToCheese}}</span></div>
         </div>
       </header>
-      <figure class="celebrity-photo" :style=" { backgroundImage: 'url('+current.pic+')' } "></figure>
-      <figcaption>
+      <figure class="cheese-photo" style="background-image:url(img/cheeselog/1.jpg)" v-if="phase == 'showCheese'"></figure>
+      <figure class="celebrity-photo" :style=" { backgroundImage: 'url('+current.pic+')' } " v-else></figure>
+      <figcaption v-if="phase == 'showCheese'">
+        <div class="inner mission">
+          <div class="status"> 
+            <h2>Look at that</h2>
+            <p>These parties always have impressive spreads that spared no expense; figs from the middle east, the fresh caviar from Russia, and freshly baked pastries from France. All garbage for peasants. This cheese log is the true treasure.</p>
+            <h1 class="mission-start"><a class="big-text" @click="phase = 'question'">Mission Start!</a></h1>
+          </div>
+        </div>
+      </figcaption>
+      <figcaption v-else>
         <div class="inner question" v-if="phase == 'question'">
           <div class="status">
             <h1 v-if="my.round == 1">
