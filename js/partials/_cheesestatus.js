@@ -14,7 +14,7 @@ const cheeseStatus = {
   medium: [
     "Would the courts accept love of cheese as an acceptable excuse for manslaughter? Surely no jury could hold you accountable, as the cheese is what separates us from animals, as the animals at this party are keeping you from obtaining cheese enlightenment.",
     "You reach into your pocket, thumbing the little yellow diary you keep of past cheese love affairs. Long has the pistachio fig brie peacock sculpture from last year’s Honey Soiree been your top prize, but the one before you is sure to take that spot in your heart.",
-    "You relaxed your focus a bit, and notice some salami on the west end of the table. A water cracker, the salami, maybe a sliced green olive, and that wonderful, wonderful cheese. Soon this dream will become a reality."
+    "You relax your focus a bit, and notice some salami on the west end of the table. A water cracker, the salami, maybe a sliced green olive, and that wonderful, wonderful cheese. Soon this dream will become a reality."
   ],
   far: [
     "You find yourself in physical discomfort as you reckon how far you are from the cheese log. You must close the gap.",
@@ -28,8 +28,7 @@ const cheeseStatus = {
     "The cheese had been delicately rolled in slivered almonds, concealing the golden spread within. You sniff the air. Did those geniuses even include a hint of scallion? You must get closer.",
     "You glance past the latest impersonator back to the cheese table and gasp, as bits of the beautiful, once whole log have been damaged by rabid impersonator wolves. But none shall keep you from sampling that luscious log.",
     "A knife slices into the cheese log, and you hiss like a vampire. You watch a guest draw the cheese and cracker into his mouth, and he doesn’t even appreciate it. Not like <i>you</i> would.",
-    "Over there she lay, the most beautiful thing in the world. Nothing can compare to her beauty, her grace, her easily spreadable interior. The most expensive cheeses rolled into a log shape rested on a silver platter, soley for you.",
-    "These moments are the kind "
+    "Over there she lay, the most beautiful thing in the world. Nothing can compare to her beauty, her grace, her easily spreadable interior. The most expensive cheeses rolled into a log shape rested on a silver platter, soley for you."
   ]
 
 };
