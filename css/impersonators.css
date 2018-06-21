@@ -221,7 +221,7 @@ figcaption {
   padding-right: 2em; }
   figcaption .question h1 {
     text-align: center;
-    margin-bottom: 1em; }
+    margin-bottom: 3vh; }
     figcaption .question h1 .medium-text {
       font-family: "Open Sans", sans-serif;
       font-size: 2.8vw;
@@ -229,9 +229,16 @@ figcaption {
       margin-bottom: 0.35em; }
     figcaption .question h1 .big-text {
       font-family: "Limelight", cursive;
-      color: #ee2a2a;
       font-size: 4vw;
       line-height: 90%; }
+  figcaption .question .neutral {
+    color: #e4dfbf; }
+  figcaption .question p {
+    font-size: 20px;
+    margin-bottom: 0.75em;
+    display: block;
+    max-width: 36em;
+    text-align: center; }
   figcaption .question form {
     width: 33vw;
     margin-left: auto;

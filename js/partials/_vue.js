@@ -14,6 +14,7 @@ var app = new Vue({
     debugMode: true,
     celebrities: impersonators,
     met: [],
+    headlineText: [],
     answer: 'correct',
     my: {
       round: 0,
@@ -22,8 +23,9 @@ var app = new Vue({
       previousScore: 0,
       stepsToCheese: 10,
       cheeseAdvance: false,
-      mood: "null",
-      previousMood: "null"
+      mood: null,
+      previousMood: null,
+      warmUp: true
     },
     current: {
       pic: '',
@@ -58,6 +60,22 @@ var app = new Vue({
       //self.my.score = (this.my.points / this.my.round);
       self.guess = '';
       self.findImpersonator();
+      self.generateHeadline();
+    },
+
+    generateHeadline() {
+      let self = this;
+      if (self.my.round == 1) {
+        // do nothing.
+      } else if (self.my.round < 3) {
+        self.my.warmUp = true;
+        let h = randomFrom(minglingHeadlines);
+        self.headlineText = [h[0], h[1]];
+      } else {
+        self.my.warmUp = false;
+        let h = randomFrom(moodHeadlines[self.mood]);
+        self.headlineText = [h[0], h[1]];
+      }
     },
 
 
@@ -123,7 +141,7 @@ var app = new Vue({
       self.phase = 'answer';
     },
 
-    generateFeedback() {
+    generateAnswerFeedback() {
       let self = this;
       self.feedback.headlineClass = self.answer;
 
@@ -134,14 +152,14 @@ var app = new Vue({
 
         let correctMessages = [
           [
-            "The "+self.current.name+" impersonator ",
+            "The "+bold(self.current.name)+" impersonator ",
               [ "brings you a drink", "shakes your hand", "introduces " +self.himself ],
                 " and you chat for a couple minutes about ",
                   [ "Trump", "the Philadelphia Eagles" ],
                     "."
           ],
           [
-            "The "+self.current.name+" impersonator ",
+            "The "+bold(self.current.name)+" impersonator ",
               [ "shakes your hand a bit too aggressively", "smiles widely ", "lets you touch "+self.his+" hair" ],
                 " and you chat for a bit about ",
                   [ "the United Nations and Palestine", "who at this party you think is fucking whom", "utter nonsense" ],
@@ -156,13 +174,13 @@ var app = new Vue({
 
         let closeMessages = [
           [
-            capitalize(self.he) + ' is actually a ' +self.current.name+ ' impersonator,',
+            capitalize(self.he) + ' is actually a ' +bold(self.current.name)+ ' impersonator,',
               ['but '+self.he+' chalks up the mistake to you having a speech impediment, which you now have to pretend for the rest of the night', 'but '+self.he+' just assumes you&apos;e a terrible. To futher the ruse, you write down "HALO, NISE 2 MEET U :)" on a piece of paper. '+capitalize(self.he)+' gives you a pitying look and quietly disposes of your note.', 'but blames the misspelling on your mouthful of Ritz crackers. You continue to make small talk, spitting crumbs in '+self.his+' face.']
           ],
           [
             '“'+self.guess+', right?” you ask.',
               [ 
-                self.current.he+" looks at you quizzically. “"+self.current.name+" actually.” “That's what I said. "+self.current.name+".” You confidently reply.",
+                self.current.he+" looks at you quizzically. “"+bold(self.current.name)+" actually.” “That's what I said. "+self.current.name+".” You confidently reply.",
                 "“Did you say "+self.current.name+" or "+self.guess+"?” "+self.he+" asks you. “Which is the right one?” you reply. “What?” "+self.he+" he asks. You then ask if "+self.he+" wants to see a magic trick, but do not perform one."
               ]
           ]
@@ -174,28 +192,31 @@ var app = new Vue({
         self.feedback.headline = randomFrom(wrongHeadlines); 
         let wrongMessages = [
           [
-            "The  "+self.current.name+" impersonator",
+            "The  "+bold(self.current.name)+" impersonator",
               " ",
                 [ "looks visibly annoyed that", "is furious", "seems genuinely hurt that" ],
                   " you mistook " +self.him+" for "+self.guess+". ",
                     [ "You apologize profusely and "+self.he+" seems placated.", "You distract "+self.him+" by asking "+self.his+" workout routine.", "You lift your shirt collar over your face and "+self.he+" goes away."]
           ],
           [
-            "“"+self.guess+"!” you scream, and the "+self.current.name+" impersonator",
+            "“"+self.guess+"!” you scream, and the "+bold(self.current.name)+" impersonator",
               " ",
                 ["takes a wild punch at your nose, but misses considerably.", "spits directly into your mouth.", "breaks down into tears."]
           ],
           [
             capitalize(self.he)+ " takes a few paces forwards and captures you an an unbreaking stare. ",
               [
-                "“"+self.current.name+".” is "+self.his+" and only utterance, but the stare does not break. Eventually you have to excuse yourself to the bathroom to break "+self.his+" line of sight.",
+                "“"+bold(self.current.name)+".” is "+self.his+" and only utterance, but the stare does not break. Eventually you have to excuse yourself to the bathroom to break "+self.his+" line of sight.",
                 "“"+self.guess+"? You look at me and tell me how I look like "+self.guess+"!” You fail to think of a response, "+self.he+" screams “"+self.current.name+"!!!” loud enough for the entire party to hear."
               ]
           ]
         ];
         self.feedback.answerMessage = workThisArray(wrongMessages);
       }
+    },
 
+    checkPartyMood() {
+      let self = this;
       self.my.previousScore = self.my.score;
       self.my.previousMood = self.my.mood;
 
@@ -215,7 +236,6 @@ var app = new Vue({
       }
 
       // Mood Score Feedback
-
       if (self.my.mood != self.my.previousMood) {
         self.feedback.showMoodMessage = true;
         self.feedback.moodMessage = randomFrom(partyMoods[self.my.mood]);
@@ -226,10 +246,11 @@ var app = new Vue({
       } else {
         self.feedback.showMoodMessage = false;
       }
-      // NOTE TO LEMON: Allow for a rarely occuring mood feedback on no change.
 
+    },
 
-      // Cheese Status Feedback
+    checkTheCheese() {
+      let self = this;
 
       if (self.answer != "wrong") {
         self.my.stepsToCheese--;
@@ -251,7 +272,7 @@ var app = new Vue({
 
         self.feedback.showCheeseMessage = true;
         self.feedback.cheeseMessage = randomFrom(f);
-        self.feedback.cheeseMessage += ' <span>['+self.my.stepsToCheese+' steps remain]</span>';
+        //self.feedback.cheeseMessage += ' <span>['+self.my.stepsToCheese+' steps remain]</span>';
 
       } else {
         // LEMON: Maybe an infrequent cheese cheeck here? Maybe?
@@ -275,44 +296,21 @@ var app = new Vue({
         self.feedback.showAnswerMessage = false;
       }
 
+    },
+
+    generateFeedback() {
+      this.generateAnswerFeedback();
+      this.checkPartyMood();
+      this.checkTheCheese();
     }
     
   },
 
   computed: {
 
-    randomWrongHeadline() {
-      let self = this;
-      return randomFrom(self.wrongHeadlines);
-    },
-
     myScore() {
       return (this.my.points / this.my.round);
     },
-
-    // This part is deprecated
-    /*
-    
-    peopleThink() {
-      if (this.myScore < -0.4) {
-        return "you are the worst person they have ever met";
-      } else if (this.myScore < -0.2) {
-        return "you suck";
-      } else if (this.myScore < -0) {
-        return "you're very unplesant";
-      } else if (this.myScore < 0.2) {
-        return "you are forgettable";
-      } else if (this.myScore < 0.4) {
-        return "you're okay";
-      } else if (this.myScore < 0.6) {
-        return "you're cool";
-      } else if (this.myScore < 0.8) {
-        return "you're the bee's knees";
-      } else {
-        return "you're the best person in the world";
-      }
-    },
-    */
 
     // Pronouns
     his() {

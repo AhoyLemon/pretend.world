@@ -10,10 +10,13 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
 
 
   .question {
-    h1 { text-align: center; margin-bottom: 1em;
+    h1 { text-align: center; margin-bottom: 3vh;
       .medium-text { font-family: $font; font-size:2.8vw; font-weight: 400; margin-bottom: 0.35em; }
-      .big-text { font-family:$headline; color:$red; font-size:4vw; line-height: 90%; }
+      .big-text { font-family:$headline; font-size:4vw; line-height: 90%; }
     }
+    .neutral { color:$neutral; }
+
+    p { font-size:20px; margin-bottom: 0.75em; display: block; max-width: 36em; text-align: center; }
   
     form { width:33vw; margin-left: auto; margin-right: auto; display: block;
       label  { font-size:2.25vw; text-align: center; margin-top: 1em; margin-bottom: 1em; font-weight: 300; font-style: italic; display:block;  }
@@ -23,6 +26,8 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
       }
     }
   }
+
+
   
 }
 

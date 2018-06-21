@@ -67,6 +67,10 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function bold(string) {
+  return '<strong>' + string + '</strong>';
+}
+
 function similarity(s1, s2) {
   var longer = s1;
   var shorter = s2;

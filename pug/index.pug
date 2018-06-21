@@ -22,15 +22,24 @@ html(lang="en")
 
         .inner.question(v-if="phase == 'question'")
           .status
-            h1
+            h1(v-if="my.round == 1")
               .medium-text You're at a party of 
-              .big-text CELEBRITY IMPERSONATORS
-            //-h1(v-else-if="my.round < 3")
-              .medium-text You're getting to
-              .big-text know people
-            //-h1(v-else-if="my.round < 6")
-              .medium-text People at this party think
-              //-.big-text {{peopleThink}}
+              .big-text.neutral CELEBRITY IMPERSONATORS
+            h1(v-else-if="my.warmUp")
+              .medium-text(v-text="headlineText[0]")
+              .big-text.neutral(v-text="headlineText[1]")
+            h1(v-else)
+              .medium-text(v-text="headlineText[0]")
+              .big-text(v-text="headlineText[1]" :class="my.mood")
+          
+          .cheese-feedback(v-if="feedback.showCheeseMessage")
+            p(v-html="feedback.cheeseMessage")
+            p [ {{my.stepsToCheese}} steps remain ]
+          
+          .mood-feedback(v-else-if="feedback.showMoodMessage")
+            p(v-html="feedback.moodMessage")
+            p(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
+
           .question-wrapper
             form(@submit.prevent="checkName()" :disabled="guess.length < 4")
               label(for="guess") Who is this supposed to be?
@@ -39,18 +48,15 @@ html(lang="en")
         
         .inner.feedback(v-if="phase == 'answer'")
 
-
           h2(v-bind:class="feedback.headlineClass" v-text="feedback.headline")
 
-          .answer-feedback(v-if="feedback.showAnswerMessage")
+          //-.answer-feedback(v-if="feedback.showAnswerMessage")
+          .answer-feedback
             p(v-html="feedback.answerMessage")
           
-          .mood-feedback(v-if="feedback.showMoodMessage" :class="my.mood")
+          .mood-feedback(v-if="feedback.showCheeseMessage" :class="my.mood")
             p(v-html="feedback.moodMessage")
             p(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
-
-          .cheese-feedback(v-if="feedback.showCheeseMessage")
-            p(v-html="feedback.cheeseMessage")
 
           .button-holder
             button.keep-mingling(@click="nextRound()" v-focus) Keep Mingling
