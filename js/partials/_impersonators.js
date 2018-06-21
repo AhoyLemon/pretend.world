@@ -115,14 +115,14 @@ const impersonators = [
     celebrity: "Bette Davis",
     variants: [ "Betty Davis"],
     sex: 'f',
-    url: "http://www.classiqueproductions.com/pages/bobby-darin-impersonator-1.htm"
+    url: "http://www.classiqueproductions.com/pages/bette-davis-impersonator-1.htm"
   },
   { 
     file: "sammy-davis-jr-6.jpg",
-    celebrity: "Sammy Davis, Jr.",
-    variants: [ "Sammy Davis Jr", "Sammy Davis Junior", "Sammy Davis Jr.", "Sammie Davis Jr"],
+    celebrity: "Sammy Davis Jr.",
+    variants: [ "Sammy Davis, Jr", "Sammy Davis Junior", "Sammy Davis Jr.", "Sammie Davis Jr", "Sammy Davis"],
     sex: 'm',
-    url: "http://www.classiqueproductions.com/pages/bobby-darin-impersonator-1.htm"
+    url: "http://www.classiqueproductions.com/pages/sammy-davis-jr-impersonator-6.htm"
   },
   { 
     file: "bill-cosby-1.jpg",
