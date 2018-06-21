@@ -230,7 +230,6 @@ var app = new Vue({
         ];
         self.feedback.answerMessage = workThisArray(closeMessages);
 
-
       } else if (self.answer == "wrong") { 
         self.feedback.headline = randomFrom(wrongHeadlines); 
         let wrongMessages = [
@@ -283,6 +282,9 @@ var app = new Vue({
         ];
         self.feedback.answerMessage = workThisArray(wrongMessages);
       }
+
+      self.feedback.showAnswerMessage = true;
+
     },
 
     checkPartyMood() {
@@ -349,6 +351,8 @@ var app = new Vue({
         self.feedback.showCheeseMessage = false;
       }
 
+      // Deprecated.
+      /*
       let answerMessageShowChance = 0;
       if (self.feedback.showMoodMessage == true && self.feedback.showCheeseMessage == true) {
         answerMessageShowChance = 20;
@@ -365,6 +369,7 @@ var app = new Vue({
       } else {
         self.feedback.showAnswerMessage = false;
       }
+      */
 
     },
 

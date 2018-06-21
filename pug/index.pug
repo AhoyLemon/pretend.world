@@ -54,8 +54,9 @@ html(lang="en")
           .answer-feedback
             p(v-html="feedback.answerMessage")
           
-          .mood-feedback(v-if="feedback.showCheeseMessage" :class="my.mood")
-            p(v-html="feedback.moodMessage")
+          .mood-feedback(v-if="feedback.showCheeseMessage")
+            p(v-if="my.mood != my.previousMood" v-html="feedback.moodMessage" :class="my.mood")
+            p(v-if="my.mood == my.previousMood" v-html="feedback.moodMessage")
             p(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
 
           .button-holder

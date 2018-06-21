@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-20@23:46:26">
+    <meta http-equiv="last-modified" content="2018-05-21@00:33:16">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/impersonators.css?lastUpdated=2018-05-20@23:46:26" rel="stylesheet">
+    <link href="css/impersonators.css?lastUpdated=2018-05-21@00:33:16" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -83,8 +83,9 @@
           <div class="answer-feedback">
             <p v-html="feedback.answerMessage"></p>
           </div>
-          <div class="mood-feedback" v-if="feedback.showCheeseMessage" :class="my.mood">
-            <p v-html="feedback.moodMessage"></p>
+          <div class="mood-feedback" v-if="feedback.showCheeseMessage">
+            <p v-if="my.mood != my.previousMood" v-html="feedback.moodMessage" :class="my.mood"></p>
+            <p v-if="my.mood == my.previousMood" v-html="feedback.moodMessage"></p>
             <p v-if="my.mood == 'veryBad'">You are in danger of being kicked out of the party.</p>
           </div>
           <div class="button-holder">
