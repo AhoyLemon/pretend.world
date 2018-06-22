@@ -10,7 +10,7 @@
       .medium-text(v-text="headlineText[0]")
       .big-text(v-text="headlineText[1]" :class="my.mood")
   
-  .cheese-feedback(v-if="feedback.showCheeseMessage")
+  .cheese-feedback(v-if="feedback.showCheeseMessage && my.correctGuesses > 1")
     p(v-html="feedback.cheeseMessage")
     p [ {{my.stepsToCheese}} steps remain ]
   

@@ -24,6 +24,7 @@ var app = new Vue({
       previousScore: 0,
       stepsToCheese: settings.stepsToCheese,
       cheeseAdvance: false,
+      cheeseIntro: false,
       mood: null,
       previousMood: null,
       warmUp: true
@@ -55,13 +56,20 @@ var app = new Vue({
 
     nextRound() {
       let self = this;
-      self.phase = 'showCheese';
       self.answer = null;
       self.my.round++;
       //self.my.score = (this.my.points / this.my.round);
       self.guess = '';
       self.findImpersonator();
       self.generateHeadline();
+
+      if (self.my.cheeseIntro) {
+        self.phase = 'showCheese';
+      } else{
+        self.phase = 'question';
+      }
+
+
     },
 
     generateHeadline() {
@@ -327,6 +335,10 @@ var app = new Vue({
       if (self.answer != "wrong") {
         self.my.stepsToCheese--;
 
+        if (self.my.stepsToCheese == 9) {
+          self.my.cheeseIntro = true;
+        }
+
         let f = cheeseStatus.any;
 
         if (self.my.stepsToCheese > 7) {
@@ -344,32 +356,11 @@ var app = new Vue({
 
         self.feedback.showCheeseMessage = true;
         self.feedback.cheeseMessage = randomFrom(f);
-        //self.feedback.cheeseMessage += ' <span>['+self.my.stepsToCheese+' steps remain]</span>';
 
       } else {
         // LEMON: Maybe an infrequent cheese cheeck here? Maybe?
         self.feedback.showCheeseMessage = false;
       }
-
-      // Deprecated.
-      /*
-      let answerMessageShowChance = 0;
-      if (self.feedback.showMoodMessage == true && self.feedback.showCheeseMessage == true) {
-        answerMessageShowChance = 20;
-      } else if (self.feedback.showMoodMessage == true && self.feedback.showCheeseMessage == false) {
-        answerMessageShowChance = 40;
-      } else if (self.feedback.showMoodMessage == false && self.feedback.showCheeseMessage == true) {
-        answerMessageShowChance = 60;
-      } else if (self.feedback.showMoodMessage == false && self.feedback.showCheeseMessage == false) {
-        answerMessageShowChance = 100;
-      }
-
-      if (testChance(answerMessageShowChance)) {
-        self.feedback.showAnswerMessage = true;
-      } else {
-        self.feedback.showAnswerMessage = false;
-      }
-      */
 
     },
 
