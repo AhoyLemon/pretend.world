@@ -1,7 +1,7 @@
 [v-cloak] { display: none !important; }
 
 //main { background:yellow; }
-html { background:#0d1021; color:$white; }
+html { background:$body; color:$white; }
 .celebrity-photo { @include position(fixed,0,0,0,50%); text-align: center; background-size:contain; background-position: center; background-repeat: no-repeat;
   img { height: 100%; }
 }
@@ -30,6 +30,13 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
     }
   }
 }
+
+.impersonator-website { @include position(absolute,null,0,2rem,0); 
+  .button { background: $yellow; padding:0.5em 1em; font-size:14px; color:$body; text-decoration: none; border:1px solid $body;
+    &:hover { background:$black; color:$yellow; }
+  }
+}
+
 
 .feedback { text-align: center; 
   h2 { font-size: 4vw; font-family: $headline; margin-bottom: 0.35em;

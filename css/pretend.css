@@ -286,6 +286,22 @@ figcaption {
       figcaption .question form button[disabled] {
         opacity: 0; }
 
+.impersonator-website {
+  position: absolute;
+  right: 0;
+  bottom: 2rem;
+  left: 0; }
+  .impersonator-website .button {
+    background: #e9eab9;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    color: #0d1021;
+    text-decoration: none;
+    border: 1px solid #0d1021; }
+    .impersonator-website .button:hover {
+      background: #212121;
+      color: #e9eab9; }
+
 .feedback {
   text-align: center; }
   .feedback h2 {

@@ -151,6 +151,7 @@ var app = new Vue({
       } else if (self.answer == 'wrong') {
         self.my.points = self.my.points - 0.5;
       }
+      sendEvent(self.answer, self.current.name, self.guess);
       self.generateFeedback();
       self.phase = 'answer';
     },
@@ -281,11 +282,22 @@ var app = new Vue({
                   ]
           ],
           [
-            capitalize(self.he)+ " takes a few paces forwards and captures you an an unbreaking stare. ",
+            capitalize(self.he)+ " stares at you ",
               [
-                "“"+bold(self.current.name)+".” is "+self.his+" and only utterance, but the stare does not break. Eventually you have to excuse yourself to the bathroom to break "+self.his+" line of sight.",
-                "“"+self.guess+"? You look at me and tell me how I look like "+self.guess+"!” You fail to think of a response, "+self.he+" screams “"+self.current.name+"!!!” loud enough for the entire party to hear."
-              ]
+                "and holds your gaze for a full minute.",
+                "and stands unblinking.",
+                "in a way that's vaguely erotic.",
+                "in a piercing gaze you find terrifying.",
+                "and aggressively chews a stick of gum.",
+                "angrily."
+              ],
+                " “"+bold(self.current.name)+"!” he screams ",
+                [
+                  "directly into your face.",
+                  "and you excuse yourself to the bathroom to break "+self.his+" line of sight.",
+                  "and you weep openly in front of "+self.him+".",
+                  "and the whole party turns to look at you."
+                ]
           ]
         ];
         self.feedback.answerMessage = workThisArray(wrongMessages);
@@ -368,6 +380,12 @@ var app = new Vue({
       this.generateAnswerFeedback();
       this.checkPartyMood();
       this.checkTheCheese();
+    },
+    
+    visitImpersonatorWebsite() {
+      let self = this;
+      sendEvent('Impersonator Website', self.current.name, self.current.url);
+      window.open(self.current.url, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
     }
     
   },

@@ -12,27 +12,30 @@ html(lang="en")
     include partials/_head.pug
   body
 
-    main#app
+    #app
 
       if testing == true
         include partials/_debug.pug
 
-      figure.cheese-photo(style="background-image:url(img/cheeselog/1.jpg)" v-if="phase == 'showCheese'")
-      figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } " v-else)
+      main(v-cloak)
 
+        figure.cheese-photo(style="background-image:url(img/cheeselog/1.jpg)" v-if="phase == 'showCheese'")
+        figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } " v-else)
+          .button-holder.impersonator-website
+            a.button(v-if="phase == 'answer'" @click="visitImpersonatorWebsite()") impersonator website
 
-      figcaption(v-if="phase == 'showCheese'")
-        .inner.mission
-          .status 
-            h2 Look at that
+        figcaption(v-if="phase == 'showCheese'")
+          .inner.mission
+            .status 
+              h2 Look at that
 
-            p These parties always have impressive spreads that spared no expense; figs from the middle east, the fresh caviar from Russia, and freshly baked pastries from France. All garbage for peasants. This cheese log is the true treasure.
+              p These parties always have impressive spreads that spared no expense; figs from the middle east, the fresh caviar from Russia, and freshly baked pastries from France. All garbage for peasants. This cheese log is the true treasure.
 
-            h1.mission-start
-              a.big-text(@click="my.cheeseIntro = false; phase = 'question';") Mission Start!
+              h1.mission-start
+                a.big-text(@click="my.cheeseIntro = false; phase = 'question';") Mission Start!
 
-      figcaption(v-else)
-        include partials/_question.pug
-        include partials/_answer.pug
+        figcaption(v-else)
+          include partials/_question.pug
+          include partials/_answer.pug
 
     include partials/_javascripts.pug
