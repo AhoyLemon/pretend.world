@@ -40,22 +40,43 @@ const moodHeadlines = {
 
 const partyMoods = {
   veryGood: [
-    "A rather dour looking woman informs you that she is a talent agent and exclaims loudly “you've got the goods!” You're unclear what specific goods she's speaking of, but tell her you appreciate her saying so.",
+    "A rather dour looking woman informs you that she is a talent agent and exclaims loudly “You've got the goods!” You're unclear what specific goods she's speaking of, but tell her you appreciate her saying so.",
     "You tell what you feel to be a pretty lackluster anecdote and are met by loud laughter and honest-to-god applause.",
-    "“All I wanna do” you exclaim, “is a zoom zoom zoom, and a boom boom.” At that, several guests inform you to shake your rump."
+    "“All I wanna do” you exclaim, “is a zoom zoom zoom, and a boom boom.” At that, several guests inform you to shake your rump.",
+    "You ask several of the guests to follow you on Twitter and a few people take out their phones.",
+    "A Matthew McConaughey comes up behind you and slips a scribbled note into your back pocket. He whispers about “The impression doesn't end at the clothes”, winks, and walks off.",
+    "After several rousing and very fake stories, you notice one guest constantly shouting out positive remarks on cue. You've picked up a hype man.",
+    "The lights turn down and you are lit by a bright spotlight. After a short announcement, much applause, and a very nice tiara, you are crowned Best In Show.",
+    "The music picks up a congo line forms with you at the head.",
+    "The Elon Musk hands you a fake $100 bill and invites you to his yacht next weekend. You're sure he doesn't even own a rowboat, but the invitation was kind.",
+    "Several guests compliment you on your spot on impersonation, even though everyone cites someone different.",
+    "You hit it off with a Key and Peele pair and they invite you to the photobooth to commemorate your new friendship.",
+    "Both you and a Joan Rivers jump into the air at the same time and manage to land a sweet high five. One of the guests even managed to snap a good photo!",
+    "Taking you aside in confidence, the Ozzy Osborne shows you the best way to bite a head off a bat - you have a sweet new party trick!"
   ],
   prettyGood: [
     "You give finger guns to three separate people whom you have never met. Only one of those makes a face like you just farted. You consider this a statistical success.",
     "You brush against a nearby woman but manage to catch her arm before she spills her glass of red wine all over you.",
     "A departing guest asks where the nearest Target is. You give him directions, and are <i>mostly</i> right!",
     "You find yourself caught in a surprise game of beer pong and don't play well, but catch a nice buzz as a result.",
-    "You find a Starburst in your pocket. A pink one, too. Yum."
+    "You find a Starburst in your pocket. A pink one, too. Yum.",
+    "You are granted a moments reprieve from the guests by ducking under a nearby cocktail table. You finish your drink in relative peace before going out again.",
+    "You run into an old friend from high school and at least manage to remember their first name.",
+    "You grab an Old Fashioned at the bar and find a few dollars in your pocket to tip the bartender.",
+    "You quote <i>Monty Python's The Holy Grail</i> by reflex and no one punches you. Lucky break!",
+    "You and a Mortia hang around the punch bowl for a few minutes making morbid jokes, and you mostly manage to keep up."
   ],
   neutral: [
     "You gleefully recount your favorite scene from one of the Teenage Mutant Ninja Turtle movies, which nobody you're talking to has seen.",
     "You almost get into a conversation about Bitcoin, but thankfully reconsider.",
     "“This is fun.” you say to nobody.",
-    "You start humming a tuneless melody to yourself."
+    "You start humming a tuneless melody to yourself.",
+    "You sip on a red wine and manage not to spill it on your shirt.",
+    "The swan napkins on the hors d'oeuvres are looking sad, and you take a few minutes to refold them.",
+    "You browse on your phone for a few minutes to find out what event the hall is hosting next week.",
+    "You walk around the perimiter of the room and look for an easy conversation to slip into.",
+    "You hold out your hand to shake an impersonator's hand, but they just walk by.",
+    "The weather seems nice outside. Not too hot, not too cold."
   ],
   prettyBad: [
     "The opening riff of Dee-Lite’s “Groove Is In The Heart” starts to play, and you make an utterly nonsensical joke about Grobin In The Heart? Like, Josh Grobin is in your heart? Something like that. It is a <i>terrible</i> joke and everybody heard it.",
@@ -63,22 +84,47 @@ const partyMoods = {
     "Calling for everyone's attention, you unscrew and drink a Mickey's Big Mouth in less than two seconds, believing it will impress people. It doesn't.",
     "You start talking about javascript, disappointingly unaware that nobody ever wants to hear anybody else about javascript.",
     "Three separate guests inform you that no matter what song ends up playing, they never want to see you twerk again.",
-    "It's unclearl exactly what provoked you to start singing a Björk song at that moment, but it's immediately clear you shouldn't have picked something from Volta."
+    "It's unclear exactly what provoked you to start singing a Björk song at that moment, but it's immediately clear you shouldn't have picked something from Volta.",
+    "In a desperate attempt to distract the guests from your bland outfit you rip the tablecloth off the nearest table, but every dish lands on the floor.",
+    "You start to dance like Elaine from <i>Seinfeld</i>, but instead of catching the reference everyone now thinks you just are a terrible dancer.",
+    "You start talking about anime and your plushie collection - this is a <i>terrible</i> mistake.",
+    "A guest sees you give yourself a high five and is disgusted.",
+    "As a joke, you link together sixteen straws to drink from a Drew Barrymore's glass from over her shoulder. She, and many other people, find it creepy.",
+    "You try to slip past a large, tight-knit group of guests and instead trip and tip over a table.",
+    "You start describing, half singing the Danzig-Shakira <i>Hips Don't Lie</i> mashup video to the Shakira impersonator and trail off when her face turns into scorn.",
+    "Someone catches you looking at IMDB on your phone and snorts.",
+    "You tell the Mark Zuckerberg that he needs to be more robotic if anyone is going to take him seriously.",
+    "In an attempt to impress the Halle Berry impersonator, you proclaim that her Catwoman is your favorite. She leaves the conversation immediately.",
+    "You get into a impression fight with the Austin Powers on who can say “YEAH BABY” better. This goes on for fifteen minutes.",
+    "You touch the Whoopi Goldberg's hair. Whats wrong with you?!",
+    "You ask the John F. Kennedy who actually shot him, suddenly trapping yourself in an hour long conspiracy screed involving Greenland and several Swedes.",
+    "You hear a fervent knocking at the side door, a cracked voice asking to be let in. You open the door and a Larry the Cable Guy stumbles in and the guests groan.",
+    "You call the Hank Williams Sr. Hank Williams Jr. and he slams his guitar into the ground over the offense.",
+    "You start making rude gestures in the face of a Stevie Wonder for a laugh, forgetting that the impersonator isn't blind."
   ],
   veryBad: [
     "A joke about Harvey Weinstein goes <i>way</i> off the rails and comes off as overtly anti-semitic. A Scarlett Johansson impersonator asks who let you in here, and you feel sweat on your forehead.",
     "You make an offhand comment about an Edward Scissorhands' props, asking him if he wrapped plastic safety scissors from the Dollar Store in tinfoil. He bursts into tears and runs out of the room, bits of foil falling on the ground in his wake.",
     "Unable to keep up with the flood of pointless references, you accidentally let drop that you don't <i>actually like movies.</i> The whole party goes silent, a glass falls to the floor and shatters.",
-    "You see a guy who kind of looks like Kid from Kid N' Play, and try to do that one dance move where you kick each other's feet. You spend the next 5 minutes apologizing and looking for an ice pack."
+    "You see a guy who kind of looks like Kid from Kid N' Play, and try to do that one dance move where you kick each other's feet. You spend the next 5 minutes apologizing and looking for an ice pack.",
+    "You steal the Michael J. Fox impersonator's guitar and attempt to reenact the scene from <i>Back to the Future</i> and remember too late that you don't know how to play guitar. Also the guitar is a solid piece of foam.",
+    "You tell the Scarlet O'Hara impersonator that “Frankly my dear, I don't give a damn!” when she politely asks you to move. She slaps you.",
+    "Thinking the Al Sharpton impersonator is the real Al Sharpton, you make the comment that anyone that dresses up like a real figure is a freak."
+    "You run up behind the Robert Pattinson and start spraying glitter all over his suit; he then goes into anaphylactic shock. The Kristen Stewart slams the epi pen into his leg just in time.",
+    "You start a fistfight with all of the different James Bonds about which Bond is best. What guests didn't see you start it, the others did not appreciate you trying to take bets.",
+    "A Winston Churchill informs you that your impersonation of Goebbels is in severely poor taste and castigates you in front of a huge group of guests.",
+    "You ask the Pope John XII how his harem is fairing, only to realize too late that he was actually Pope John Paul II.",
+    "A Sally Rand breaks out her ostrich feathers and sentiously starts to perform her famous fan dance for the crowd. You take this moment to ask loudly where the bathroom is and don't stop until she answers.",
   ],
 
   noChange: [
     "In a poorly lit corner, you see an Ashton Kutcher impersonator making out with a Demi Moore impersonator. A few feet away, a Bruce Willis impersonator is seemingly unphased by all of this, which seems oddly progressive.",
     "You notice a Carrot Top impersonator making his third trip out to the car to gather props for a joke he has planned. Nobody helps him, including you.",
     "Several people shout “murderer!” in unison, which briefly confuses you until the second time when you realize they were singing along to <i>Here Comes The Hotstepper</i>.",
-    "despite the overactive air conditioning in the room, a guy who looks like Glenn Danzig seems comfortable in his mesh tank top. Also he might actually be Glenn Danzig.",
+    "Despite the overactive air conditioning in the room, a guy who looks like Glenn Danzig seems comfortable in his mesh tank top. Also he might actually be Glenn Danzig.",
     "A few feet away is somebody who might be either a Brendan Eich impersonator or Brendan Eich himself. Regardless, nobody wants to talk to him about javascript.",
     "A discussion occurs about that one episode of <i>Nathan For You</i> with the Bill Gates impersonator. You miss most of the important details.",
-    "You wonder if there had been a squabble over the party theme, every impersonator vying to have <i>their</i> movie recreated in the space. The result was a mixture of an 80s high school prom, derelict building props on the walls, medieval glassware, and just too much glitter."
+    "You wonder if there had been a squabble over the party theme, every impersonator vying to have <i>their</i> movie recreated in the space. The result was a mixture of an 80s high school prom, derelict building props on the walls, medieval glassware, and just too much glitter.",
+    "To pass the time you try to guess which impersonators spent the most money on their costumes."
   ]
 };
