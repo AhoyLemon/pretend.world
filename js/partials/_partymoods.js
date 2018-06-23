@@ -47,7 +47,7 @@ const partyMoods = {
     "A Matthew McConaughey comes up behind you and slips a scribbled note into your back pocket. He whispers about “The impression doesn't end at the clothes”, winks, and walks off.",
     "After several rousing and very fake stories, you notice one guest constantly shouting out positive remarks on cue. You've picked up a hype man.",
     "The lights turn down and you are lit by a bright spotlight. After a short announcement, much applause, and a very nice tiara, you are crowned Best In Show.",
-    "The music picks up a congo line forms with you at the head.",
+    "The music picks up and a congo line forms with you at the head.",
     "The Elon Musk hands you a fake $100 bill and invites you to his yacht next weekend. You're sure he doesn't even own a rowboat, but the invitation was kind.",
     "Several guests compliment you on your spot on impersonation, even though everyone cites someone different.",
     "You hit it off with a Key and Peele pair and they invite you to the photobooth to commemorate your new friendship.",
@@ -64,7 +64,7 @@ const partyMoods = {
     "You run into an old friend from high school and at least manage to remember their first name.",
     "You grab an Old Fashioned at the bar and find a few dollars in your pocket to tip the bartender.",
     "You quote <i>Monty Python's The Holy Grail</i> by reflex and no one punches you. Lucky break!",
-    "You and a Mortia hang around the punch bowl for a few minutes making morbid jokes, and you mostly manage to keep up."
+    "You and a Morticia hang around the punch bowl for a few minutes making morbid jokes, and you mostly manage to keep up."
   ],
   neutral: [
     "You gleefully recount your favorite scene from one of the Teenage Mutant Ninja Turtle movies, which nobody you're talking to has seen.",
@@ -74,7 +74,7 @@ const partyMoods = {
     "You sip on a red wine and manage not to spill it on your shirt.",
     "The swan napkins on the hors d'oeuvres are looking sad, and you take a few minutes to refold them.",
     "You browse on your phone for a few minutes to find out what event the hall is hosting next week.",
-    "You walk around the perimiter of the room and look for an easy conversation to slip into.",
+    "You walk around the perimeter of the room and look for an easy conversation to slip into.",
     "You hold out your hand to shake an impersonator's hand, but they just walk by.",
     "The weather seems nice outside. Not too hot, not too cold."
   ],
@@ -86,10 +86,10 @@ const partyMoods = {
     "Three separate guests inform you that no matter what song ends up playing, they never want to see you twerk again.",
     "It's unclear exactly what provoked you to start singing a Björk song at that moment, but it's immediately clear you shouldn't have picked something from Volta.",
     "In a desperate attempt to distract the guests from your bland outfit you rip the tablecloth off the nearest table, but every dish lands on the floor.",
-    "You start to dance like Elaine from <i>Seinfeld</i>, but instead of catching the reference everyone now thinks you just are a terrible dancer.",
+    "You start to dance like Elaine from <i>Seinfeld</i>, but instead of catching the reference everyone now thinks you are just a terrible dancer.",
     "You start talking about anime and your plushie collection - this is a <i>terrible</i> mistake.",
     "A guest sees you give yourself a high five and is disgusted.",
-    "As a joke, you link together sixteen straws to drink from a Drew Barrymore's glass from over her shoulder. She, and many other people, find it creepy.",
+    "As a joke, you link together sixteen straws to drink from a Drew Barrymore's glass. She, and many other people, find it creepy.",
     "You try to slip past a large, tight-knit group of guests and instead trip and tip over a table.",
     "You start describing, half singing the Danzig-Shakira <i>Hips Don't Lie</i> mashup video to the Shakira impersonator and trail off when her face turns into scorn.",
     "Someone catches you looking at IMDB on your phone and snorts.",
@@ -97,7 +97,7 @@ const partyMoods = {
     "In an attempt to impress the Halle Berry impersonator, you proclaim that her Catwoman is your favorite. She leaves the conversation immediately.",
     "You get into a impression fight with the Austin Powers on who can say “YEAH BABY” better. This goes on for fifteen minutes.",
     "You touch the Whoopi Goldberg's hair. Whats wrong with you?!",
-    "You ask the John F. Kennedy who actually shot him, suddenly trapping yourself in an hour long conspiracy screed involving Greenland and several Swedes.",
+    "You jokingly ask the John F. Kennedy who actually shot him, suddenly trapping yourself in an hour long conspiracy screed involving Greenland and several Swedes.",
     "You hear a fervent knocking at the side door, a cracked voice asking to be let in. You open the door and a Larry the Cable Guy stumbles in and the guests groan.",
     "You call the Hank Williams Sr. Hank Williams Jr. and he slams his guitar into the ground over the offense.",
     "You start making rude gestures in the face of a Stevie Wonder for a laugh, forgetting that the impersonator isn't blind."
@@ -107,12 +107,11 @@ const partyMoods = {
     "You make an offhand comment about an Edward Scissorhands' props, asking him if he wrapped plastic safety scissors from the Dollar Store in tinfoil. He bursts into tears and runs out of the room, bits of foil falling on the ground in his wake.",
     "Unable to keep up with the flood of pointless references, you accidentally let drop that you don't <i>actually like movies.</i> The whole party goes silent, a glass falls to the floor and shatters.",
     "You see a guy who kind of looks like Kid from Kid N' Play, and try to do that one dance move where you kick each other's feet. You spend the next 5 minutes apologizing and looking for an ice pack.",
-    "You steal the Michael J. Fox impersonator's guitar and attempt to reenact the scene from <i>Back to the Future</i> and remember too late that you don't know how to play guitar. Also the guitar is a solid piece of foam.",
+    "You steal the Michael J. Fox's guitar and attempt to reenact the scene from <i>Back to the Future</i> and remember too late that you don't know how to play guitar. Also the guitar is a solid piece of foam.",
     "You tell the Scarlet O'Hara impersonator that “Frankly my dear, I don't give a damn!” when she politely asks you to move. She slaps you.",
-    "Thinking the Al Sharpton impersonator is the real Al Sharpton, you make the comment that anyone that dresses up like a real figure is a freak."
+    "Thinking the Al Sharpton impersonator is the <i>real</i> Al Sharpton, you make the comment that anyone that dresses up like a public figure is a freak."
     "You run up behind the Robert Pattinson and start spraying glitter all over his suit; he then goes into anaphylactic shock. The Kristen Stewart slams the epi pen into his leg just in time.",
-    "You start a fistfight with all of the different James Bonds about which Bond is best. What guests didn't see you start it, the others did not appreciate you trying to take bets.",
-    "A Winston Churchill informs you that your impersonation of Goebbels is in severely poor taste and castigates you in front of a huge group of guests.",
+    "You start a fistfight with all of the different James Bonds about which Bond is best. What guests didn't see you start it certinaly did not appreciate you trying to take bets.",
     "You ask the Pope John XII how his harem is fairing, only to realize too late that he was actually Pope John Paul II.",
     "A Sally Rand breaks out her ostrich feathers and sentiously starts to perform her famous fan dance for the crowd. You take this moment to ask loudly where the bathroom is and don't stop until she answers.",
   ],
