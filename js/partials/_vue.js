@@ -27,7 +27,8 @@ var app = new Vue({
       cheeseIntro: false,
       mood: null,
       previousMood: null,
-      warmUp: true
+      warmUp: true,
+      dangerZone: false
     },
     current: {
       pic: '',
@@ -45,6 +46,14 @@ var app = new Vue({
       moodMessage: '',
       showCheeseMessage: false,
       cheeseMessage: ''
+    },
+    specialScreen: {
+      show: false,
+      type: null,
+      pic: '',
+      headline: '',
+      message: '',
+      gameOver: false
     }
   },
 
@@ -58,17 +67,25 @@ var app = new Vue({
       let self = this;
       self.answer = null;
       self.my.round++;
-      //self.my.score = (this.my.points / this.my.round);
       self.guess = '';
       self.findImpersonator();
       self.generateHeadline();
-
+      
       if (self.my.cheeseIntro) {
-        self.phase = 'showCheese';
-      } else{
+        // Did you just see the cheese!?
+        self.introduceCheese();
+      /*
+      } else if (self.my.stepsToCheese < 0) {
+        // Did you reach the cheese?
+        self.gameOver('win');
+      } else if (self.my.mood == 'veryBad' && self.my.dangerZone == true) {
+        // You meet the loss conditions
+        self.gameOver('lose');
+      */
+      } else {
+        // none of the conditions above. Let's just go to the next round.
         self.phase = 'question';
       }
-
 
     },
 
@@ -77,17 +94,15 @@ var app = new Vue({
       let h;
       if (self.my.round == 1) {
         // Round 1
-        self.my.warmUp = true;
-      } else if (self.my.round <= settings.warmUpRounds) {
-        // You're out of warm up phase.
-        self.my.warmUp = true;
+      } else if (self.my.warmUp) {
+        // You're warming up.
         h = randomFrom(minglingHeadlines);
         self.headlineText = [h[0], h[1]];
       } else {
-        self.my.warmUp = false;
         h = randomFrom(moodHeadlines[self.my.mood]);
         self.headlineText = [h[0], h[1]];
       }
+
     },
 
 
@@ -115,7 +130,6 @@ var app = new Vue({
       let self = this;
       let correctGuess = false;
       if (self.guess.toLowerCase() == self.current.name.toLowerCase() || self.guess == 'xxxx') {
-
         // 100% correct
         self.answer = 'correct';
         correctGuess = true;
@@ -149,8 +163,9 @@ var app = new Vue({
         self.my.points = self.my.points + 0.7;
         self.my.correctGuesses++;
       } else if (self.answer == 'wrong') {
-        self.my.points = self.my.points - 0.5;
+        self.my.points = self.my.points - 0.6;
       }
+
       sendEvent(self.answer, self.current.name, self.guess);
       self.generateFeedback();
       self.phase = 'answer';
@@ -312,16 +327,16 @@ var app = new Vue({
       self.my.previousScore = self.my.score;
       self.my.previousMood = self.my.mood;
 
-      self.my.score = (self.my.points / self.my.round);
+      self.my.score = (self.my.points / self.my.round).toFixed(2);
 
       // Generate the Mood Score
-      if (self.my.score > 0.6) {
+      if (self.my.score > 0.69) {
         self.my.mood = "veryGood";
-      } else if (self.my.score > 0.3) {
+      } else if (self.my.score > 0.39) {
         self.my.mood = "prettyGood";
-      } else if (self.my.score > -0.1) {
+      } else if (self.my.score > 0.19) {
         self.my.mood = "neutral";
-      } else if (self.my.score > -0.3) {
+      } else if (self.my.score > -0.19) {
         self.my.mood = "prettyBad";
       } else {
         self.my.mood = "veryBad";
@@ -339,6 +354,17 @@ var app = new Vue({
         self.feedback.showMoodMessage = false;
       }
 
+    },
+
+    introduceCheese() {
+      let self = this;
+      self.specialScreen.show = true;
+      self.specialScreen.type = "cheese";
+      self.specialScreen.pic = 'img/cheeselog/1.jpg';
+
+      self.specialScreen.headline = randomFrom(cheeseIntroHeadlines);
+      self.specialScreen.message = randomFrom(cheeseIntroMessages);
+      self.specialScreen.message += ' [ ' +self.my.stepsToCheese+ ' steps away ]';
     },
 
     checkTheCheese() {
@@ -359,11 +385,9 @@ var app = new Vue({
         } else if (self.my.stepsToCheese > 3) {
           // You are medium distance from the cheese
           f.concat(cheeseStatus.medium);
-        } else if (self.my.stepsToCheese > 0) {
+        } else {
           // You are close to the cheese
           f.concat(cheeseStatus.close);
-        } else {
-          alert('you have won the game (LEMON, WRITE SOMETHING FOR THIS)');
         }
 
         self.feedback.showCheeseMessage = true;
@@ -376,7 +400,35 @@ var app = new Vue({
 
     },
 
+    checkDanger() {
+      let self = this;
+
+      if (self.my.round >= settings.warmUpRounds) {
+        self.my.warmUp = false;
+      }
+
+      if (self.answer == 'wrong') {
+        if (self.my.mood == 'veryBad' && self.my.warmUp == false) {
+          self.my.dangerZone = true;
+        } else {
+          self.my.dangerZone = false;
+        }
+      } else {
+        self.my.dangerZone = false;
+      }
+    },
+
+    /*
+    checkGameOver() {
+      let self = this;
+      if (self.my.dangerZone == true && self.my.mood == 'veryBad') {
+        this.gameOver('lose');
+      }
+    },
+    */
+
     generateFeedback() {
+      this.checkDanger();
       this.generateAnswerFeedback();
       this.checkPartyMood();
       this.checkTheCheese();
@@ -386,6 +438,14 @@ var app = new Vue({
       let self = this;
       sendEvent('Impersonator Website', self.current.name, self.current.url);
       window.open(self.current.url, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
+    },
+
+    gameOver(g) {
+      if (g == 'win') {
+
+      } else if (g == 'lose') {
+        alert('you fucking lose');
+      }
     }
     
   },

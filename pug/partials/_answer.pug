@@ -8,7 +8,7 @@
   .mood-feedback(v-if="feedback.showCheeseMessage")
     p(v-if="my.mood != my.previousMood" v-html="feedback.moodMessage" :class="my.mood")
     p(v-if="my.mood == my.previousMood" v-html="feedback.moodMessage")
-    p(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
+    p(v-if="my.dangerZone == true") You are in danger of being kicked out of the party.
 
   .button-holder
     button.keep-mingling(@click="nextRound()" v-focus) Keep Mingling

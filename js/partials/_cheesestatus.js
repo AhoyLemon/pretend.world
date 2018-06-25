@@ -1,8 +1,16 @@
-const justSawCheeseStrings = [
-
+const cheeseIntroHeadlines = [
+  "Look at that!",
+  "Look over there!",
+  "Ooooh, look!",
+  "What's this!?"
 ];
 
-
+const cheeseIntroMessages = [
+  //"These parties always have impressive spreads that spared no expense; figs from the middle east, the fresh caviar from Russia, and freshly baked pastries from France. All garbage for peasants. This cheese log is the true treasure."
+  "On the other side of the room you notice a few snacks: Some croissants, potato chips, deviled eggs: This is all garbage for peasants. But among this trash you notice a cheese log, and this is your mission. You <i>must</i> get to this cheese log",
+  "One of the reasons you so enjoy crashing parties like this is because there's often decent snacks. This time though? This time they have a cheese log. You must have it.",
+  "For a moment you consider trying to crash some other party until, on the other side of the room, you notice a cheese log, and you become suddenly obsessed. This cheese log is now your mission in life."
+];
 
 const cheeseStatus = {
   close: [

@@ -178,28 +178,18 @@ html {
   background: #0d1021;
   color: #eee; }
 
-.celebrity-photo {
+.screen > figure {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 50%;
-  text-align: center;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
-  .celebrity-photo img {
-    height: 100%; }
 
-.cheese-photo {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 50%;
-  background-size: cover;
-  background-position: contain;
-  background-repeat: no-repeat; }
+.button-holder {
+  text-align: center; }
 
 figcaption {
   position: fixed;
@@ -326,32 +316,47 @@ figcaption {
         background: #155bd4;
         color: #eee; }
 
-.mission h2 {
+.special-feedback h1 {
   font-size: 3vw;
-  margin-bottom: 0.35em;
+  text-transform: uppercase;
+  color: #a8cd7d; }
+
+.special-feedback p {
+  margin-bottom: 2em; }
+
+.special-feedback button {
+  display: block;
+  width: 100%;
   text-align: center;
-  text-transform: uppercase; }
-
-.mission .mission-start {
-  margin-top: 6vh;
-  margin-bottom: 0; }
-  .mission .mission-start .big-text {
-    font-size: 4.3vw; }
-  .mission .mission-start a {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
+  cursor: pointer;
+  background: #cdfe37;
+  border: none; }
+  .special-feedback button span {
+    font-size: 3vw;
+    font-weight: 900;
+    font-family: "Merriweather", serif;
+    color: #052e23;
     display: block;
-    -webkit-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-    cursor: pointer;
-    color: yellow; }
-    .mission .mission-start a:hover {
-      -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-      transform: scale(1.05); }
+    padding: 0.1em 0.35em; }
 
+.special-headline {
+  font-size: 3vw; }
+
+/*
+
+.mission {
+  //h1 { margin-bottom: 1em; }
+  h2 { font-size: 3vw; margin-bottom: 0.35em; text-align: center; text-transform: uppercase; }
+  .mission-start {margin-top: 6vh; margin-bottom: 0;
+    //.big-text { font-size:4vw; }
+    button { display: block; width:100%; cursor: pointer; background:#cdfe37; border:none;
+      span { font-size:3.6vw; font-weight: $bold; font-family:$font; padding: 0.05em 0.35em; text-transform: uppercase; color:#052e23; transform: scale(1); display: block; transition:transform 0.1s ease; }
+      //&:hover { transform: scale(1.05); }
+    }
+  }
+}
+
+*/
 .correct {
   color: #3ede2e; }
 

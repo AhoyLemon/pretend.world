@@ -16,7 +16,7 @@
   
   .mood-feedback(v-else)
     p(v-html="feedback.moodMessage")
-    p.veryBad(v-if="my.mood == 'veryBad'") You are in danger of being kicked out of the party.
+    p(v-if="my.dangerZone == true" :class="my.mood") You are in danger of being kicked out of the party.
 
   .question-wrapper
     form(@submit.prevent="checkName()" :disabled="guess.length < 4")

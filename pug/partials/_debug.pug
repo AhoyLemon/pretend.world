@@ -5,7 +5,7 @@ header.debug(v-if="debugMode == true")
     .box
       span.label round
       span.data {{my.round}}
-    .box
+    //-.box
       span.label points
       span.data {{my.points}}
     .box
@@ -14,6 +14,12 @@ header.debug(v-if="debugMode == true")
     .box
       span.label mood
       span.data {{my.mood}}
+    .box
+      span.label warmUp
+      span.data {{my.warmUp}}
+    .box
+      span.label dangerZone
+      span.data {{my.dangerZone}}
     .box
       span.label steps
       span.data {{my.stepsToCheese}}

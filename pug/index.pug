@@ -19,23 +19,29 @@ html(lang="en")
 
       main(v-cloak)
 
-        figure.cheese-photo(style="background-image:url(img/cheeselog/1.jpg)" v-if="phase == 'showCheese'")
-        figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } " v-else)
-          .button-holder.impersonator-website
-            a.button(v-if="phase == 'answer'" @click="visitImpersonatorWebsite()") impersonator website
+        //- SPECIAL SCREENS
+        //- (Introduce Cheese, Game Over You Won, Game Over You Lost)
+        .screen.special-screen(v-if="specialScreen.show")
+          figure(:style="{ backgroundImage: 'url(' + specialScreen.pic + ')' }")
+          figcaption
+            .inner.special-feedback
+              .status 
+                h1.special-headline(v-text="specialScreen.headline")
+                p(v-html="specialScreen.message")
 
-        figcaption(v-if="phase == 'showCheese'")
-          .inner.mission
-            .status 
-              h2 Look at that
+                .button-holder(v-if="!specialScreen.gameOver")
+                  button.mission-start(@click="specialScreen.show = false; phase = 'question';" v-focus)
+                    span Mission Start
 
-              p These parties always have impressive spreads that spared no expense; figs from the middle east, the fresh caviar from Russia, and freshly baked pastries from France. All garbage for peasants. This cheese log is the true treasure.
+        
 
-              h1.mission-start
-                a.big-text(@click="my.cheeseIntro = false; phase = 'question';") Mission Start!
-
-        figcaption(v-else)
-          include partials/_question.pug
-          include partials/_answer.pug
+        //- Q&A SCREENS
+        .screen.qa-screen(v-else)
+          figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
+            .button-holder.impersonator-website
+              a.button(v-if="phase == 'answer'" @click="visitImpersonatorWebsite()") impersonator website
+          figcaption
+            include partials/_question.pug
+            include partials/_answer.pug
 
     include partials/_javascripts.pug

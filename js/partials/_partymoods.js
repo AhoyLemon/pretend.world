@@ -34,7 +34,7 @@ const moodHeadlines = {
     ["you are", "awful"],
     ["you are", "uniformly hated"],
     ["people think", "you totally suck"],
-    ["you're are", "failing"]
+    ["you are", "failing"]
   ]
 };
 
