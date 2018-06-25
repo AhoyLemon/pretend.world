@@ -28,12 +28,12 @@ html(lang="en")
               .status 
                 h1.special-headline(v-text="specialScreen.headline")
                 p(v-html="specialScreen.message")
-
-                .button-holder(v-if="!specialScreen.gameOver")
-                  button.mission-start(@click="specialScreen.show = false; phase = 'question';" v-focus)
+                
+                .game-over-holder(v-if="specialScreen.gameOver")
+                  h2(:class="my.mood") GAME OVER
+                .button-holder(v-else-if="specialScreen.type == 'cheese'")
+                  button.mission-start(@click="cheeseScreen('hide')" v-focus)
                     span Mission Start
-
-        
 
         //- Q&A SCREENS
         .screen.qa-screen(v-else)

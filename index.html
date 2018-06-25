@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-25@15:15:48">
+    <meta http-equiv="last-modified" content="2018-05-25@16:24:32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/pretend.css?lastUpdated=2018-05-25@15:15:48" rel="stylesheet">
+    <link href="css/pretend.css?lastUpdated=2018-05-25@16:24:32" rel="stylesheet">
   </head>
   <body>
     <div id="app">
@@ -18,9 +18,8 @@
           <div class="box"><span class="label">round</span><span class="data">{{my.round}}</span></div>
           <div class="box"><span class="label">score</span><span class="data">{{my.score}}</span></div>
           <div class="box"><span class="label">mood</span><span class="data">{{my.mood}}</span></div>
-          <div class="box"><span class="label">warmUp</span><span class="data">{{my.warmUp}}</span></div>
-          <div class="box"><span class="label">dangerZone</span><span class="data">{{my.dangerZone}}</span></div>
-          <div class="box"><span class="label">steps</span><span class="data">{{my.stepsToCheese}}</span></div>
+          <div class="box"><span class="label">warmUp</span><span class="data">{{warmUp}}</span></div>
+          <div class="box"><span class="label">dangerZone</span><span class="data">{{dangerZone}}</span></div>
         </div>
       </header>
       <main v-cloak>
@@ -31,8 +30,11 @@
               <div class="status"> 
                 <h1 class="special-headline" v-text="specialScreen.headline"></h1>
                 <p v-html="specialScreen.message"></p>
-                <div class="button-holder" v-if="!specialScreen.gameOver">
-                  <button class="mission-start" @click="specialScreen.show = false; phase = 'question';" v-focus><span>Mission Start</span></button>
+                <div class="game-over-holder" v-if="specialScreen.gameOver">
+                  <h2 :class="my.mood">GAME OVER</h2>
+                </div>
+                <div class="button-holder" v-else-if="specialScreen.type == 'cheese'">
+                  <button class="mission-start" @click="cheeseScreen('hide')" v-focus><span>Mission Start</span></button>
                 </div>
               </div>
             </div>
@@ -49,7 +51,7 @@
                   <div class="medium-text">You're at a party of </div>
                   <div class="big-text neutral">CELEBRITY IMPERSONATORS</div>
                 </h1>
-                <h1 v-else-if="my.warmUp == true">
+                <h1 v-else-if="warmUp == true">
                   <div class="medium-text" v-text="headlineText[0]"></div>
                   <div class="big-text neutral" v-text="headlineText[1]"></div>
                 </h1>
@@ -64,7 +66,7 @@
               </div>
               <div class="mood-feedback" v-else>
                 <p v-html="feedback.moodMessage"></p>
-                <p v-if="my.dangerZone == true" :class="my.mood">You are in danger of being kicked out of the party.</p>
+                <p v-if="dangerZone == true" :class="my.mood">You are in danger of being kicked out of the party.</p>
               </div>
               <div class="question-wrapper">
                 <form @submit.prevent="checkName()" :disabled="guess.length &lt; 4">
@@ -82,7 +84,7 @@
               <div class="mood-feedback" v-if="feedback.showCheeseMessage">
                 <p v-if="my.mood != my.previousMood" v-html="feedback.moodMessage" :class="my.mood"></p>
                 <p v-if="my.mood == my.previousMood" v-html="feedback.moodMessage"></p>
-                <p v-if="my.dangerZone == true">You are in danger of being kicked out of the party.</p>
+                <p v-if="dangerZone == true">You are in danger of being kicked out of the party.</p>
               </div>
               <div class="button-holder">
                 <button class="keep-mingling" @click="nextRound()" v-focus>Keep Mingling</button>

@@ -22,9 +22,8 @@ var app = new Vue({
       correctGuesses: 0,
       score: 0,
       previousScore: 0,
+      seenCheese: false,
       stepsToCheese: settings.stepsToCheese,
-      cheeseAdvance: false,
-      cheeseIntro: false,
       mood: null,
       previousMood: null,
       warmUp: true,
@@ -57,36 +56,22 @@ var app = new Vue({
     }
   },
 
-  created: function () {
-    
-  },
-
   methods: {
 
     nextRound() {
       let self = this;
-      self.answer = null;
-      self.my.round++;
-      self.guess = '';
-      self.findImpersonator();
-      self.generateHeadline();
-      
-      if (self.my.cheeseIntro) {
-        // Did you just see the cheese!?
-        self.introduceCheese();
-      /*
-      } else if (self.my.stepsToCheese < 0) {
-        // Did you reach the cheese?
-        self.gameOver('win');
-      } else if (self.my.mood == 'veryBad' && self.my.dangerZone == true) {
-        // You meet the loss conditions
-        self.gameOver('lose');
-      */
-      } else {
-        // none of the conditions above. Let's just go to the next round.
+
+      self.checkSpecialScreens();
+
+      if (self.specialScreen.show == false) {
+        self.answer = null;
+        self.my.round++;
+        self.guess = '';
+        self.findImpersonator();
+        self.generateHeadline();
         self.phase = 'question';
       }
-
+      
     },
 
     generateHeadline() {
@@ -94,7 +79,7 @@ var app = new Vue({
       let h;
       if (self.my.round == 1) {
         // Round 1
-      } else if (self.my.warmUp) {
+      } else if (self.warmUp) {
         // You're warming up.
         h = randomFrom(minglingHeadlines);
         self.headlineText = [h[0], h[1]];
@@ -124,6 +109,29 @@ var app = new Vue({
         self.met.push(self.current.name);
       }
       
+    },
+
+    checkSpecialScreens() {
+      let self = this;
+      if (self.my.seenCheese == false && self.my.stepsToCheese < settings.stepsToCheese) {
+        self.cheeseScreen('show');
+      } else if (self.dangerZone && self.my.mood == 'veryBad' && self.my.previousMood == 'veryBad') {
+        self.specialScreen.show = true;
+        self.specialScreen.type = "lose";
+        self.specialScreen.pic = 'img/gameover/taco-bell.jpg';
+
+        self.specialScreen.headline = "You lose!";
+        self.specialScreen.message = "Having angered enough party guests, you've been kicked out of the party. You get a few nacho cheese chalupas from a nearby Taco Bell, and feel awful afterwards. "
+        self.specialScreen.gameOver = true;
+      } else if (self.my.stepsToCheese < 1) {
+        self.specialScreen.show = true;
+        self.specialScreen.type = "win"
+        self.specialScreen.pic = 'img/gameover/cheese-stock.jpg';
+
+        self.specialScreen.headline = "You win!"
+        self.specialScreen.message = "Here is a stock photo of a lady eating cheese"
+        self.specialScreen.gameOver = true;
+      }
     },
 
     checkName: function() {
@@ -356,15 +364,23 @@ var app = new Vue({
 
     },
 
-    introduceCheese() {
+    cheeseScreen(t) {
       let self = this;
-      self.specialScreen.show = true;
-      self.specialScreen.type = "cheese";
-      self.specialScreen.pic = 'img/cheeselog/1.jpg';
 
-      self.specialScreen.headline = randomFrom(cheeseIntroHeadlines);
-      self.specialScreen.message = randomFrom(cheeseIntroMessages);
-      self.specialScreen.message += ' [ ' +self.my.stepsToCheese+ ' steps away ]';
+      if (t == 'hide') {
+        self.specialScreen.show = false;
+        self.nextRound();
+      } else if (t == 'show') {
+        self.my.seenCheese = true;
+        self.specialScreen.show = true;
+        self.specialScreen.type = "cheese";
+        self.specialScreen.pic = 'img/cheeselog/1.jpg';
+
+        self.specialScreen.headline = randomFrom(cheeseIntroHeadlines);
+        self.specialScreen.message = randomFrom(cheeseIntroMessages);
+        self.specialScreen.message += ' [ ' +self.my.stepsToCheese+ ' steps away ]';
+      }
+
     },
 
     checkTheCheese() {
@@ -373,16 +389,12 @@ var app = new Vue({
       if (self.answer != "wrong") {
         self.my.stepsToCheese--;
 
-        if (self.my.stepsToCheese == 9) {
-          self.my.cheeseIntro = true;
-        }
-
         let f = cheeseStatus.any;
 
-        if (self.my.stepsToCheese > 7) {
+        if (self.my.stepsToCheese > (settings.stepsToCheese * 0.66)) {
           // You are far from the cheese
           f.concat(cheeseStatus.far);
-        } else if (self.my.stepsToCheese > 3) {
+        } else if (self.my.stepsToCheese > (settings.stepsToCheese * 0.33)) {
           // You are medium distance from the cheese
           f.concat(cheeseStatus.medium);
         } else {
@@ -400,35 +412,8 @@ var app = new Vue({
 
     },
 
-    checkDanger() {
-      let self = this;
-
-      if (self.my.round >= settings.warmUpRounds) {
-        self.my.warmUp = false;
-      }
-
-      if (self.answer == 'wrong') {
-        if (self.my.mood == 'veryBad' && self.my.warmUp == false) {
-          self.my.dangerZone = true;
-        } else {
-          self.my.dangerZone = false;
-        }
-      } else {
-        self.my.dangerZone = false;
-      }
-    },
-
-    /*
-    checkGameOver() {
-      let self = this;
-      if (self.my.dangerZone == true && self.my.mood == 'veryBad') {
-        this.gameOver('lose');
-      }
-    },
-    */
-
     generateFeedback() {
-      this.checkDanger();
+      //this.checkDanger();
       this.generateAnswerFeedback();
       this.checkPartyMood();
       this.checkTheCheese();
@@ -451,6 +436,22 @@ var app = new Vue({
   },
 
   computed: {
+    
+    warmUp() {
+      if (this.my.round > settings.warmUpRounds) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+
+    dangerZone() {
+      if (this.my.mood == 'veryBad' && !this.warmUp) {
+        return true;
+      } else {
+        return false;
+      }
+    },
 
     myScore() {
       return (this.my.points / this.my.round);

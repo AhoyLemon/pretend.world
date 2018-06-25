@@ -51,31 +51,21 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
   }
 }
 
-.special-feedback {
-  h1 { font-size:3vw; text-transform: uppercase; color:$prettyGood; }
-  p { margin-bottom: 2em; }
-  button { display: block; width:100%; text-align: center; cursor: pointer; background:#cdfe37; border:none;
-    span { font-size:3vw; font-weight: $bold; font-family: $font; color:#052e23; display: block; padding: 0.1em 0.35em; }
-  }
-}
 
-.special-headline { font-size:3vw; }
-
-/*
-
-.mission {
-  //h1 { margin-bottom: 1em; }
-  h2 { font-size: 3vw; margin-bottom: 0.35em; text-align: center; text-transform: uppercase; }
-  .mission-start {margin-top: 6vh; margin-bottom: 0;
-    //.big-text { font-size:4vw; }
-    button { display: block; width:100%; cursor: pointer; background:#cdfe37; border:none;
-      span { font-size:3.6vw; font-weight: $bold; font-family:$font; padding: 0.05em 0.35em; text-transform: uppercase; color:#052e23; transform: scale(1); display: block; transition:transform 0.1s ease; }
-      //&:hover { transform: scale(1.05); }
+.special-screen {
+  .special-feedback {
+    h1 { font-size:3vw; text-transform: uppercase; color:$neutral; }
+    h2 { font-size:3.5vw; text-align: center; }
+    p { margin-bottom: 2em; }
+    button { display: block; width:100%; text-align: center; cursor: pointer; background:#cdfe37; border:none;
+      span { font-size:3vw; font-weight: $bold; font-family: $font; color:#052e23; display: block; padding: 0.1em 0.35em; }
     }
   }
-}
 
-*/
+  > figure { background-size:cover; }
+
+  .game-over { font-size:3.2vw; color:$veryBad; }
+}
 
 .correct { color: $correct; }
 .close   { color: $yellow; }
