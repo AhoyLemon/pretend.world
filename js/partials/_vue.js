@@ -115,11 +115,10 @@ var app = new Vue({
       let self = this;
       if (self.my.seenCheese == false && self.my.stepsToCheese < settings.stepsToCheese) {
         self.cheeseScreen('show');
-      } else if (self.dangerZone && self.my.mood == 'veryBad' && self.my.previousMood == 'veryBad') {
+      } else if (self.dangerZone && self.my.previousMood == 'veryBad' && self.answer == 'wrong') {
         self.specialScreen.show = true;
         self.specialScreen.type = "lose";
         self.specialScreen.pic = 'img/gameover/taco-bell.jpg';
-
         self.specialScreen.headline = "You lose!";
         self.specialScreen.message = "Having angered enough party guests, you've been kicked out of the party. You get a few nacho cheese chalupas from a nearby Taco Bell, and feel awful afterwards. "
         self.specialScreen.gameOver = true;
@@ -127,7 +126,6 @@ var app = new Vue({
         self.specialScreen.show = true;
         self.specialScreen.type = "win"
         self.specialScreen.pic = 'img/gameover/cheese-stock.jpg';
-
         self.specialScreen.headline = "You win!"
         self.specialScreen.message = "Here is a stock photo of a lady eating cheese"
         self.specialScreen.gameOver = true;
