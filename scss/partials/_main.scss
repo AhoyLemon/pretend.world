@@ -4,61 +4,48 @@
 html { background:$body; color:$white; }
 
 .screen {
-  > figure { @include position(fixed,0,0,0,50%); background-size:contain; background-position: center; background-repeat: no-repeat; }
+  > figure { background-size:contain; background-position: center; background-repeat: no-repeat; }
 }
 
-.button-holder { text-align: center; }
+figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padding-right:2em;
 
-
-
-figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include flex-center(); padding-left: 2em; padding-right:2em;
-
-  p { font-size:$fontSize; line-height:$lineHeight; margin-bottom: 0.75em; display: block; margin-left: auto; margin-right: auto; max-width: 36em; text-align: center; }
+  p { line-height:$lineHeight; margin-bottom: 0.75em; display: block; margin-left: auto; margin-right: auto; max-width: 36em; }
 
   h1 { text-align: center; margin-bottom: 3vh;
-    .medium-text { font-family: $font; font-size:2.8vw; font-weight: 400; margin-bottom: 0.35em; }
-    .big-text { font-family:$headline; font-size:4vw; line-height: 90%; text-transform: uppercase; }
+    .medium-text { font-family: $font; font-weight: $medium; margin-bottom: 0.35em; }
+    .big-text { font-family:$headline; line-height: 90%; text-transform: uppercase; }
   }
 
   .question { 
-    form { width:33vw; margin-left: auto; margin-right: auto; display: block;
-      label  { font-size:2.25vw; text-align: center; margin-top: 1em; margin-bottom: 1em; font-weight: 300; font-style: italic; display:block; }
-      input { display: block; width:100%; font-size:1.75vw; padding: 0.3em 0.5em; font-family: $font; }
-      button { background: $red; color:$white; border:none; font-size:1.75vw; padding: 0.15em 0.5em; display: block; margin-left: auto; cursor: pointer; font-family: $headline; transition:opacity 0.3s linear;
-        &[disabled] { opacity: 0; }
-      }
+    form { display: block;
+      label  { margin-top: 1em; margin-bottom: 1em; font-weight: 300; font-style: italic; display:block; }
+      input { display: block; width:100%; padding: 0.3em 0.5em; font-family: $font; }
+      button { display: block; transition:opacity 0.3s linear; @extend %button; }
     }
   }
 }
 
-.impersonator-website { @include position(absolute,null,0,2rem,0); 
-  .button { background: $yellow; padding:0.5em 1em; font-size:14px; color:$body; text-decoration: none; border:1px solid $body;
+.impersonator-website {
+  .button { @extend %button; text-transform: none; background: $white; color:darken($buttonColor, 25%); border:1px solid darken($buttonColor, 15%);
     &:hover { background:$black; color:$yellow; }
   }
 }
 
 
-.feedback { text-align: center; 
-  h2 { font-size: 4vw; font-family: $headline; margin-bottom: 0.35em;
-    
-  }
-  p { margin-bottom: 1em; display: block; max-width: 36em; text-align: center; font-size:$fontSize; line-height:$lineHeight; }
-
-  .button-holder { padding-top: 3em;
-    button { font-size:1.5em; padding:0.25em 1em; font-family:$headline; cursor: pointer;
-      &:hover, &:focus { background:darken($blue,15%); color:$white; }
-    }
-  }
+.feedback {
+  h2 { font-family: $headline; margin-bottom: 0.35em; }
+  p { margin-bottom: 1em; display: block; max-width: 36em; line-height:$lineHeight; }
+  button { @extend %button; }
 }
 
 
 .special-screen {
   .special-feedback {
-    h1 { font-size:3vw; text-transform: uppercase; color:$neutral; }
-    h2 { font-size:3.5vw; text-align: center; }
+    h1 { text-transform: uppercase; color:$neutral; }
+    h2 { text-align: center; }
     p { margin-bottom: 2em; }
-    button { display: block; width:100%; text-align: center; cursor: pointer; background:#cdfe37; border:none;
-      span { font-size:3vw; font-weight: $bold; font-family: $font; color:#052e23; display: block; padding: 0.1em 0.35em; }
+    button { @extend %button; background:#b0ee9a; border-color: #b0ee9a;
+      span { font-size:150%; font-weight: $bold; color:darken($black,7%); padding-left: 0.5em; padding-right:0.5em;  }
     }
   }
 
@@ -78,9 +65,76 @@ figcaption { @include position(fixed,0,50%,0,0); font-family: $font; @include fl
 
 
 @media screen and (max-width:$mobile-max) {
+  .screen {
+    > figure { @include position(fixed,0,0,50%,0); }
+    figcaption { @include position(fixed,50%,0,0,0); overflow-x: hidden; align-items: flex-start; padding-top: 1em; padding-bottom: 1.5em;
+      .medium-text { font-size:16px; }
+      .big-text { font-size:8.8vw; }
+      p { font-size:14px; }
+      .danger-zone-paragraph { @include position(fixed,null,0,0,0); background:$veryBad; margin: 0; color:darken($black,20%); padding: 0.25em 1em; text-align: center; font-size:3vw; font-weight: $bold; }
+
+
+      .question { @include flex-container();
+        > * { @include flex-item(100%); }
+        .question-wrapper { order: 1;
+          label { margin-top: 0; margin-bottom: 0.25em; padding-left: 0.5em; }
+          button { padding-left: 1em; padding-right: 1em; margin-bottom: 1em; font-size:16px; }
+        }
+        .mood-feedback, .cheese-feedback { order:2; }
+      }
+      
+      .feedback {
+        h2 { font-size:9vw; text-align: center; }
+      }
+
+    }
+    .impersonator-website { @include position(absolute,null,0,0,0); text-align: center;
+      .button { font-size:12px; }
+    }
+  }
+
+  .special-screen {
+    h1 { font-size:9vw; }
+    h2 { font-size:7vw; }
+    p { font-size:14px; }
+    button {
+      span { font-size:18px; }
+    }
+  }
 
 }
 
-@media screen and (max-width:$desktop-min) {
-  
+@media screen and (min-width:$desktop-min) {
+  .screen {
+    > figure { @include position(fixed,0,0,0,50%); }
+    figcaption { @include position(fixed,0,50%,0,0);
+      .medium-text { font-size:2.8vw; }
+      .big-text { font-size:4vw; }
+      h1 { text-align: center; }
+      h2 { text-align: center; }
+      p { font-size:18px; }
+      form { width:33vw; margin-left: auto; margin-right: auto; 
+        label { font-size:1.75vw; margin-bottom: 0.1em; padding-left: 0.5em; }
+        input { font-size:1.75vw; }
+        button { font-size:1.75vw; margin-left: auto; display: block; }
+      }
+
+      .feedback {
+        h2 { font-size: 4vw; }
+        .button-holder { padding-top: 3em; }
+        button { font-size:1.5em; }
+      }
+
+    }
+
+    .impersonator-website { @include position(absolute,null,0,2rem,0); }
+  }
+
+  .special-screen {
+    h1 { font-size:3vw; }
+    h2 { font-size:3.5vw; }
+    button { display: block; text-align: center; margin-left: auto; margin-right: auto; font-size:22px; }
+  }
+
+  .button-holder { text-align: center; }
 }

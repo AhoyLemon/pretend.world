@@ -36,7 +36,8 @@ const cheeseStatus = {
     "The cheese had been delicately rolled in slivered almonds, concealing the golden spread within. You sniff the air. Did those geniuses even include a hint of scallion? You must get closer.",
     "You glance past the latest impersonator back to the cheese table and gasp, as bits of the beautiful, once whole log have been damaged by rabid impersonator wolves. But none shall keep you from sampling that luscious log.",
     "A knife slices into the cheese log, and you hiss like a vampire. You watch a guest draw the cheese and cracker into his mouth, and he doesn’t even appreciate it. Not like <i>you</i> would.",
-    "Over there she lay, the most beautiful thing in the world. Nothing can compare to her beauty, her grace, her easily spreadable interior. The most expensive cheeses rolled into a log shape rested on a silver platter, soley for you."
+    "Over there she lay, the most beautiful thing in the world. Nothing can compare to her beauty, her grace, her easily spreadable interior. The most expensive cheeses rolled into a log shape rested on a silver platter, soley for you.",
+    "Mmmmmmmmmmmmmmmm, that's one <i>greezy log!</i>"
   ]
 
 };

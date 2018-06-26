@@ -1,5 +1,5 @@
 const minglingHeadlines = [
-  ["you're getting", "to know people"],
+  ["you're getting to", "know people"],
   ["you are", "mingling"],
   ["you are", "introducing yourself"],
   ["you're just", "getting started"]
@@ -46,7 +46,7 @@ const partyMoods = {
     "You ask several of the guests to follow you on Twitter and a few people take out their phones.",
     "After several rousing and very fake stories, you notice one guest constantly shouting out positive remarks on cue. You've picked up a hype man.",
     "The lights turn down and you are lit by a bright spotlight. After a short announcement, much applause, and a very nice tiara, you are crowned Best Party Guest.",
-    "The music picks up and a congo line forms with you at the head.",
+    "The music picks up and a conga line forms with you at the head.",
     "An Elon Musk impersonator invites you to a party at his yacht next weekend. You're sure he doesn't own a yacht, but appreciate the invitation regardless.",
     "You receive several compliments on your Gore Vidal impression, even though you were trying to do a George Will.",
     "You hit it off with a Key and Peele pair and they invite you to the photobooth to commemorate your new friendship.",

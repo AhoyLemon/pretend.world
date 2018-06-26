@@ -569,5 +569,40 @@ const impersonators = [
     sex: 'm',
     url: "https://mirrorimages.co/portfolio/danny-devito/"
   },
+
+  // Misc
+  {
+    file: "kid-rock.jpg",
+    celebrity: "Kid Rock",
+    sex: 'm',
+    url: "https://www.gigmasters.com/impersonator/kid-rock-look-alike"
+  },
+  {
+    file: "james-dean.jpg",
+    celebrity: "James Dean",
+    sex: 'm',
+    url: "http://www.applause.com.au/act/james-dean.html"
+  },
+  {
+    file: "rob-ford.jpg",
+    celebrity: "Rob Ford",
+    variants: [ "Robert Ford" ],
+    sex: 'm',
+    url: "https://www.flickr.com/photos/chicagopartyentertainment/14808314948/in/dateposted/"
+  },
+  {
+    file: "ricky-gervais.jpg",
+    celebrity: "Ricky Gervais",
+    variants: [ "Rickie Gervais", "Ricky Gervais", "Rickie Gervase", "David Brent" ],
+    sex: 'm',
+    url: "http://www.scarlettentertainment.com/page/ricky-gervais-impersonator"
+  },
+  {
+    file: "simon-cowell.jpg",
+    celebrity: "Simon Cowell",
+    variants: [ "Simon Cowel" ],
+    sex: 'm',
+    url: "http://www.scarlettentertainment.com/page/simon-cowell-lookalike"
+  },
   
 ];

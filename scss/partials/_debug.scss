@@ -18,3 +18,11 @@
   &:hover { background:black; color:white; }
 
 }
+
+@media screen and (max-width:$mobile-max) {
+  .debug, .debug-toggle { display:none; }
+}
+
+@media screen and (max-width:$desktop-min) {
+  
+}

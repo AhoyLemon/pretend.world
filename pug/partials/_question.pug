@@ -16,10 +16,10 @@
   
   .mood-feedback(v-else)
     p(v-html="feedback.moodMessage")
-    p(v-if="dangerZone == true" :class="my.mood") You are in danger of being kicked out of the party.
+    p.danger-zone-paragraph(v-if="dangerZone == true" :class="my.mood") You are in danger of being kicked out of the party.
 
   .question-wrapper
     form(@submit.prevent="checkName()" :disabled="guess.length < 4")
       label(for="guess") Who is this supposed to be?
       input(type="text" v-model="guess" placeholder="Type your guess here" v-focus name="guess")
-      button(type="submit" :disabled="guess.length < 4" ) Guess!
+      button(type="submit" :disabled="guess.length < 4" ) Guess

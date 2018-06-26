@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-25@16:24:32">
+    <meta http-equiv="last-modified" content="2018-05-26@16:20:19">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/pretend.css?lastUpdated=2018-05-25@16:24:32" rel="stylesheet">
+    <link href="css/pretend.css?lastUpdated=2018-05-26@16:20:19" rel="stylesheet">
   </head>
   <body>
     <div id="app">
@@ -66,13 +66,13 @@
               </div>
               <div class="mood-feedback" v-else>
                 <p v-html="feedback.moodMessage"></p>
-                <p v-if="dangerZone == true" :class="my.mood">You are in danger of being kicked out of the party.</p>
+                <p class="danger-zone-paragraph" v-if="dangerZone == true" :class="my.mood">You are in danger of being kicked out of the party.</p>
               </div>
               <div class="question-wrapper">
                 <form @submit.prevent="checkName()" :disabled="guess.length &lt; 4">
                   <label for="guess">Who is this supposed to be?</label>
                   <input type="text" v-model="guess" placeholder="Type your guess here" v-focus name="guess">
-                  <button type="submit" :disabled="guess.length &lt; 4">Guess!</button>
+                  <button type="submit" :disabled="guess.length &lt; 4">Guess</button>
                 </form>
               </div>
             </div>
@@ -84,7 +84,7 @@
               <div class="mood-feedback" v-if="feedback.showCheeseMessage">
                 <p v-if="my.mood != my.previousMood" v-html="feedback.moodMessage" :class="my.mood"></p>
                 <p v-if="my.mood == my.previousMood" v-html="feedback.moodMessage"></p>
-                <p v-if="dangerZone == true">You are in danger of being kicked out of the party.</p>
+                <p class="danger-zone-paragraph" v-if="dangerZone == true" :class="my.mood">You are in danger of being kicked out of the party.</p>
               </div>
               <div class="button-holder">
                 <button class="keep-mingling" @click="nextRound()" v-focus>Keep Mingling</button>

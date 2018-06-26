@@ -96,6 +96,7 @@ var app = new Vue({
 
       // Who are you going to meet?
       let i = randomFrom(self.celebrities);
+      //let i = self.celebrities[88];
       self.current.pic = picPath + i.file;
       self.current.name = i.celebrity;
       self.current.url = i.url;
