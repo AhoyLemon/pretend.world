@@ -372,7 +372,7 @@ var app = new Vue({
         self.my.seenCheese = true;
         self.specialScreen.show = true;
         self.specialScreen.type = "cheese";
-        self.specialScreen.pic = 'img/cheeselog/1.jpg';
+        self.specialScreen.pic = 'img/cheeselog/sn-1.jpg';
 
         self.specialScreen.headline = randomFrom(cheeseIntroHeadlines);
         self.specialScreen.message = randomFrom(cheeseIntroMessages);
