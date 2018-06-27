@@ -27,7 +27,7 @@ figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padd
 
 .impersonator-website {
   .button { @extend %button; text-transform: none; background: $white; color:darken($buttonColor, 25%); border:1px solid darken($buttonColor, 15%);
-    &:hover { background:$black; color:$yellow; }
+    &:hover { background:$buttonColor; color:$yellow; }
   }
 }
 
