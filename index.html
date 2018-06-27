@@ -6,22 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-05-26@16:20:19">
+    <meta http-equiv="last-modified" content="2018-05-26@22:04:13">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/pretend.css?lastUpdated=2018-05-26@16:20:19" rel="stylesheet">
+    <link href="css/pretend.css?lastUpdated=2018-05-26@22:04:13" rel="stylesheet">
   </head>
   <body>
     <div id="app">
-      <button class="debug-toggle" :class="{on: debugMode == true, off: debugMode == false}" @click="debugMode = !debugMode">Debug</button>
-      <header class="debug" v-if="debugMode == true">
-        <div class="boxes">
-          <div class="box"><span class="label">round</span><span class="data">{{my.round}}</span></div>
-          <div class="box"><span class="label">score</span><span class="data">{{my.score}}</span></div>
-          <div class="box"><span class="label">mood</span><span class="data">{{my.mood}}</span></div>
-          <div class="box"><span class="label">warmUp</span><span class="data">{{warmUp}}</span></div>
-          <div class="box"><span class="label">dangerZone</span><span class="data">{{dangerZone}}</span></div>
-        </div>
-      </header>
+      <!--include partials/_debug.pug-->
       <main v-cloak>
         <div class="screen special-screen" v-if="specialScreen.show">
           <figure :style="{ backgroundImage: 'url(' + specialScreen.pic + ')' }"></figure>
