@@ -4,7 +4,7 @@
 html { background:$body; color:$white; }
 
 .screen {
-  > figure { background-size:contain; background-position: center; background-repeat: no-repeat; }
+  > figure { background-size:contain; background-repeat: no-repeat;  }
 }
 
 figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padding-right:2em;
@@ -112,7 +112,7 @@ figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padd
 
 @media screen and (min-width:$desktop-min) {
   .screen {
-    > figure { @include position(fixed,0,0,0,50%); }
+    > figure { @include position(fixed,0,0,0,50%); background-position: center right; }
     figcaption { @include position(fixed,0,50%,0,0);
       .medium-text { font-size:2.8vw; }
       .big-text { font-size:4vw; }

@@ -421,6 +421,124 @@ const impersonators = [
     url: "http://www.celebrity-lookalikes.com/sharpton.htm"
   },
 
+  { 
+    file: "tom-selleck.jpg",
+    celebrity: "Tom Selleck",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/tom-selleck.htm"
+  },
+  { 
+    file: "rosanne-barr.jpg",
+    celebrity: "Roseanne Barr",
+    variants: [ "Rosanne Barr", "Roseanne", "Roseanne Arnold", "Rosanne" ],
+    sex: 'f',
+    url: "http://www.lookalike.com/lookalikes/roseanne-barr.htm"
+  },
+  { 
+    file: "jeff-foxworthy.jpg",
+    celebrity: "Jeff Foxworthy",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/jeff-foxworthy.htm"
+  },
+  { 
+    file: "richard-gere.jpg",
+    celebrity: "Richard Gere",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/richard-gere-dr.htm"
+  },
+  { 
+    file: "salma-hayek.jpg",
+    celebrity: "Salma Hayek",
+    variants: [ "Selma Hayek", "Salma Heyek" ],
+    sex: 'f',
+    url: "http://www.lookalike.com/lookalikes/salma-hayek-eo.htm"
+  },
+  { 
+    file: "paris-hilton.jpg",
+    celebrity: "Paris Hilton",
+    sex: 'f',
+    url: "http://www.lookalike.com/lookalikes/paris-hilton.htm"
+  },
+  { 
+    file: "bill-maher.jpg",
+    celebrity: "Bill Maher",
+    variants: [ "Bill Mahr" ],
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/bill-maher-dv.htm"
+  },
+  { 
+    file: "jennifer-lopez.jpg",
+    celebrity: "Jennifer Lopez",
+    variants: [ "JLo", "J. Lo", "J Lo" ],
+    sex: 'f',
+    url: "http://www.lookalike.com/lookalikes/jennifer-lopez.htm"
+  },
+  { 
+    file: "billy-mays.jpg",
+    celebrity: "Billy Mays",
+    variants: [ "Bill Mays", "Billy Maze" ],
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/billy-mays-jd.htm"
+  },
+  { 
+    file: "chuck-norris.jpg",
+    celebrity: "Chuck Norris",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/chuck-norris-cm.htm"
+  },
+  { 
+    file: "sharon-osbourne.jpg",
+    celebrity: "Sharon Osbourne",
+    variants: [ "Sharon Osbourn", "Sharon Osborn", "Sharon Osborne", "Sharon Ozborn", "Sharon Ozborne" ],
+    sex: 'f',
+    url: "http://www.lookalike.com/lookalikes/sharon-osbourne-sd.htm"
+  },
+  { 
+    file: "joe-pesci.jpg",
+    celebrity: "Joe Pesci",
+    variants: [ "Joe Peshy", "Joe Peschi" ],
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/joe-pesci-vc.htm"
+  },
+  { 
+    file: "jack-nicholson.jpg",
+    celebrity: "Jack Nicholson",
+    variants: [ "Jack Nicolson", "Jack Nicholsen", "Jack Nickelson", "Jack Nichelson" ],
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/jack-nicholson-rj.htm"
+  },
+  { 
+    file: "sam-kinison.jpg",
+    celebrity: "Sam Kinison",
+    variants: [ "Sam Kinnison", "Sam Kennison", "Sam Kenison" ],
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/sam-kennison.htm"
+  },
+  { 
+    file: "damon-wayans.jpg",
+    celebrity: "Damon Wayans",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/damon-wayan.htm"
+  },
+  { 
+    file: "bill-clinton.jpg",
+    celebrity: "Bill Clinton",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/bill-clinton-et.htm"
+  },
+  { 
+    file: "keith-urban.jpg",
+    celebrity: "Keith Urban",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/keith-urban.htm"
+  },
+  { 
+    file: "john-mccain.jpg",
+    celebrity: "John McCain",
+    sex: 'm',
+    url: "http://www.lookalike.com/lookalikes/john-mccain-fk.htm"
+  },
+
 
   // Tribute Productions
   {
@@ -604,6 +722,38 @@ const impersonators = [
     variants: [ "Simon Cowel" ],
     sex: 'm',
     url: "http://www.scarlettentertainment.com/page/simon-cowell-lookalike"
+  },
+
+  // LV Impersonators
+  {
+    file: "vin-diesel.jpg",
+    celebrity: "Vin Diesel",
+    sex: 'm',
+    url: "http://www.lvimpersonators.com/profile/chad-geidel"
+  },
+  {
+    file: "marilyn-monroe.jpg",
+    celebrity: "Marilyn Monroe",
+    sex: 'f',
+    url: "http://www.lvimpersonators.com/profile/catherine-thogersen"
+  },
+  {
+    file: "charlie-sheen.jpg",
+    celebrity: "Charlie Sheen",
+    sex: 'm',
+    url: "http://www.lvimpersonators.com/profile/dave-burleigh/"
+  },
+  {
+    file: "christina-aguilera.jpg",
+    celebrity: "Christina Aguilera",
+    sex: 'f',
+    url: "http://www.lvimpersonators.com/profile/christina-shaw3"
+  },
+  {
+    file: "celine-dion.jpg",
+    celebrity: "Celine Dion",
+    sex: 'f',
+    url: "http://www.lvimpersonators.com/profile/morgane-latouche"
   },
   
 ];
