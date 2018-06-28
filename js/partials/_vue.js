@@ -447,14 +447,6 @@ var app = new Vue({
       let self = this;
       sendEvent('Impersonator Website', self.current.name, self.current.url);
       window.open(self.current.url, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
-    },
-
-    gameOver(g) {
-      if (g == 'win') {
-
-      } else if (g == 'lose') {
-        alert('you fucking lose');
-      }
     }
     
   },
