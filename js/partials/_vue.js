@@ -195,17 +195,26 @@ var app = new Vue({
                 "shakes your hand a bit too aggressively",
                 "introduces " +self.himself +" ",
                 "smiles widely ",
-                "lets you touch "+self.his+" hair" 
+                "lets you touch "+self.his+" hair",
+                "playfully tweaks your nose",
+                "asks if you can link up on Ello",
+                "offers you a cigarette",
               ],
                 ", and you chat for a bit about ",
                   [ 
                     "the Philadelphia Eagles.",
                     "Trump.",
                     "the United Nations and Palestine.", 
-                    //"who you think is sleeping with whom.", 
                     "utter nonsense.",
                     "cocktail recipes.",
-                    "lawn maintenance."
+                    "lawn maintenance.",
+                    "penny stocks.",
+                    "methods of hypnosis.",
+                    "your mutual appreciation for The Beatnuts",
+                    "your favorite recurring dreams",
+                    "pickled cabbage and the LA Kings",
+                    "that river in Ohio that used to catch fire all the time",
+                    "crimes"
                   ]
           ],
           [
@@ -224,7 +233,8 @@ var app = new Vue({
                     "make utterly baseless guesses about who at the party is sleeping together.",
                     "trade recipes for polenta.",
                     "discuss how well "+self.current.name+" aged.",
-                    "brainstorm an ideal <i>Match Game</i> cast."
+                    "brainstorm an ideal <i>Match Game</i> cast.",
+                    "discuss your respective skin care routines"
                   ]
           ]
         ];
@@ -246,7 +256,7 @@ var app = new Vue({
           [
             "“"+self.guess+", right?” you ask.",
               [ 
-                self.current.he+" looks at you quizzically. “"+bold(self.current.name)+" actually.” “That's what I said. "+self.current.name+".” You confidently reply.",
+                self.he+" looks at you quizzically. “"+bold(self.current.name)+" actually.” “That's what I said. "+self.current.name+".” You confidently reply.",
                 "“Did you say "+self.current.name+" or "+self.guess+"?” "+self.he+" asks you. “Which is the right one?” you reply. “What?” "+self.he+" he asks. You then ask if "+self.he+" wants to see a magic trick, but do not perform one.",
                 "“You mean "+self.current.name+"” he asks. You tell him that's what you meant."
               ]
@@ -258,6 +268,18 @@ var app = new Vue({
                 "He thanks you for saying so, and doesn't correct you by pronouncing it "+bold(self.current.name)+"."
               ]
           ],
+          [
+            "The "+bold(self.current.name)+" impersonator weighs the pros and cons of correcting you, and ultimately ",
+              [
+                "points over your shoulder and shouts “Is that Beyoncé!?” but your back is to the wall. You see "+self.him+" give a sad look, and finally turn around out of politeness.",
+                "realizing life is too short, "+self.he+" mutters “Sure.” and then pushes past you.",
+                "sighs, pinches the bridge of "+self.his+" nose, and just kind of stands there. After three minutes, you realize "+self.she+" has fallen asleep.",
+                "decides on chewing scenery. “"+self.guess+"!!??” "+self.he+" bellows, and then gives a perfomative sob with "+self.his+" face in the crook of "+self.his+" elbow. Nearby guests politely applaud.",
+                "hands you a business card that says “"+self.current.name+". (Not "+self.guess+")” and slinks away.",
+                "throws an arm around your shoulders and says “close enough!” As the heartbreak of halitosis sinks in, you realize it might be <i>too</i> close."
+              ]
+
+          ]
         ];
         self.feedback.answerMessage = workThisArray(closeMessages);
 
@@ -278,7 +300,8 @@ var app = new Vue({
                     "You apologize profusely and "+self.he+" seems placated.",
                     "You distract "+self.him+" by asking "+self.his+" workout routine.",
                     "You lift your shirt collar over your face and "+self.he+" goes away.",
-                    "You try to change topics, but the only one you can think of is javascript, and nobody <i>ever</i> wants to talk about javascript."
+                    "You try to change topics, but the only one you can think of is javascript, and nobody <i>ever</i> wants to talk about javascript.",
+                    "So "+self.he+" tells you about "+self.his+" time at "+self.current.name+" school and how good"+self.his+" grades were. This goes on for some time."
                   ]
           ],
           [
@@ -300,7 +323,8 @@ var app = new Vue({
                     "You feel genuine shame.",
                     "You fold your arms and look around the room for a couple minutes.",
                     "You apologize, and "+self.he+" immediately forgives you.",
-                    "You apologize, but "+self.he+" doesn't forgive you."
+                    "You apologize, but "+self.he+" doesn't forgive you.",
+                    "“Pistols at dawn!” "+capitalize(self.he)+" declares. “And pray you're a better shot than "+self.guess+" was!”"
                   ]
           ],
           [
@@ -318,7 +342,8 @@ var app = new Vue({
                   "directly into your face.",
                   "and you excuse yourself to the bathroom to break "+self.his+" line of sight.",
                   "and you weep openly in front of "+self.him+".",
-                  "and the whole party turns to look at you."
+                  "and the whole party turns to look at you.",
+                  "and then snaps his teeth at you, like Val Kilmer in Top gun. Perhaps not intimidating, but <i>definitely</i> unsettling"
                 ]
           ]
         ];
@@ -373,7 +398,7 @@ var app = new Vue({
         self.my.seenCheese = true;
         self.specialScreen.show = true;
         self.specialScreen.type = "cheese";
-        self.specialScreen.pic = 'img/cheeselog/sn-1.jpg';
+        self.specialScreen.pic = 'img/cheeselog/desktop.jpg';
 
         self.specialScreen.headline = randomFrom(cheeseIntroHeadlines);
         self.specialScreen.message = randomFrom(cheeseIntroMessages);

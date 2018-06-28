@@ -51,6 +51,10 @@ figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padd
 
   > figure { background-size:cover; }
 
+  &.cheese {
+    figure { background-position: center bottom; }
+  }
+
   .game-over { font-size:3.2vw; color:$veryBad; }
 }
 

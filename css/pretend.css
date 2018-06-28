@@ -308,6 +308,9 @@ figcaption {
 .special-screen > figure {
   background-size: cover; }
 
+.special-screen.cheese figure {
+  background-position: center bottom; }
+
 .special-screen .game-over {
   font-size: 3.2vw;
   color: #e84040; }
