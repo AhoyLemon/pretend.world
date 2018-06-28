@@ -268,6 +268,7 @@ const impersonators = [
   { 
     file: "andie-mcdowell-1.jpg",
     celebrity: "Andie McDowell",
+    variants: [ "Andie MacDowell", "Andy MacDowell" ],
     sex: 'f',
     url: "http://www.classiqueproductions.com/pages/andie-mcdowell-impersonator-1.htm"
   },

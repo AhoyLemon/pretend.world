@@ -20,7 +20,9 @@ figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padd
     form { display: block;
       label  { margin-top: 1em; margin-bottom: 1em; font-weight: 300; font-style: italic; display:block; }
       input { display: block; width:100%; padding: 0.3em 0.5em; font-family: $font; }
-      button { display: block; transition:opacity 0.3s linear; @extend %button; }
+      button { display: block; transition:opacity 0.3s linear; @extend %button; opacity: 1;
+        &:disabled { opacity: 0; }
+      }
     }
   }
 }

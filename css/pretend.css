@@ -264,7 +264,10 @@ figcaption {
       display: block;
       -webkit-transition: opacity 0.3s linear;
       -o-transition: opacity 0.3s linear;
-      transition: opacity 0.3s linear; }
+      transition: opacity 0.3s linear;
+      opacity: 1; }
+      figcaption .question form button:disabled {
+        opacity: 0; }
 
 .impersonator-website .button {
   text-transform: none;
