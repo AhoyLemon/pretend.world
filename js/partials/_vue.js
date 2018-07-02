@@ -447,6 +447,11 @@ var app = new Vue({
       let self = this;
       sendEvent('Impersonator Website', self.current.name, self.current.url);
       window.open(self.current.url, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
+    },
+    visitIllustratorWebsite() {
+      let self = this;
+      sendEvent('Illustrator Website', 'Sanguinary Novel', 'https://twitter.com/aberrantwhimsy');
+      window.open('https://twitter.com/aberrantwhimsy', '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
     }
     
   },

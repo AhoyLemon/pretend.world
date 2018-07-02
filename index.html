@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="You are at a party of celebrity impersonators.">
-    <meta http-equiv="last-modified" content="2018-05-28@12:36:47">
+    <meta http-equiv="last-modified" content="2018-06-02@11:17:21">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/pretend.css?lastUpdated=2018-05-28@12:36:47" rel="stylesheet">
+    <link href="css/pretend.css?lastUpdated=2018-06-02@11:17:21" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,7 +40,9 @@
       <!--include partials/_debug.pug-->
       <main v-cloak>
         <div class="screen special-screen" v-if="specialScreen.show" v-bind:class="specialScreen.type">
-          <figure :style="{ backgroundImage: 'url(' + specialScreen.pic + ')' }"></figure>
+          <figure :style="{ backgroundImage: 'url(' + specialScreen.pic + ')' }">
+            <div class="button-holder impersonator-website" v-if="specialScreen.gameOver"><a class="button" @click="visitIllustratorWebsite()">illustrator website</a></div>
+          </figure>
           <figcaption>
             <div class="inner special-feedback">
               <div class="status"> 
