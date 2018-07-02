@@ -9,6 +9,7 @@ Vue.directive('focus', {
 var app = new Vue({
   el: '#app',
   data: {
+    sidebarVisible: false,
     guess: '',
     phase: 'question',
     debugMode: true,
@@ -434,6 +435,14 @@ var app = new Vue({
         self.feedback.showCheeseMessage = false;
       }
 
+    },
+
+    toggleDrawer: function() {
+      var self = this;
+      self.sidebarVisible = !self.sidebarVisible;
+      if (self.sidebarVisible) {
+        sendEvent('Info Drawer Opened', 'Drawer Open');
+      }
     },
 
     generateFeedback() {
