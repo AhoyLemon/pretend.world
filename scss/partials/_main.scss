@@ -169,7 +169,7 @@ figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padd
         .status { width:99vh; }
         h1 { font-size:9vw; color:$veryGood; animation:youwintext 2s ease forwards; }
       }
-      figure { background-position: center top; left:20%; }
+      figure { background-position: center top; left:20%; background-image:url(../img/gameover/win-desktop.jpg) !important; }
       .game-over-holder { display:none; }
     }
 

@@ -557,7 +557,8 @@ figcaption {
       animation: youwintext 2s ease forwards; }
   .special-screen.win figure {
     background-position: center top;
-    left: 20%; }
+    left: 20%;
+    background-image: url(../img/gameover/win-desktop.jpg) !important; }
   .special-screen.win .game-over-holder {
     display: none; }
   .button-holder {
