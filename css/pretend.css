@@ -316,27 +316,15 @@ figcaption {
 .special-screen.lose figure {
   background-position: center; }
 
-.special-screen.win figcaption {
-  right: 80%;
-  bottom: 0;
-  left: 0; }
-  .special-screen.win figcaption .status {
-    width: 99vh; }
-  .special-screen.win figcaption h1 {
-    font-size: 9vw;
-    color: #21f90c;
-    -webkit-animation: youwintext 2s ease forwards;
-    animation: youwintext 2s ease forwards; }
-
 .special-screen.win figure {
-  background-position: center top;
-  left: 20%;
   -webkit-transition: all 2s ease;
   -o-transition: all 2s ease;
   transition: all 2s ease; }
 
-.special-screen.win .game-over-holder {
-  display: none; }
+.special-screen.win figcaption {
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease; }
 
 .special-screen .game-over {
   font-size: 3.2vw;
@@ -388,7 +376,8 @@ figcaption {
     top: 0;
     right: 0;
     bottom: 50%;
-    left: 0; }
+    left: 0;
+    background-position: center; }
   .screen figcaption {
     position: fixed;
     top: 50%;
@@ -481,7 +470,18 @@ figcaption {
   .special-screen p {
     font-size: 14px; }
   .special-screen button span {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .special-screen.win figure {
+    bottom: 20vw; }
+  .special-screen.win figcaption {
+    top: calc(100% - 19vw);
+    padding: 0; }
+    .special-screen.win figcaption h1 {
+      font-size: 16vw;
+      margin: 0;
+      color: #21f90c; }
+    .special-screen.win figcaption .game-over-holder, .special-screen.win figcaption p {
+      display: none; } }
 
 @media screen and (min-width: 601px) {
   .screen > figure {
@@ -542,6 +542,24 @@ figcaption {
     margin-left: auto;
     margin-right: auto;
     font-size: 22px; }
+  .special-screen.lose figure {
+    background-image: url(../img/gameover/lose-desktop.jpg) !important; }
+  .special-screen.win figcaption {
+    right: 80%;
+    bottom: 0;
+    left: 0; }
+    .special-screen.win figcaption .status {
+      width: 99vh; }
+    .special-screen.win figcaption h1 {
+      font-size: 9vw;
+      color: #21f90c;
+      -webkit-animation: youwintext 2s ease forwards;
+      animation: youwintext 2s ease forwards; }
+  .special-screen.win figure {
+    background-position: center top;
+    left: 20%; }
+  .special-screen.win .game-over-holder {
+    display: none; }
   .button-holder {
     text-align: center; } }
 

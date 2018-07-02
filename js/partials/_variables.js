@@ -1,5 +1,5 @@
 const settings = {
-  stepsToCheese: 8,
+  stepsToCheese: 2,
   warmUpRounds: 3
 };
 
