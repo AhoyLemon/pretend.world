@@ -10,6 +10,7 @@ var app = new Vue({
   el: '#app',
   data: {
     sidebarVisible: false,
+    bannerVisible: false,
     guess: '',
     phase: 'question',
     debugMode: true,
@@ -71,6 +72,12 @@ var app = new Vue({
         self.findImpersonator();
         self.generateHeadline();
         self.phase = 'question';
+      }
+
+      if (self.my.round == 5) {
+        var audio = new Audio('audio/bylemon.mp3');
+        audio.play();
+        self.bannerVisible = true;
       }
       
     },
