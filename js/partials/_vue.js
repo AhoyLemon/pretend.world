@@ -119,16 +119,16 @@ var app = new Vue({
       } else if (self.dangerZone && self.my.previousMood == 'veryBad' && self.answer == 'wrong') {
         self.specialScreen.show = true;
         self.specialScreen.type = "lose";
-        self.specialScreen.pic = 'img/gameover/taco-bell.jpg';
+        self.specialScreen.pic = 'img/gameover/lose.jpg';
         self.specialScreen.headline = "You lose!";
-        self.specialScreen.message = "Having angered enough party guests, you've been kicked out of the party. You get a few nacho cheese chalupas from a nearby Taco Bell, and feel awful afterwards. ";
+        self.specialScreen.message = "Having experienced significant problems assessing the identities of the guests as well as what others at this party would consider socially acceptable, you are told to leave.<br/><br />An hour later, you find yourself at a Taco Bell getting sick on chaulpas, and tell a Larry The Cable Guy impersonator that he's your best friend. That is the saddest moment you've ever had.";
         self.specialScreen.gameOver = true;
       } else if (self.my.stepsToCheese < 1) {
         self.specialScreen.show = true;
         self.specialScreen.type = "win";
-        self.specialScreen.pic = 'img/gameover/cheese-stock.jpg';
+        self.specialScreen.pic = 'img/gameover/win.jpg';
         self.specialScreen.headline = "You win!";
-        self.specialScreen.message = "Here is a stock photo of a lady eating cheese";
+        self.specialScreen.message = "";
         self.specialScreen.gameOver = true;
       }
     },

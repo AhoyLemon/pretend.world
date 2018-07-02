@@ -313,9 +313,50 @@ figcaption {
 .special-screen.cheese figure {
   background-position: center bottom; }
 
+.special-screen.lose figure {
+  background-position: center; }
+
+.special-screen.win figcaption {
+  right: 80%;
+  bottom: 0;
+  left: 0; }
+  .special-screen.win figcaption .status {
+    width: 99vh; }
+  .special-screen.win figcaption h1 {
+    font-size: 9vw;
+    color: #21f90c;
+    -webkit-animation: youwintext 2s ease forwards;
+    animation: youwintext 2s ease forwards; }
+
+.special-screen.win figure {
+  background-position: center top;
+  left: 20%;
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease; }
+
+.special-screen.win .game-over-holder {
+  display: none; }
+
 .special-screen .game-over {
   font-size: 3.2vw;
   color: #e84040; }
+
+@-webkit-keyframes youwintext {
+  from {
+    -webkit-transform: rotate(-90deg) translateY(-20vw) scale(0.3);
+    transform: rotate(-90deg) translateY(-20vw) scale(0.3); }
+  to {
+    -webkit-transform: rotate(-90deg) translateY(0) scale(1);
+    transform: rotate(-90deg) translateY(0) scale(1); } }
+
+@keyframes youwintext {
+  from {
+    -webkit-transform: rotate(-90deg) translateY(-20vw) scale(0.3);
+    transform: rotate(-90deg) translateY(-20vw) scale(0.3); }
+  to {
+    -webkit-transform: rotate(-90deg) translateY(0) scale(1);
+    transform: rotate(-90deg) translateY(0) scale(1); } }
 
 .correct {
   color: #3ede2e; }

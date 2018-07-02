@@ -56,9 +56,26 @@ figcaption { font-family: $font; @include flex-center(); padding-left: 2em; padd
   &.cheese {
     figure { background-position: center bottom; }
   }
+  &.lose {
+    figure { background-position: center; }
+  }
+  &.win {
+    figcaption { right:80%; bottom:0; left:0; 
+      .status { width:99vh; }
+      h1 { font-size:9vw; color:$veryGood; animation:youwintext 2s ease forwards; }
+    }
+    figure { background-position: center top; left:20%; transition:all 2s ease; }
+    .game-over-holder { display:none; }
+  }
 
   .game-over { font-size:3.2vw; color:$veryBad; }
 }
+
+@keyframes youwintext {
+  from { transform: rotate(-90deg) translateY(-20vw) scale(0.3); }
+  to   { transform: rotate(-90deg) translateY(0) scale(1); }
+}
+
 
 .correct { color: $correct; }
 .close   { color: $yellow; }
