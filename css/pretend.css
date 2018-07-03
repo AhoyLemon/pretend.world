@@ -275,7 +275,7 @@ figcaption {
   border: 1px solid #1047a5; }
   .impersonator-website .button:hover {
     background: #1a66e8;
-    color: #e9eab9; }
+    color: yellow; }
 
 .feedback h2 {
   font-family: "Limelight", cursive;
@@ -313,15 +313,44 @@ figcaption {
 .special-screen.cheese figure {
   background-position: center bottom; }
 
+.special-screen.lose figure {
+  background-position: center; }
+
+.special-screen.win figure {
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease; }
+
+.special-screen.win figcaption {
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease; }
+
 .special-screen .game-over {
   font-size: 3.2vw;
   color: #e84040; }
+
+@-webkit-keyframes youwintext {
+  from {
+    -webkit-transform: rotate(-90deg) translateY(-20vw) scale(0.3);
+    transform: rotate(-90deg) translateY(-20vw) scale(0.3); }
+  to {
+    -webkit-transform: rotate(-90deg) translateY(0) scale(1);
+    transform: rotate(-90deg) translateY(0) scale(1); } }
+
+@keyframes youwintext {
+  from {
+    -webkit-transform: rotate(-90deg) translateY(-20vw) scale(0.3);
+    transform: rotate(-90deg) translateY(-20vw) scale(0.3); }
+  to {
+    -webkit-transform: rotate(-90deg) translateY(0) scale(1);
+    transform: rotate(-90deg) translateY(0) scale(1); } }
 
 .correct {
   color: #3ede2e; }
 
 .close {
-  color: #e9eab9; }
+  color: yellow; }
 
 .wrong {
   color: #ee2a2a; }
@@ -347,7 +376,8 @@ figcaption {
     top: 0;
     right: 0;
     bottom: 50%;
-    left: 0; }
+    left: 0;
+    background-position: center; }
   .screen figcaption {
     position: fixed;
     top: 50%;
@@ -440,7 +470,18 @@ figcaption {
   .special-screen p {
     font-size: 14px; }
   .special-screen button span {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .special-screen.win figure {
+    bottom: 20vw; }
+  .special-screen.win figcaption {
+    top: calc(100% - 19vw);
+    padding: 0; }
+    .special-screen.win figcaption h1 {
+      font-size: 16vw;
+      margin: 0;
+      color: #21f90c; }
+    .special-screen.win figcaption .game-over-holder, .special-screen.win figcaption p {
+      display: none; } }
 
 @media screen and (min-width: 601px) {
   .screen > figure {
@@ -501,8 +542,305 @@ figcaption {
     margin-left: auto;
     margin-right: auto;
     font-size: 22px; }
+  .special-screen.lose figure {
+    background-image: url(../img/gameover/lose-desktop.jpg) !important; }
+  .special-screen.win figcaption {
+    right: 80%;
+    bottom: 0;
+    left: 0; }
+    .special-screen.win figcaption .status {
+      width: 99vh; }
+    .special-screen.win figcaption h1 {
+      font-size: 9vw;
+      color: #21f90c;
+      -webkit-animation: youwintext 2s ease forwards;
+      animation: youwintext 2s ease forwards; }
+  .special-screen.win figure {
+    background-position: center top;
+    left: 20%;
+    background-image: url(../img/gameover/win-desktop.jpg) !important; }
+  .special-screen.win .game-over-holder {
+    display: none; }
   .button-holder {
     text-align: center; } }
+
+.sidebar-button {
+  background: transparent;
+  border: none;
+  color: #e4dfbf;
+  position: fixed;
+  left: 5px;
+  z-index: 1005;
+  outline: none;
+  cursor: pointer; }
+  .sidebar-button svg * {
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    fill: currentColor; }
+  .sidebar-button .fill {
+    opacity: 0; }
+  .sidebar-button .x {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1); }
+  .sidebar-button .question-mark {
+    -webkit-transform-style: scale(1);
+    transform-style: scale(1); }
+  .sidebar-button:hover svg .question-mark, .sidebar-button:hover svg .x {
+    fill: #212121; }
+  .sidebar-button:hover svg .fill {
+    opacity: 1; }
+  .sidebar-button.active svg * {
+    fill: #212121; }
+  .sidebar-button.active:hover .question-mark, .sidebar-button.active:hover .x {
+    fill: #e9eab9; }
+  .sidebar-button.active .x {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  .sidebar-button.active .question-mark {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1); }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #e9eab9;
+  color: #212121;
+  width: 14em;
+  padding: 4.5rem 1rem 1rem 1rem;
+  z-index: 1004;
+  font-family: "Merriweather", serif;
+  -webkit-transform: translateX(-102%);
+  -ms-transform: translateX(-102%);
+  transform: translateX(-102%);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .sidebar ul {
+    padding: 0; }
+  .sidebar li {
+    margin-bottom: 0.65em;
+    list-style: none; }
+  .sidebar .label {
+    display: block;
+    line-height: 145%; }
+  .sidebar .indent {
+    display: block;
+    padding-left: 1em; }
+  .sidebar a {
+    color: #ee2a2a;
+    text-decoration: none;
+    cursor: pointer; }
+    .sidebar a:hover {
+      text-decoration: underline; }
+  .sidebar .smaller {
+    font-size: 0.8em; }
+  .sidebar.visible {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+
+.homescreen-help-holder {
+  background-color: rgba(33, 33, 33, 0.9);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 12; }
+  .homescreen-help-holder .homescreen-help {
+    background: #eee;
+    color: #212121;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1em; }
+  .homescreen-help-holder svg {
+    fill: currentColor; }
+    .homescreen-help-holder svg * {
+      fill: currentColor; }
+  .homescreen-help-holder .help {
+    text-align: right;
+    line-height: 160%; }
+    .homescreen-help-holder .help span {
+      display: block; }
+    .homescreen-help-holder .help svg {
+      width: 0.8em;
+      height: 0.8em; }
+  .homescreen-help-holder.ios {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%; }
+    .homescreen-help-holder.ios .help {
+      text-align: center; }
+  .homescreen-help-holder .button-holder {
+    padding-top: 1em;
+    text-align: center; }
+  .homescreen-help-holder button {
+    color: #4885ed;
+    background-color: transparent;
+    border: 2px solid #4885ed;
+    font-family: "Merriweather", serif;
+    padding: 0.25em 1em;
+    font-size: 0.9rem; }
+    .homescreen-help-holder button:hover {
+      background: #4885ed;
+      cursor: pointer;
+      color: #eee; }
+
+@media screen and (max-width: 600px) {
+  .sidebar-button {
+    top: 5px; }
+    .sidebar-button svg {
+      width: 32px;
+      height: 32px; }
+  .sidebar {
+    font-size: 14px;
+    padding-top: 50px; } }
+
+@media screen and (min-width: 601px) {
+  .sidebar-button {
+    top: 15px; }
+    .sidebar-button svg {
+      width: 50px;
+      height: 50px; }
+  .sidebar {
+    font-size: 18px;
+    padding-top: 80px; } }
+
+@media all and (display-mode: standalone) {
+  #AddToHomeScreen {
+    display: none; } }
+
+.banner {
+  background-color: yellow;
+  width: 305px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
+  .banner .icon-holder {
+    -ms-flex-preferred-size: 76px;
+    flex-basis: 76px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    padding: 10px; }
+  .banner .text-holder {
+    -ms-flex-preferred-size: calc(100% - 76px);
+    flex-basis: calc(100% - 76px);
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    font-size: 120%; }
+  .banner .text {
+    color: #212121;
+    text-decoration: none; }
+    .banner .text:hover {
+      text-decoration: underline; }
+  .banner .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer; }
+    .banner .close svg {
+      width: 18px;
+      height: 18px; }
+    .banner .close .fill {
+      opacity: 0; }
+    .banner .close:hover .x {
+      fill: yellow; }
+    .banner .close:hover .fill {
+      opacity: 1; }
+
+.animated {
+  -webkit-animation-duration: 0.65s;
+  animation-duration: 0.65s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  to {
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  to {
+    -webkit-transform: none;
+    transform: none; } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
 
 .debug {
   position: fixed;

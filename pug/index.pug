@@ -17,6 +17,8 @@ html(lang="en")
       if testing == true
         //include partials/_debug.pug
 
+      include partials/_sidebar.pug
+
       main(v-cloak)
 
         include partials/_special-screen.pug
@@ -29,6 +31,8 @@ html(lang="en")
           figcaption
             include partials/_question.pug
             include partials/_answer.pug
+      
+      include partials/_banner.pug
 
     include partials/_javascripts.pug
     include partials/_schema.pug

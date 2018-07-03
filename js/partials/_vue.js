@@ -9,6 +9,8 @@ Vue.directive('focus', {
 var app = new Vue({
   el: '#app',
   data: {
+    sidebarVisible: false,
+    bannerVisible: false,
     guess: '',
     phase: 'question',
     debugMode: true,
@@ -71,6 +73,12 @@ var app = new Vue({
         self.generateHeadline();
         self.phase = 'question';
       }
+
+      if (self.my.round == 5) {
+        var audio = new Audio('audio/bylemon.mp3');
+        audio.play();
+        self.bannerVisible = true;
+      }
       
     },
 
@@ -119,16 +127,16 @@ var app = new Vue({
       } else if (self.dangerZone && self.my.previousMood == 'veryBad' && self.answer == 'wrong') {
         self.specialScreen.show = true;
         self.specialScreen.type = "lose";
-        self.specialScreen.pic = 'img/gameover/taco-bell.jpg';
+        self.specialScreen.pic = 'img/gameover/lose-mobile.jpg';
         self.specialScreen.headline = "You lose!";
-        self.specialScreen.message = "Having angered enough party guests, you've been kicked out of the party. You get a few nacho cheese chalupas from a nearby Taco Bell, and feel awful afterwards. ";
+        self.specialScreen.message = "Having experienced significant problems assessing the identities of the guests as well as what others at this party would consider socially acceptable, you are told to leave.<br/><br />An hour later, you find yourself at a Taco Bell getting sick on chaulpas, and tell a Larry The Cable Guy impersonator that he's your best friend. That is the saddest moment you've ever had.";
         self.specialScreen.gameOver = true;
       } else if (self.my.stepsToCheese < 1) {
         self.specialScreen.show = true;
         self.specialScreen.type = "win";
-        self.specialScreen.pic = 'img/gameover/cheese-stock.jpg';
+        self.specialScreen.pic = 'img/gameover/win-mobile.jpg';
         self.specialScreen.headline = "You win!";
-        self.specialScreen.message = "Here is a stock photo of a lady eating cheese";
+        self.specialScreen.message = "";
         self.specialScreen.gameOver = true;
       }
     },
@@ -436,6 +444,14 @@ var app = new Vue({
 
     },
 
+    toggleDrawer: function() {
+      var self = this;
+      self.sidebarVisible = !self.sidebarVisible;
+      if (self.sidebarVisible) {
+        sendEvent('Info Drawer Opened', 'Drawer Open');
+      }
+    },
+
     generateFeedback() {
       //this.checkDanger();
       this.generateAnswerFeedback();
@@ -447,6 +463,11 @@ var app = new Vue({
       let self = this;
       sendEvent('Impersonator Website', self.current.name, self.current.url);
       window.open(self.current.url, '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
+    },
+    visitIllustratorWebsite() {
+      let self = this;
+      sendEvent('Illustrator Website', 'Sanguinary Novel', 'https://twitter.com/aberrantwhimsy');
+      window.open('https://twitter.com/aberrantwhimsy', '_blank', 'location=yes,height=600,width=960,scrollbars=yes,status=yes');
     }
     
   },
