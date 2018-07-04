@@ -51,7 +51,8 @@ const partyMoods = {
     "You receive several compliments on your Gore Vidal impression, even though you were trying to do a George Will.",
     "You hit it off with a Key and Peele pair and they invite you to the photobooth to commemorate your new friendship.",
     "Both you and a Joan Rivers jump into the air at the same time and manage to land a sweet high five. One of the guests even managed to snap a good photo.",
-    "Taking you aside in confidence, the Ozzy Osborne shows you the best way to bite a head off a bat - you have a sweet new party trick!"
+    "Taking you aside in confidence, the Ozzy Osborne shows you the best way to bite a head off a bat - you have a sweet new party trick!",
+    "The waiter mistakes you for Ricky Martin and gives you the bottle of rare 1669 chardonnay he requested and leaves before you can correct the mistake."
   ],
   prettyGood: [
     "You give finger guns to three separate people whom you have never met. Only one of those makes a face like you just farted. You consider this a statistical success.",
@@ -63,7 +64,8 @@ const partyMoods = {
     "You run into an old friend from high school and at least manage to remember their first name.",
     "You get an old fashioned at the bar and find a few dollars in your pocket to tip the bartender.",
     "You accidentally quote a line from <i>Monty Python And The Holy Grail</i> and nobody seems to mind. Lucky break!",
-    "You and a Morticia Addams hang around the punch bowl for a few minutes making morbid jokes, and you mostly manage to keep up."
+    "You and a Morticia Addams hang around the punch bowl for a few minutes making morbid jokes, and you mostly manage to keep up.",
+    "You run into a Jean Luc Picard impersonator and he humors you with a “Make it so”."
   ],
   neutral: [
     "You gleefully recount your favorite scene from one of the Teenage Mutant Ninja Turtle movies, which nobody you're talking to has seen.",
@@ -74,7 +76,8 @@ const partyMoods = {
     "The swan napkins on the hors d'oeuvres are looking sad, and you take a few minutes to refold them.",
     "You walk around the perimeter of the room and look for an easy conversation to slip into.",
     "You hold out your hand to shake an impersonator's hand, but they just walk by.",
-    "The weather seems nice outside. Not too hot, not too cold."
+    "The weather seems nice outside. Not too hot, not too cold.",
+    "You fiddle with your phone, checking the forum to see if anyone posted in your thread. They haven't, the snakes."
   ],
   prettyBad: [
     "The opening riff of Dee-Lite’s “Groove Is In The Heart” starts to play, and you make an utterly nonsensical joke about Grobin In The Heart? Like, Josh Grobin is in your heart? Something like that. It is a <i>terrible</i> joke and everybody heard it.",
@@ -120,6 +123,8 @@ const partyMoods = {
     "A few feet away is somebody who might be either a Brendan Eich impersonator or Brendan Eich himself. Regardless, nobody wants to talk to him about javascript.",
     "A discussion occurs about that one episode of <i>Nathan For You</i> with the Bill Gates impersonator. You miss most of the important details.",
     "You wonder if there had been a squabble over the party theme, every impersonator vying to have <i>their</i> movie recreated in the space. The result was a mixture of an 80s high school prom, derelict building props on the walls, medieval glassware, and just too much glitter.",
-    "To pass the time you try to guess which impersonators spent the most money on their costumes."
+    "To pass the time you try to guess which impersonators spent the most money on their costumes.",
+    "You watch as a Criss Angel and Queen Latifah stumble into the party late. Someone started the festivities elsewhere.",
+    "There's a Crocodile Dundee impersonator? Just how much work does he get nowadays?"
   ]
 };
