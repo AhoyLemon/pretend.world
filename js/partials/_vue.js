@@ -281,7 +281,7 @@ var app = new Vue({
               [
                 "points over your shoulder and shouts “Is that Beyoncé!?” but your back is to the wall. You see "+self.him+" give a sad look, and finally turn around out of politeness.",
                 "realizing life is too short, "+self.he+" mutters “Sure.” and then pushes past you.",
-                "sighs, pinches the bridge of "+self.his+" nose, and just kind of stands there. After three minutes, you realize "+self.she+" has fallen asleep.",
+                "sighs, pinches the bridge of "+self.his+" nose, and just kind of stands there. After three minutes, you realize "+self.he+" has fallen asleep.",
                 "decides on chewing scenery. “"+self.guess+"!!??” "+self.he+" bellows, and then gives a perfomative sob with "+self.his+" face in the crook of "+self.his+" elbow. Nearby guests politely applaud.",
                 "hands you a business card that says “"+self.current.name+". (Not "+self.guess+")” and slinks away.",
                 "throws an arm around your shoulders and says “close enough!” As the heartbreak of halitosis sinks in, you realize it might be <i>too</i> close."
