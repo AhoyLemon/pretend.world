@@ -1,7 +1,8 @@
 - var testing = true
 - var siteTitle = "PRETEND 🌐 WORLD"
 - var siteURL = "https://pretend.world"
-- var fPlusURL = false
+- var githubURL = "https://github.com/AhoyLemon/pretend.world"
+- var fPlusURL = null
 - var description = "You are at a party of celebrity impersonators."
 - var d = new Date()
 - var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
@@ -15,7 +16,7 @@ html(lang="en")
     #app
 
       if testing == true
-        //include partials/_debug.pug
+        include partials/_debug.pug
 
       include partials/_sidebar.pug
 
