@@ -11,6 +11,7 @@ var app = new Vue({
   data: {
     sidebarVisible: false,
     bannerVisible: false,
+    canCheat: canCheat,
     guess: '',
     phase: 'question',
     debugMode: true,
