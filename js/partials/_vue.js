@@ -309,7 +309,7 @@ var app = new Vue({
                     "You distract "+self.him+" by asking "+self.his+" workout routine.",
                     "You lift your shirt collar over your face and "+self.he+" goes away.",
                     "You try to change topics, but the only one you can think of is javascript, and nobody <i>ever</i> wants to talk about javascript.",
-                    "So "+self.he+" tells you about "+self.his+" time at "+self.current.name+" school and how good"+self.his+" grades were. This goes on for some time."
+                    "So "+self.he+" tells you about "+self.his+" time at "+self.current.name+" school and how good "+self.his+" grades were. This goes on for some time."
                   ]
           ],
           [
@@ -386,12 +386,14 @@ var app = new Vue({
       if (self.my.mood != self.my.previousMood) {
         self.feedback.showMoodMessage = true;
         self.feedback.moodMessage = randomFrom(partyMoods[self.my.mood]);
-      } else if (testChance(26)) {
+      } else if (testChance(37)) {
         // a certain liklihood that it will display the general mood of the party, without specifically referencing your status.
         self.feedback.showMoodMessage = true; 
-        self.feedback.moodMessage = randomFrom(partyMoods.noChange);
+        let f = partyMoods[self.my.mood];
+        self.feedback.moodMessage = randomFrom(f.concat(partyMoods.noChange));
       } else {
         self.feedback.showMoodMessage = false;
+        self.feedback.moodMessage = null;
       }
 
     },
