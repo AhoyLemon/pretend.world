@@ -52,7 +52,16 @@ const partyMoods = {
     "You hit it off with a Key and Peele pair and they invite you to the photobooth to commemorate your new friendship.",
     "Both you and a Joan Rivers jump into the air at the same time and manage to land a sweet high five. One of the guests even managed to snap a good photo.",
     "Taking you aside in confidence, the Ozzy Osborne shows you the best way to bite a head off a bat - you have a sweet new party trick!",
-    "The waiter mistakes you for Ricky Martin and gives you the bottle of rare 1669 chardonnay he requested and leaves before you can correct the mistake."
+    "The waiter mistakes you for Ricky Martin and gives you the bottle of rare 1669 chardonnay he requested and leaves before you can correct the mistake.",
+    "You are challenged to a TV show theme karaoke contest and remembered all of the lyrics to <i>Fresh Prince of Bel Aire</i>.",
+    "The crowd parts before your magnificence, and the choicest impersonators make their way over to greet you.",
+    "Another impersonator runs up with a Paul Rudd action figure and a marker, asking you to sign the box.",
+    "A deranged fan bursts into the crowd, forces his way past security right up to you. He pronounces his undying love while being dragged out of the room.",
+    "You hear a loud bang off to the left and as you follow it your gaze falls upon a group of ladies, causing them to swoon.",
+    "A lovely Janet Jackson impersonator asks you to help reenact the waltz from <i>Crimson Peak</i>.",
+    "You are made an honorary fourth Amigo.",
+    "The Mr. T impersonator gifts you one of his fine gold chains, as his grandfather would have wanted it.",
+    "You are invited back to the private Casino Royal poker room for a round. You win $10 before heading back out to the party."
   ],
   prettyGood: [
     "You give finger guns to three separate people whom you have never met. Only one of those makes a face like you just farted. You consider this a statistical success.",
@@ -65,7 +74,11 @@ const partyMoods = {
     "You get an old fashioned at the bar and find a few dollars in your pocket to tip the bartender.",
     "You accidentally quote a line from <i>Monty Python And The Holy Grail</i> and nobody seems to mind. Lucky break!",
     "You and a Morticia Addams hang around the punch bowl for a few minutes making morbid jokes, and you mostly manage to keep up.",
-    "You run into a Jean Luc Picard impersonator and he humors you with a “Make it so”."
+    "You run into a Jean Luc Picard impersonator and he humors you with a “Make it so”.",
+    "A guest graces your story with a slight grin and politely laughs before wandering off.",
+    "The Elvis impersonator asks you to hold a small mirror while he fixes his hair.",
+    "You are handed a signed headshot of a Don Rickles as he slaps your arm and calls you sport."
+    "The Mad Hatter from the Tim Burton <i>Alice in Wonderland</i> passes by without noticing you."
   ],
   neutral: [
     "You gleefully recount your favorite scene from one of the Teenage Mutant Ninja Turtle movies, which nobody you're talking to has seen.",
@@ -77,7 +90,14 @@ const partyMoods = {
     "You walk around the perimeter of the room and look for an easy conversation to slip into.",
     "You hold out your hand to shake an impersonator's hand, but they just walk by.",
     "The weather seems nice outside. Not too hot, not too cold.",
-    "You fiddle with your phone, checking the forum to see if anyone posted in your thread. They haven't, the snakes."
+    "You fiddle with your phone, checking the forum to see if anyone posted in your thread. They haven't, the snakes.",
+    "You count the ceiling tiles for a few minutes.",
+    "You stop by the drink table for a cup of punch.",
+    "You ask the waiter for directions to the bathroom. Just in case.",
+    "You rock back and forth on your feet for awhile.",
+    "You pluck at your shirt a bit and adjust your vest.",
+    "Just how many seasons of <i>Survivor</i> are there? Is that still going?",
+    "You nibble on a cracker. It's a little bland, could use something."
   ],
   prettyBad: [
     "The opening riff of Dee-Lite’s “Groove Is In The Heart” starts to play, and you make an utterly nonsensical joke about Grobin In The Heart? Like, Josh Grobin is in your heart? Something like that. It is a <i>terrible</i> joke and everybody heard it.",
@@ -99,7 +119,12 @@ const partyMoods = {
     "You jokingly ask the John F. Kennedy who actually shot him, suddenly trapping yourself in an hour long conspiracy screed involving Greenland and several Swedes.",
     "You hear a fervent knocking at the side door, a cracked voice asking to be let in. You open the door and a Larry the Cable Guy stumbles in and the guests groan.",
     "You mistake a Hank Williams Sr. for Hank Williams Jr. and he slams his guitar into the ground over the offense.",
-    "You start making rude gestures in the face of a Stevie Wonder for a laugh, forgetting that the impersonator isn't blind."
+    "You start making rude gestures in the face of a Stevie Wonder for a laugh, forgetting that the impersonator isn't blind.",
+    "A Rick Astley impersonator scoffs at you.",
+    "You steal the Will Smith impersonator's Men In Black neuralyzer and run around flashing people directly in the eyes. No one is amused.",
+    "Turns out there are people who still haven't seen <i>The Sixth Sense</i>, especially that buff Bruce Willis impersonator. Tough break.",
+    "Your rival, Ray Purchase (or his impersonator?) stares at you from across the room. It is a tense 15 minutes.",
+    "Everyone shouts “Norm!” when the impersonator walks in. Everyone also heard you shout “Neal!”"
   ],
   veryBad: [
     "A joke about Harvey Weinstein goes <i>way</i> off the rails and comes off as overtly anti-semitic. A Scarlett Johansson impersonator asks who let you in here, and you feel sweat on your forehead.",
@@ -113,6 +138,9 @@ const partyMoods = {
     "You start a fistfight with all of the different James Bonds about which Bond is best. What guests didn't see you start it certainly do not appreciate you trying to take bets.",
     "You ask the Pope John XII how his harem is fairing, only to realize too late that he was actually Pope John Paul II.",
     "A Sally Rand breaks out her ostrich feathers and sentiously starts to perform her famous fan dance for the crowd. You take this moment to ask loudly where the bathroom is and don't stop until she answers.",
+    "The Willy Wonka impersonator seeks you out specifically, hands you a plate of cheese and slaps it out of your hands, screaming “YOU GET NOTHING SIR, GOOD DAY!”",
+    "You brush past the Betty Boop impersonator, but the moment your hand brushes her thin, matchstick waist she snaps in half. The screams will never leave you.",
+    "The Sean Connery impersonator asks you what Connery movie was your favorite. All you can remember is <i>League of Extraordinary Gentlemen</i>, and he is incensed."
   ],
 
   noChange: [
@@ -125,6 +153,8 @@ const partyMoods = {
     "You wonder if there had been a squabble over the party theme, every impersonator vying to have <i>their</i> movie recreated in the space. The result was a mixture of an 80s high school prom, derelict building props on the walls, medieval glassware, and just too much glitter.",
     "To pass the time you try to guess which impersonators spent the most money on their costumes.",
     "You watch as a Criss Angel and Queen Latifah stumble into the party late. Someone started the festivities elsewhere.",
-    "There's a Crocodile Dundee impersonator? Just how much work does he get nowadays?"
+    "There's a Crocodile Dundee impersonator? Just how much work does he get nowadays?",
+    "Someone mentions seeing a very impressive Jaws impersonator, and for a moment your heart skips at thought of a man in a giant shark costume. At least the metal teeth were well crafted.",
+    "The Hannibals from <i>Silence of the Lambs</i> and <i>Hannibal</i> get into a fight over the legitimacy of the tv series."
   ]
 };
