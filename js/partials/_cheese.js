@@ -2,7 +2,10 @@ const cheeseIntroHeadlines = [
   "Look at that!",
   "Look over there!",
   "Ooooh, look!",
-  "What's this!?"
+  "What's this!?",
+  "Check it out!",
+  "Humina humina!",
+  "Oh. My. God."
 ];
 
 const cheeseIntroMessages = [
@@ -23,7 +26,12 @@ const cheeseStatus = {
     "The distance was small, but the three foot gap transformed into a massive chasm before your very eyes, and cheddar beauty lay far beyond.",
     "Had Romeo felt the same as you? Your fairest love just barely beyond your grasp, trading cheesy love notes between a wall of imprsonators, but never touching? You certainly felt as if you would die without the log.",
     "The table was unbearably close now. You roll up your sleeves and tie on a bib in anticipation.",
-    "There was no thought of accoutrements anymore, no thought given to what cracker would suffice or what wine would pair best. The log would go straight into your mouth, and you would feel no remorse."
+    "There was no thought of accoutrements anymore, no thought given to what cracker would suffice or what wine would pair best. The log would go straight into your mouth, and you would feel no remorse.",
+    "You pull out your custom cheese sampling knife, the handle notched with all of your cheesy conquests.",
+    "The cheese log now a few feet away, you begin to compose a post for your blog Cheezus Jesus about its many wonders and mouthfeel.",
+    "You pop some grated ginger into your mouth to cleanse your palete for the cheese feast before you, removing the taste of the base wine and mini wieners.",
+    "A shudder rolls down your body as you think about that log in your hand, your fingers gently running down the almond sides; it is as if you were already there.",
+    "You think indecent things about cheese - it's a little inappropriate."
   ],
   medium: [
     "Would the courts accept love of cheese as an acceptable excuse for manslaughter? Surely no jury could hold you accountable, as the cheese is what separates us from animals, as the animals at this party are keeping you from obtaining cheese enlightenment.",
@@ -31,7 +39,17 @@ const cheeseStatus = {
     "You relax your focus a bit, and notice some salami on the west end of the table. A water cracker, the salami, maybe a sliced green olive, and that wonderful, wonderful cheese. Soon this dream will become a reality.",
     "The constant guessing has left you exhausted and questioning your motives. Maybe this was too much? But then you glance over at the snacks table once more, and are filled with a renewed sense of purpose.",
     "History has always tested it's greatest men with adversity, and it is with a sense of pride and determination that you muddle through your task to the greatest prize - cheese.",
-    "With every step your cheesy fantasies grow more detailed; you would use two crackers to sandwich it, or even just lick it straight off the knife."
+    "With every step your cheesy fantasies grow more detailed; you would use two crackers to sandwich it, or even just lick it straight off the knife.",
+    "Like Odysseus you shall continue to endevor in what must be a ten year cheese quest, in spite of these dispicable Lotus Eaters blocking your way.",
+    "You stop for a moment to do a few stretches, working out the cheese longing cramps in your sides. This is a test of endurance, and you would be the winner.",
+    "You do a few small hops to peek over the heads of the impersonators - the cheese log was still there, only a little worse for wear.",
+    "Pulling out a blueprint from your pocket, you stop at an empty table to check your snack table route and note the shift in impersonator herds.",
+    "Growing impatient you reach into your back pocket for a set of smoke grenades leftover from the 4th of July. Sadly, you broke the fuses when picking up the John Wayne's handkerchief.",
+    "If you were a more violent man, you could use the basics of CQC (Cheese Quarters Combat) to knock the impersonators out of your way. But you are a pacifist, as the cheese demands.",
+    "Every clink of silverware on plates sends your gaze shooting over to the cheese log. It was in good shape right now, but for how long?",
+    "It has been three hours since your last cheese fix; your hands shake and forehead beads with sweat, breath coming fast.",
+    "Taking a private moment from the conversation, you pull out a silver cheese round on a chain from beneath your shirt, mumbling a small prayer to Saint Marcellin.",
+    "You flag down one of the wait staff and ask if they would just bring the cheese log to you? The person smiles, backing up slowly before taking off in a sprint to the kitchen."
   ],
   far: [
     "You find yourself in physical discomfort as you reckon how far you are from the cheese log. You must close the gap.",
