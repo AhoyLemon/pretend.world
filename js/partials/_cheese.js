@@ -49,7 +49,8 @@ const cheeseStatus = {
     "Every clink of silverware on plates sends your gaze shooting over to the cheese log. It was in good shape right now, but for how long?",
     "It has been three hours since your last cheese fix; your hands shake and forehead beads with sweat, breath coming fast.",
     "Taking a private moment from the conversation, you pull out a silver cheese round on a chain from beneath your shirt, mumbling a small prayer to Saint Marcellin.",
-    "You flag down one of the wait staff and ask if they would just bring the cheese log to you? The person smiles, backing up slowly before taking off in a sprint to the kitchen."
+    "You flag down one of the wait staff and ask if they would just bring the cheese log to you? The person smiles, backing up slowly before taking off in a sprint to the kitchen.",
+    "You grab the log with your hands, drawing it close to your slavering jaws, but as you chomp down you find out that it's only a Chester the Cheetah arm."
   ],
   far: [
     "You find yourself in physical discomfort as you reckon how far you are from the cheese log. You must close the gap.",
@@ -60,10 +61,12 @@ const cheeseStatus = {
     "You wonder if dressing up as the wait staff and sneaking in through the back would be a faster and easier approach, as the impersonators dogged need to be identfied was time consuming.",
     "Maybe if you said you were impersonating Ricky Gervais and that the cheese log was your prop the crowd would let you pass through.",
     "If you leaned back slightly your fingers could just reach the fire alarm. However, the Celine Dion impersonator was downing a bottle of champagne next to it and would most certainly testify against you.",
-    "You check your phone for the time and realize that your man on the outside has let you down and didn't cut the power. You'll just have to get to the cheese log the hard way."
+    "You check your phone for the time and realize that your man on the outside has let you down and didn't cut the power. You'll just have to get to the cheese log the hard way.",
+    "Would toughing this crowd really be worth it for cheese? You check double check your cheese flowchart. All options lead to YES.",
+    "The kitchen nearby, you take a gamble and call out for another cheese log at the window. The chef throws a bottle of worcestershire at you and tells you to make it yourself.",
+    "You reach into your vest pocket to pull out an emergency ration of smoked gouda. Though delicious, the snack was far from nourshing and would only tide you over for a little bit.",
   ],
   any: [
-    "These parties always have impressive spreads that spared no expense; figs from the middle east, the fresh caviar from Russia, and freshly baked pastries from France. All garbage for peasants. This cheese log is the true treasure.",
     "The cheese had been delicately rolled in slivered almonds, concealing the golden spread within. You sniff the air. Did those geniuses even include a hint of scallion? You must get closer.",
     "You glance past the latest impersonator back to the cheese table and gasp, as bits of the beautiful, once whole log have been damaged by rabid impersonator wolves. But none shall keep you from sampling that luscious log.",
     "A knife slices into the cheese log, and you hiss like a vampire. You watch a guest draw the cheese and cracker into his mouth, and he doesn’t even appreciate it. Not like <i>you</i> would.",
