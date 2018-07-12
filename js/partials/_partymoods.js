@@ -52,12 +52,9 @@ const partyMoods = {
     "You hit it off with a Key and Peele pair and they invite you to the photobooth to commemorate your new friendship.",
     "Both you and a Joan Rivers jump into the air at the same time and manage to land a sweet high five. One of the guests even managed to snap a good photo.",
     "Taking you aside in confidence, the Ozzy Osborne shows you the best way to bite a head off a bat - you have a sweet new party trick!",
-    "The waiter mistakes you for Ricky Martin and gives you the bottle of rare 1669 chardonnay he requested and leaves before you can correct the mistake.",
     "You are challenged to a TV show theme karaoke contest and remembered all of the lyrics to <i>Fresh Prince of Bel Aire</i>.",
     "The crowd parts before your magnificence, and the choicest impersonators make their way over to greet you.",
     "Another impersonator runs up with a Paul Rudd action figure and a marker, asking you to sign the box.",
-    "A deranged fan bursts into the crowd, forces his way past security right up to you. He pronounces his undying love while being dragged out of the room.",
-    "You hear a loud bang off to the left and as you follow it your gaze falls upon a group of ladies, causing them to swoon.",
     "A lovely Janet Jackson impersonator asks you to help reenact the waltz from <i>Crimson Peak</i>.",
     "You are made an honorary fourth Amigo.",
     "The Mr. T impersonator gifts you one of his fine gold chains, as his grandfather would have wanted it.",
@@ -76,9 +73,7 @@ const partyMoods = {
     "You and a Morticia Addams hang around the punch bowl for a few minutes making morbid jokes, and you mostly manage to keep up.",
     "You run into a Jean Luc Picard impersonator and he humors you with a “Make it so”.",
     "A guest graces your story with a slight grin and politely laughs before wandering off.",
-    "The Elvis impersonator asks you to hold a small mirror while he fixes his hair.",
-    "You are handed a signed headshot of a Don Rickles as he slaps your arm and calls you sport."
-    "The Mad Hatter from the Tim Burton <i>Alice in Wonderland</i> passes by without noticing you."
+    "The Elvis impersonator asks you to hold a small mirror while he fixes his hair."
   ],
   neutral: [
     "You gleefully recount your favorite scene from one of the Teenage Mutant Ninja Turtle movies, which nobody you're talking to has seen.",
@@ -93,7 +88,7 @@ const partyMoods = {
     "You fiddle with your phone, checking the forum to see if anyone posted in your thread. They haven't, the snakes.",
     "You count the ceiling tiles for a few minutes.",
     "You stop by the drink table for a cup of punch.",
-    "You ask the waiter for directions to the bathroom. Just in case.",
+    "You ask someone for directions to the bathroom. Just in case.",
     "You rock back and forth on your feet for awhile.",
     "You pluck at your shirt a bit and adjust your vest.",
     "Just how many seasons of <i>Survivor</i> are there? Is that still going?",
@@ -123,7 +118,6 @@ const partyMoods = {
     "A Rick Astley impersonator scoffs at you.",
     "You steal the Will Smith impersonator's Men In Black neuralyzer and run around flashing people directly in the eyes. No one is amused.",
     "Turns out there are people who still haven't seen <i>The Sixth Sense</i>, especially that buff Bruce Willis impersonator. Tough break.",
-    "Your rival, Ray Purchase (or his impersonator?) stares at you from across the room. It is a tense 15 minutes.",
     "Everyone shouts “Norm!” when the impersonator walks in. Everyone also heard you shout “Neal!”"
   ],
   veryBad: [
@@ -155,6 +149,7 @@ const partyMoods = {
     "You watch as a Criss Angel and Queen Latifah stumble into the party late. Someone started the festivities elsewhere.",
     "There's a Crocodile Dundee impersonator? Just how much work does he get nowadays?",
     "Someone mentions seeing a very impressive Jaws impersonator, and for a moment your heart skips at thought of a man in a giant shark costume. At least the metal teeth were well crafted.",
-    "The Hannibals from <i>Silence of the Lambs</i> and <i>Hannibal</i> get into a fight over the legitimacy of the tv series."
+    "The Hannibals from <i>Silence of the Lambs</i> and <i>Hannibal</i> get into a fight over the legitimacy of the tv series.",
+    "The Mad Hatter from the Tim Burton <i>Alice in Wonderland</i> passes by without noticing you. Phew!"
   ]
 };
