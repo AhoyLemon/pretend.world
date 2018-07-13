@@ -162,7 +162,7 @@ var app = new Vue({
       
       if (correctGuess == false) {
         let score = similarity(self.current.name,self.guess);
-        if (score > 0.86) {
+        if (score > 0.71) { 
           // Your spelling was off, but this is close enough.
           self.answer = 'close';
           correctGuess = true;
