@@ -193,8 +193,8 @@ const impersonators = [
   },
   { 
     file: "rudy-guiliani-1.jpg",
-    celebrity: "Rudy Guiliani",
-    variants: [ "Rudy Guliani"],
+    celebrity: "Rudy Giuliani",
+    variants: [ "Rudy Guiliani", "Rudy Guliani"],
     sex: 'm',
     url: "http://www.classiqueproductions.com/pages/rudy-guiliani-impersonator-1.htm"
   },
