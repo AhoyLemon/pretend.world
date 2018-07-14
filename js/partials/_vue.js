@@ -132,6 +132,7 @@ var app = new Vue({
         self.specialScreen.headline = "You lose!";
         self.specialScreen.message = "Having experienced significant problems assessing the identities of the guests as well as what others at this party would consider socially acceptable, you are told to leave.<br/><br />An hour later, you find yourself at a Taco Bell getting sick on chaulpas, and tell a Larry The Cable Guy impersonator that he's your best friend. That is the saddest moment you've ever had.";
         self.specialScreen.gameOver = true;
+        sendEvent('Game Over', 'Lose', 'Round'+self.my.round);
       } else if (self.my.stepsToCheese < 1) {
         self.specialScreen.show = true;
         self.specialScreen.type = "win";
@@ -139,6 +140,7 @@ var app = new Vue({
         self.specialScreen.headline = "You win!";
         self.specialScreen.message = "";
         self.specialScreen.gameOver = true;
+        sendEvent('Game Over', 'Win', 'Round'+self.my.round);
       }
     },
 
