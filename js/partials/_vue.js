@@ -273,10 +273,10 @@ var app = new Vue({
               ]
           ],
           [
-            "“You kinda look like "+self.guess+".” you tell "+self.him+".",
+            "“You kinda look like "+self.guess+".” you tell "+self.him+". ",
               [ 
                 "“Kind of looking like "+bold(self.current.name)+" is kind of what I do!” he says. You laugh politely.",
-                "He thanks you for saying so, and doesn't correct you by pronouncing it "+bold(self.current.name)+"."
+                capitalize(self.he) + " thanks you for saying so, and doesn't correct you by pronouncing it "+bold(self.current.name)+"."
               ]
           ],
           [
