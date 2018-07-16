@@ -428,7 +428,7 @@ const impersonators = [
     url: "http://www.lookalike.com/lookalikes/tom-selleck.htm"
   },
   { 
-    file: "rosanne-barr.jpg",
+    file: "roseanne-barr.jpg",
     celebrity: "Roseanne Barr",
     variants: [ "Rosanne Barr", "Roseanne", "Roseanne Arnold", "Rosanne" ],
     sex: 'f',
