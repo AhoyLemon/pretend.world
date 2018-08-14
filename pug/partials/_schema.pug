@@ -1,21 +1,14 @@
-//-- const sameAs
-if fPlusURL && githubURL
-  - let sameAs = [ fPlusURL, githubURL ]
-else if fPlusURL
-  - let sameAs = fPlusURL
-else if githubURL
-  - let sameAs = fPlusURL
-else
-  - let sameAs = null
-
-
 script(type="application/ld+json").
   {
     "@context": "http://schema.org",
     "@type": "VideoGame",
     "name": "#{siteTitle}",
     "url": "#{siteURL}",
-    "sameAs": "#{githubURL}",
+    "sameAs": 
+      [ 
+        "#{githubURL}",
+        "#{fPlusURL}"
+      ],
     "image": "#{siteURL}/img/og-image.png",
     "playMode": "SinglePlayer",
     "applicationCategory": "browser game",
