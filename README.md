@@ -2,7 +2,7 @@
 ### You are at a party of celebrity impersonators.
 
 ## Hm?
-This is a game that invites the player to guess the photo of each celebrity impersonator presented to him.
+This is a game that invites the player to guess the photo of each celebrity impersonator presented to them.
 
 ## Who made this?
 [Lemon](https://github.com/AhoyLemon) created the game, with some help.
