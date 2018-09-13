@@ -348,7 +348,7 @@ var app = new Vue({
                 "and aggressively chews a stick of gum.",
                 "angrily."
               ],
-                " “"+bold(self.current.name)+"!” he screams ",
+                " “"+bold(self.current.name)+"!” "+self.he+" screams ",
                 [
                   "directly into your face.",
                   "and you excuse yourself to the bathroom to break "+self.his+" line of sight.",
