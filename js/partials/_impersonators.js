@@ -592,8 +592,8 @@ const impersonators = [
   },
   {
     file: "lindsey-lohan.jpg",
-    celebrity: "Lindsey Lohan",
-    variants: [ "Lindsay Lohan", "Lindsie Lohan" ],
+    celebrity: "Lindsay Lohan",
+    variants: [ "Lindsey Lohan", "Lindsie Lohan" ],
     sex: 'f',
     url: "http://www.tributeproductions.com/celebrity-women"
   },
