@@ -1,39 +1,16 @@
-- const testing      =  false
-- const siteTitle    =  "PRETEND 🌐 WORLD"
-- const siteURL      =  "https://ahoylemon.github.io/pretend.world"
-- const githubURL    =  "https://github.com/AhoyLemon/pretend.world"
-- const fPlusURL     =  "https://thefpl.us/also-made/pretend-world"
-- const description  =  "You are at a party of celebrity impersonators."
-- const d = new Date()
-- const lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
-
 doctype html
 html(lang="en")
   head
-    include partials/_head.pug
+    title Pretend World has moved to https://kinda.fun/pretend
+    meta(http-equiv="refresh" content="3; url='https://kinda.fun/pretend'")
   body
+    main
+      h1 Pretend World is now kinda.fun
+      a(href="https://kinda.fun/pretend") https://kinda.fun/pretend
 
-    #app
-
-      if testing == true
-        include partials/_debug.pug
-
-      include partials/_sidebar.pug
-
-      main(v-cloak)
-
-        include partials/_special-screen.pug
-
-        //- Q&A SCREENS
-        .screen.qa-screen(v-else)
-          figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
-            .button-holder.impersonator-website
-              a.button(v-if="phase == 'answer'" @click="visitImpersonatorWebsite()") impersonator website
-          figcaption
-            include partials/_question.pug
-            include partials/_answer.pug
-      
-      include partials/_banner.pug
-
-    include partials/_javascripts.pug
-    include partials/_schema.pug
+    style.
+      * { box-sizing:border-box; }
+      body { background-color:#E5E828; color:#313131; text-align:center; display:flex; align-items:center; height:99.999vh; padding:0; margin:0; }
+      main { padding:40px; }
+      h1 { font-family:"Lora", serif; font-size:clamp(50px, 12vw, 120px); }
+      a  { font-family:"Lora", serif; font-size:clamp(25px, 6vw, 60px); color:#ac4b06; }
